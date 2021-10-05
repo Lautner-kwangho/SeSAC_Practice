@@ -13,6 +13,7 @@
 		E4B50603270C476A00AAA04C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B50601270C476A00AAA04C /* Main.storyboard */; };
 		E4B50605270C476B00AAA04C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B50604270C476B00AAA04C /* Assets.xcassets */; };
 		E4B50608270C476B00AAA04C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4B50606270C476B00AAA04C /* LaunchScreen.storyboard */; };
+		E4B50610270C495100AAA04C /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B5060F270C495100AAA04C /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E4B50604270C476B00AAA04C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4B50607270C476B00AAA04C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4B50609270C476B00AAA04C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4B5060F270C495100AAA04C /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E4B505FB270C476A00AAA04C /* AppDelegate.swift */,
 				E4B505FD270C476A00AAA04C /* SceneDelegate.swift */,
 				E4B505FF270C476A00AAA04C /* ViewController.swift */,
+				E4B5060F270C495100AAA04C /* TestViewController.swift */,
 				E4B50601270C476A00AAA04C /* Main.storyboard */,
 				E4B50604270C476B00AAA04C /* Assets.xcassets */,
 				E4B50606270C476B00AAA04C /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				E4B50600270C476A00AAA04C /* ViewController.swift in Sources */,
 				E4B505FC270C476A00AAA04C /* AppDelegate.swift in Sources */,
+				E4B50610270C495100AAA04C /* TestViewController.swift in Sources */,
 				E4B505FE270C476A00AAA04C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
