@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--배달의민족-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SSACAssignment6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OneViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="mono_baedal04" imagePlacement="top" title="한식    " imagePadding="2" titleAlignment="center"/>
                                                 <connections>
-                                                    <segue destination="Fa8-Tj-mf0" kind="push" id="q7y-vr-hbD"/>
+                                                    <segue destination="Fa8-Tj-mf0" kind="modal" id="dur-Hi-LNS"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nnz-TA-XCm">
@@ -114,20 +114,31 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="banner01" highlightedImage="cake" translatesAutoresizingMaskIntoConstraints="NO" id="B0U-1c-in3">
+                                <rect key="frame" x="0.0" y="88" width="414" height="130"/>
+                                <color key="backgroundColor" systemColor="systemTealColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="NMK-gk-FhQ"/>
+                                </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="bold"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="B0U-1c-in3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="35a-nI-Qxe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7bO-Fw-C4J" secondAttribute="trailing" constant="30" id="8t2-U6-rZ6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="B0U-1c-in3" secondAttribute="trailing" id="9uH-ZG-RvU"/>
                             <constraint firstItem="df6-Gj-3By" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="RQI-hh-wNj"/>
                             <constraint firstItem="7bO-Fw-C4J" firstAttribute="top" secondItem="df6-Gj-3By" secondAttribute="bottom" constant="20" id="VSh-4N-b6e"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="df6-Gj-3By" secondAttribute="trailing" constant="30" id="XdW-1m-9Sy"/>
                             <constraint firstItem="df6-Gj-3By" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Xyd-B6-le6"/>
                             <constraint firstItem="df6-Gj-3By" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ZjS-gy-H7T"/>
                             <constraint firstItem="7bO-Fw-C4J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="qJU-XX-XhZ"/>
+                            <constraint firstItem="B0U-1c-in3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wje-pn-Lrh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="7eG-4J-qKA">
+                    <navigationItem key="navigationItem" title="배달의민족" id="7eG-4J-qKA">
                         <barButtonItem key="backBarButtonItem" title=" " id="RHt-Ut-qNE"/>
                     </navigationItem>
                 </viewController>
@@ -138,9 +149,9 @@
         <!--한식-->
         <scene sceneID="khE-Cz-AJh">
             <objects>
-                <viewController id="Fa8-Tj-mf0" sceneMemberID="viewController">
+                <viewController id="Fa8-Tj-mf0" customClass="OneeViewController" customModule="SSACAssignment6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Qg-7Q-G5z">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="O30-vV-xbo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,7 +205,7 @@
         <!--찜한 가게-->
         <scene sceneID="3ZF-It-UMg">
             <objects>
-                <viewController id="cIU-wn-WbA" sceneMemberID="viewController">
+                <viewController id="cIU-wn-WbA" customClass="TwoViewController" customModule="SSACAssignment6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AmV-VR-VJl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -252,7 +263,7 @@
         <!--찜한가게-->
         <scene sceneID="8Wf-we-vga">
             <objects>
-                <viewController id="acP-A8-lV4" sceneMemberID="viewController">
+                <viewController id="acP-A8-lV4" customClass="TwooViewController" customModule="SSACAssignment6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="46I-d3-UFe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -282,7 +293,7 @@
         <!--주문내역-->
         <scene sceneID="t2f-zS-llK">
             <objects>
-                <viewController id="Yxb-dV-kiv" sceneMemberID="viewController">
+                <viewController id="Yxb-dV-kiv" customClass="ThreeViewController" customModule="SSACAssignment6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p1b-4G-xd0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -294,7 +305,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="ZVH-NZ-Kxd">
-                                <rect key="frame" x="20" y="98" width="374" height="31"/>
+                                <rect key="frame" x="20" y="150" width="374" height="31"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NZl-95-5zc">
                                         <rect key="frame" x="0.0" y="0.0" width="158" height="31"/>
@@ -336,7 +347,7 @@
         <!--주문내역-->
         <scene sceneID="D6O-qT-t1q">
             <objects>
-                <viewController id="NWZ-3S-Rue" sceneMemberID="viewController">
+                <viewController id="NWZ-3S-Rue" customClass="ThreeeViewController" customModule="SSACAssignment6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IFC-0A-0bQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -349,21 +360,61 @@
             </objects>
             <point key="canvasLocation" x="2698" y="1428"/>
         </scene>
-        <!--MyPage-->
-        <scene sceneID="7Iq-71-J9v">
+        <!-- 마이페이지-->
+        <scene sceneID="Nhi-C4-hOP">
             <objects>
-                <viewController id="NXD-hk-tQl" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="YVt-Do-4U7">
+                <tableViewController id="xjv-2P-ktg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Q9x-Fa-FfK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="Amh-q5-zdx"/>
-                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="MyPage" id="yM1-21-iM0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rZQ-y0-Gyh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="VbB-lP-q0j">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VbB-lP-q0j" id="MEG-nO-gEy">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                    <color key="tintColor" systemColor="systemBackgroundColor"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xjv-2P-ktg" id="CKc-5B-wZq"/>
+                            <outlet property="delegate" destination="xjv-2P-ktg" id="f6N-Qf-zU3"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title=" 마이페이지" id="H7S-lY-ihG">
+                        <barButtonItem key="backBarButtonItem" title=" " id="RI8-cT-e28"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="oQP-7L-xnh">
+                            <connections>
+                                <segue destination="O1e-Q6-fzH" kind="push" id="K8b-X6-zWU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rrY-xx-90j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923.1884057971015" y="2110.7142857142858"/>
+            <point key="canvasLocation" x="1925" y="2111"/>
+        </scene>
+        <!--Fourr View Controller-->
+        <scene sceneID="gQ0-bq-S49">
+            <objects>
+                <viewController id="O1e-Q6-fzH" customClass="FourrViewController" customModule="SSACAssignment6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rLb-Iu-HYt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Hd8-HN-cDX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dTe-cf-HGC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j7k-EZ-15w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2736" y="2111"/>
         </scene>
         <!--찜한가게-->
         <scene sceneID="UHS-Cd-iwb">
@@ -391,10 +442,46 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dqY-op-316" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="주문내역" image="map" catalog="system" id="OI4-U0-ddz"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ca6-ED-9hn">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="ca6-ED-9hn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <navigationBarAppearance key="standardAppearance"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" systemColor="systemOrangeColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" systemColor="systemBrownColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="systemTealColor"/>
+                            <color key="textShadowColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <offsetWrapper key="textShadowOffset" horizontal="4" vertical="0.0"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance" backgroundEffect="systemChromeMaterialLight">
+                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textShadowColor" systemColor="systemOrangeColor"/>
+                                <offsetWrapper key="textShadowOffset" horizontal="20" vertical="0.0"/>
+                            </textAttributes>
+                            <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                            <textAttributes key="largeTitleTextAttributes">
+                                <color key="textColor" systemColor="systemTealColor"/>
+                                <color key="textShadowColor" systemColor="systemPurpleColor"/>
+                                <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="6"/>
+                            </textAttributes>
+                            <barButtonItemAppearance key="buttonAppearance">
+                                <barButtonItemStateAppearance key="normal"/>
+                                <barButtonItemStateAppearance key="highlighted"/>
+                                <barButtonItemStateAppearance key="disabled"/>
+                                <barButtonItemStateAppearance key="focused">
+                                    <textAttributes key="titleTextAttributes">
+                                        <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textShadowColor" systemColor="systemGreenColor"/>
+                                    </textAttributes>
+                                </barButtonItemStateAppearance>
+                            </barButtonItemAppearance>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -414,10 +501,23 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oa5-Qf-3id">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemPurpleColor"/>
+                            <color key="textShadowColor" systemColor="systemTealColor"/>
+                        </textAttributes>
+                        <navigationBarAppearance key="standardAppearance"/>
+                        <navigationBarAppearance key="scrollEdgeAppearance" backgroundEffect="prominent" backgroundImage="banner01" backgroundImageContentMode="scaleToFill">
+                            <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <textAttributes key="titleTextAttributes">
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <color key="textShadowColor" systemColor="secondarySystemFillColor"/>
+                                <offsetWrapper key="textShadowOffset" horizontal="12" vertical="0.0"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="NXD-hk-tQl" kind="relationship" relationship="rootViewController" id="CKM-AM-HOd"/>
+                        <segue destination="xjv-2P-ktg" kind="relationship" relationship="rootViewController" id="m3Z-dJ-1Fq"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPS-Lc-376" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -426,8 +526,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="banner01" width="915" height="516"/>
         <image name="bookmark.fill" catalog="system" width="112" height="128"/>
         <image name="brain.head.profile" catalog="system" width="114" height="128"/>
+        <image name="cake" width="200" height="267"/>
         <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="mono_baedal02" width="69" height="94"/>
@@ -439,11 +541,32 @@
         <image name="mono_baedal12" width="83" height="60"/>
         <image name="mono_baedal15" width="89" height="95"/>
         <image name="mono_baedal16" width="94" height="81"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

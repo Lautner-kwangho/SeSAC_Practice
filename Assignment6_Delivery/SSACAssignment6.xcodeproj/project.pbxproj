@@ -13,6 +13,7 @@
 		E4D5C0E6270C5A9F002B0DB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D5C0E4270C5A9F002B0DB9 /* Main.storyboard */; };
 		E4D5C0E8270C5AA0002B0DB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4D5C0E7270C5AA0002B0DB9 /* Assets.xcassets */; };
 		E4D5C0EB270C5AA0002B0DB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4D5C0E9270C5AA0002B0DB9 /* LaunchScreen.storyboard */; };
+		E4D5C0F3270C81D4002B0DB9 /* AssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D5C0F2270C81D4002B0DB9 /* AssignmentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E4D5C0E7270C5AA0002B0DB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E4D5C0EA270C5AA0002B0DB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E4D5C0EC270C5AA0002B0DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4D5C0F2270C81D4002B0DB9 /* AssignmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				E4D5C0E0270C5A9F002B0DB9 /* SceneDelegate.swift */,
 				E4D5C0E2270C5A9F002B0DB9 /* ViewController.swift */,
 				E4D5C0E4270C5A9F002B0DB9 /* Main.storyboard */,
+				E4D5C0F2270C81D4002B0DB9 /* AssignmentViewController.swift */,
 				E4D5C0E7270C5AA0002B0DB9 /* Assets.xcassets */,
 				E4D5C0E9270C5AA0002B0DB9 /* LaunchScreen.storyboard */,
 				E4D5C0EC270C5AA0002B0DB9 /* Info.plist */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4D5C0E3270C5A9F002B0DB9 /* ViewController.swift in Sources */,
+				E4D5C0F3270C81D4002B0DB9 /* AssignmentViewController.swift in Sources */,
 				E4D5C0DF270C5A9F002B0DB9 /* AppDelegate.swift in Sources */,
 				E4D5C0E1270C5A9F002B0DB9 /* SceneDelegate.swift in Sources */,
 			);
