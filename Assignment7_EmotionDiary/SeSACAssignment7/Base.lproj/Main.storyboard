@@ -47,7 +47,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime1"/>
                                                         <connections>
-                                                            <action selector="checkingEmotion1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="etV-xT-lOo"/>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4es-C3-aZN"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXM-FW-24O">
@@ -66,7 +66,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime2"/>
                                                         <connections>
-                                                            <action selector="checkingEmotion2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fgk-VD-hOn"/>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P7O-bU-xw8"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TCR-lS-yLn">
@@ -85,7 +85,7 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime3"/>
                                                         <connections>
-                                                            <action selector="checkingEmotion3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Txz-zE-tg1"/>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="38U-DL-DOa"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmA-yL-UKf">
@@ -111,6 +111,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="118.5"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime4"/>
+                                                        <connections>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dMO-xy-sGi"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="907-W2-SRP">
                                                         <rect key="frame" x="0.0" y="119.5" width="116" height="20.5"/>
@@ -127,6 +130,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="118.5"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime5"/>
+                                                        <connections>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t17-cR-Ppt"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sJK-sd-ioY">
                                                         <rect key="frame" x="0.0" y="119.5" width="116" height="20.5"/>
@@ -143,6 +149,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="118.5"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime6"/>
+                                                        <connections>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IUX-v5-xZ9"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hob-P0-3zx">
                                                         <rect key="frame" x="0.0" y="119.5" width="116" height="20.5"/>
@@ -164,6 +173,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="118.5"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime7"/>
+                                                        <connections>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F7o-vs-JDS"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yv8-52-wIu">
                                                         <rect key="frame" x="0.0" y="119.5" width="116" height="20.5"/>
@@ -180,6 +192,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="118.5"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime8"/>
+                                                        <connections>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2rg-cF-hlb"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljn-4j-8pk">
                                                         <rect key="frame" x="0.0" y="119.5" width="116" height="20.5"/>
@@ -196,6 +211,9 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="116" height="118.5"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <state key="normal" title="Button" image="mono_slime9"/>
+                                                        <connections>
+                                                            <action selector="checkingEmotion4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PzQ-Vc-4QK"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdo-A8-xVX">
                                                         <rect key="frame" x="0.0" y="119.5" width="116" height="20.5"/>
@@ -209,12 +227,22 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRn-y1-sdI">
+                                <rect key="frame" x="172" y="742" width="69" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="삭제"/>
+                                <connections>
+                                    <action selector="deleteUsersDefault:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FUT-wA-njf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.91320377588272095" green="0.65450137853622437" blue="0.52068424224853516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="LRn-y1-sdI" firstAttribute="top" secondItem="pJc-Jc-Hec" secondAttribute="bottom" constant="72" id="1Pu-9S-HQ7"/>
                             <constraint firstItem="pJc-Jc-Hec" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bik-ha-hx1"/>
                             <constraint firstItem="pJc-Jc-Hec" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Snr-wq-3Nb"/>
+                            <constraint firstItem="LRn-y1-sdI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ydp-BR-5Z2"/>
                             <constraint firstItem="pJc-Jc-Hec" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zt2-eE-BVP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pJc-Jc-Hec" secondAttribute="trailing" constant="20" id="uYD-is-lVm"/>
                         </constraints>
