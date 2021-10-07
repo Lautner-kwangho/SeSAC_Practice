@@ -50,7 +50,7 @@ class DDayViewController: UIViewController {
     func lblSetting(_ lbl: UILabel) {
         lbl.text = ""
         lbl.textColor = .white
-        lbl.font = UIFont.boldSystemFont(ofSize: 25)
+        lbl.font = UIFont.boldSystemFont(ofSize: 20)
     }
 
     @IBAction func datePickValueChanged(_ sender: UIDatePicker) {
@@ -65,19 +65,41 @@ class DDayViewController: UIViewController {
         let bfterDDay = format.string(from: bfterDay)
         lblsub2.text = "\(bfterDDay)"
         
-        let cfterDay = Date(timeInterval: 86400 * 300, since: sender.date)
-        let cfterDDay = format.string(from: cfterDay)
+        let cfterDay = Calendar.current.date(byAdding: .day, value: 300, to: sender.date)
+        let cfterDDay = format.string(from: cfterDay!)
         lblsub3.text = "\(cfterDDay)"
         
-        let dfterDay = Date(timeInterval: 86400 * 400, since: sender.date)
-        let dfterDDay = format.string(from: dfterDay)
+        let dfterDay = Calendar.current.date(byAdding: .day, value: 400, to: sender.date)
+        let dfterDDay = format.string(from: dfterDay!)
         lblsub4.text = "\(dfterDDay)"
+        
+        /*
+        3번째 방법
+        let date = sender.date
+        Calendar는 identifier 필수! (왜냐면 : 나라, 종교 별로 다르기 때문에)
+        let calendar = Calendar(identifier: .gregorian)
+        print(calendar.dateComponents([.day], from: date))
+        var dateConponents = DateComponents()
+        dateConponents.day = 100
+        print(calendar.date(byAdding: dateConponents, to: date)!)
+        더 간결하게 쓰면 아래와 같겠지?
+        */
+        
+        testDay(100)
+        testDay(200)
+        testDay(300)
+        testDay(400)
 
-//
-//        // format 여러 구조로 사용되는지 확인
-//        // 100일 뒤에 날짜 계산하는 방법 TimeInterval, Calendar
-//        // 간단한 방법 (100일 뒤)
-//        let afterDate = Date(timeInterval: 86400 * 100, since: sender.date)
-//        print(afterDate)
+    }
+    func testDay(_ countInt: Int) {
+        let selfFormat = DateFormatter()
+        selfFormat.dateFormat = "yy년 mm월 dd일"
+        
+        var dateConponents = DateComponents()
+        dateConponents.day = countInt
+        // 근데 너무 줄이니까 다음에 봤을 때 모를 수도 있겠다
+        let a = Calendar(identifier: .gregorian).date(byAdding: dateConponents, to: datePicker.date)!
+        let b = selfFormat.string(from: a)
+        print(b)
     }
 }
