@@ -32,6 +32,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let number: [AnyObject: String] = [NumberA: "행복해", NumberB: "사랑해", NumberC: "좋아해", NumberD: "당황해", NumberE: "속상해", NumberF: "심심해", NumberG: "행복해", NumberH: "몰라요"]
+//
+//
+//        va
+//        let
+        
         let numberA = UserDefaults.standard.integer(forKey: "행복해")
         let numberB = UserDefaults.standard.integer(forKey: "사랑해")
         let numberC = UserDefaults.standard.integer(forKey: "좋아해")
