@@ -114,6 +114,8 @@ class DrinkWaterViewController: UIViewController {
         txt?.textColor = .white
         txt?.textAlignment = .center
         txt?.font = UIFont.boldSystemFont(ofSize: 40)
+        txt?.layer.borderWidth = 0.5
+        txt?.layer.borderColor = #colorLiteral(red: 0.2528861165, green: 0.5798728466, blue: 0.4502484202, alpha: 1).cgColor
     }
     
     
