@@ -71,7 +71,6 @@
 				E43233972711F09D00F60625 /* AppDelegate.swift */,
 				E43233992711F09D00F60625 /* SceneDelegate.swift */,
 				E43233A02711F09E00F60625 /* Assets.xcassets */,
-				E43233A22711F09E00F60625 /* LaunchScreen.storyboard */,
 				E43233A52711F09E00F60625 /* Info.plist */,
 			);
 			path = SeSACAssignment9;
@@ -92,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				E432339D2711F09D00F60625 /* Main.storyboard */,
+				E43233A22711F09E00F60625 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
