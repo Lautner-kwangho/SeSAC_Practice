@@ -57,7 +57,6 @@ class ProfileViewController: UIViewController {
         txt.keyboardType = keyboardType
         txt.layer.borderWidth = 0.5
         txt.layer.borderColor = #colorLiteral(red: 0.2528861165, green: 0.5798728466, blue: 0.4502484202, alpha: 1).cgColor
-        txt.addLeftPadding()
     }
     
     @IBAction func saveUserDefaults(_ sender: UIButton) {
