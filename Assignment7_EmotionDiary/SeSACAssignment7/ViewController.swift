@@ -59,6 +59,7 @@ class ViewController: UIViewController {
         lbl9.text = "몰라요 \(numberI)"
         
         // 추가 수정 예정
+        view.backgroundColor = UIColor(patternImage: UIImage(imageLiteralResourceName: "배경"))
     }
     
     @IBAction func deleteUsersDefault(_ sender: UIButton) {
