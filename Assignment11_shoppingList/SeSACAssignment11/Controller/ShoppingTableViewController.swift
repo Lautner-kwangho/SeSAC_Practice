@@ -45,7 +45,6 @@ class ShoppingTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as? ShoppingTableViewCell else {
             return UITableViewCell()
         }
-        cell.separatorInset = UIEdgeInsets.zero
         cell.lblList.text = lblChecklist[indexPath.row]
         
         return cell
