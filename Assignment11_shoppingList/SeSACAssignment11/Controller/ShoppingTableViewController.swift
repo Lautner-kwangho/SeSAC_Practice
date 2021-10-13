@@ -23,7 +23,7 @@ class ShoppingTableViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.5416610837, green: 0.7107171416, blue: 0.7037462592, alpha: 1)
         headerView.backgroundColor = #colorLiteral(red: 0.5416610837, green: 0.7107171416, blue: 0.7037462592, alpha: 1)
-        
+        txtField.placeholder = "무엇을 구매하실 건가요?"
         btnSave.setTitle("추가", for: .normal)
         btnSave.setTitleColor(.white, for: .normal)
         btnSave.backgroundColor = #colorLiteral(red: 0.3123301864, green: 0.462901473, blue: 0.6003618836, alpha: 1)
