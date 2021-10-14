@@ -15,6 +15,7 @@
 		E428833E2716F14C00551C6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E428833C2716F14C00551C6C /* LaunchScreen.storyboard */; };
 		E42883462716F19F00551C6C /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42883452716F19F00551C6C /* ShoppingTableViewCell.swift */; };
 		E428834B2716F21A00551C6C /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E428834A2716F21A00551C6C /* ShoppingTableViewController.swift */; };
+		E4CC7B42271832D400BA8B0E /* ShoppingBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7B41271832D400BA8B0E /* ShoppingBasket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E428833F2716F14C00551C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E42883452716F19F00551C6C /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		E428834A2716F21A00551C6C /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingTableViewController.swift; path = SeSACAssignment11/Controller/ShoppingTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		E4CC7B41271832D400BA8B0E /* ShoppingBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBasket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		E42883302716F14A00551C6C /* SeSACAssignment11 */ = {
 			isa = PBXGroup;
 			children = (
+				E4CC7B40271832C200BA8B0E /* Struct */,
 				E42883492716F1D200551C6C /* Cell */,
 				E42883482716F1C400551C6C /* Storyboard */,
 				E42883472716F1A500551C6C /* Controller */,
@@ -95,6 +98,14 @@
 				E42883452716F19F00551C6C /* ShoppingTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E4CC7B40271832C200BA8B0E /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				E4CC7B41271832D400BA8B0E /* ShoppingBasket.swift */,
+			);
+			path = Struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E42883362716F14A00551C6C /* ViewController.swift in Sources */,
+				E4CC7B42271832D400BA8B0E /* ShoppingBasket.swift in Sources */,
 				E42883462716F19F00551C6C /* ShoppingTableViewCell.swift in Sources */,
 				E42883322716F14A00551C6C /* AppDelegate.swift in Sources */,
 				E428834B2716F21A00551C6C /* ShoppingTableViewController.swift in Sources */,

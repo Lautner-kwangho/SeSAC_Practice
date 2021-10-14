@@ -13,8 +13,9 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var txtField: UITextField!
     @IBOutlet weak var btnSave: UIButton!
     
-    var lblChecklist = ["그립톡 구매하기", "사이다 구매", "아이패드 케이스 최저가 알아보기", "양말"] {
+    var lblChecklist: [ShoppingBasket] = [ShoppingBasket(name: "shopping값은 이렇게 쓰세요!", checkBox: false, favorite: false)] {
         didSet {
+            saveData()
             tableView.reloadData()
         }
     }
@@ -27,14 +28,48 @@ class ShoppingTableViewController: UITableViewController {
         btnSave.setTitle("추가", for: .normal)
         btnSave.setTitleColor(.white, for: .normal)
         btnSave.backgroundColor = #colorLiteral(red: 0.3123301864, green: 0.462901473, blue: 0.6003618836, alpha: 1)
+        
+        loadData()
+    }
+    
+    func saveData() {
+        var shoppingBasket: [[String:Any]] = []
+        
+        for shopping in lblChecklist {
+            let data: [String:Any] = [
+                "name": shopping.name,
+                "checkBox": shopping.checkBox,
+                "favorite": shopping.favorite
+            ]
+            shoppingBasket.append(data)
+        }
+        UserDefaults.standard.set(shoppingBasket, forKey: "shoppingBasket")
+        tableView.reloadData()
+    }
+    
+    func loadData() {
+        let userDefaults = UserDefaults.standard
+        if let data = userDefaults.object(forKey: "shoppingBasket") as? [[String: Any]] {
+            var shopping = [ShoppingBasket]()
+            for datum in data {
+                guard let name = datum["name"] as? String else {return}
+                guard let checkBox = datum["checkBox"] as? Bool else {return}
+                guard let favorite = datum["favorite"] as? Bool else {return}
+            
+                shopping.append(ShoppingBasket(name: name, checkBox: checkBox, favorite: favorite))
+            }
+            self.lblChecklist = shopping
+        }
     }
     
     @IBAction func savingList(_ sender: UIButton) {
         
         if let text = txtField.text {
             if text != "" {
-                lblChecklist.append(text)
-            }
+//                let shop = ShoppingBasket(name: text, checkBox: false, favorite: false)
+                let shop = ShoppingBasket(name: text, checkBox: false, favorite: false)
+                lblChecklist.append(shop)
+                }
         } else {
             print("들어갈 값이 없습니다")
         }
@@ -42,10 +77,13 @@ class ShoppingTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as? ShoppingTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingTableViewCell.shoppingIdentifier, for: indexPath) as? ShoppingTableViewCell else {
             return UITableViewCell()
         }
-        cell.lblList.text = lblChecklist[indexPath.row]
+        
+        let shoppigRow = lblChecklist[indexPath.row]
+        
+        cell.lblList.text = shoppigRow.name
         
         return cell
     }

@@ -9,6 +9,8 @@ import UIKit
 
 class ShoppingTableViewCell: UITableViewCell {
 
+    static let shoppingIdentifier = "ShoppingTableViewCell"
+    
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var btnChecklist: UIButton!
     @IBOutlet weak var lblList: UILabel!
