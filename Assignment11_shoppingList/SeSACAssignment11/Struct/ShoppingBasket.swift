@@ -9,6 +9,12 @@ import Foundation
 
 struct ShoppingBasket {
     var name: String
-    var checkBox: Bool
-    var favorite: Bool
+//    var checkBox: Int
+//    var favorite: Int
+}
+
+// 원래는 나눠야하지만..
+struct BtnCount {
+    var checkBox: Int
+    var favorite: Int
 }

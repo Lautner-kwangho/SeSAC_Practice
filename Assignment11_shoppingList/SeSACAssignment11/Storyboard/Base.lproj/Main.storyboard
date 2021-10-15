@@ -15,6 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="hAU-C3-qYF">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -112,6 +113,7 @@
                         <connections>
                             <outlet property="dataSource" destination="hiV-AM-VKU" id="Fgg-M4-gEc"/>
                             <outlet property="delegate" destination="hiV-AM-VKU" id="uy4-hY-XId"/>
+                            <outletCollection property="gestureRecognizers" destination="zoK-Ph-i9L" appends="YES" id="AXt-MC-Paw"/>
                         </connections>
                     </tableView>
                     <connections>
@@ -121,8 +123,13 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1t5-U6-G4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zoK-Ph-i9L">
+                    <connections>
+                        <action selector="endEditing:" destination="hiV-AM-VKU" id="TuY-gv-TIW"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="781.15942028985512" y="105.80357142857143"/>
+            <point key="canvasLocation" x="177" y="117"/>
         </scene>
     </scenes>
     <resources>

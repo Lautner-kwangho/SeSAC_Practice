@@ -13,7 +13,7 @@ class ShoppingTableViewController: UITableViewController {
     @IBOutlet weak var txtField: UITextField!
     @IBOutlet weak var btnSave: UIButton!
     
-    var lblChecklist: [ShoppingBasket] = [ShoppingBasket(name: "shopping값은 이렇게 쓰세요!", checkBox: false, favorite: false)] {
+    var lblChecklist: [ShoppingBasket] = [ShoppingBasket(name: "shopping값은 이렇게 쓰세요!")] {
         didSet {
             saveData()
             tableView.reloadData()
@@ -37,9 +37,7 @@ class ShoppingTableViewController: UITableViewController {
         
         for shopping in lblChecklist {
             let data: [String:Any] = [
-                "name": shopping.name,
-                "checkBox": shopping.checkBox,
-                "favorite": shopping.favorite
+                "name": shopping.name
             ]
             shoppingBasket.append(data)
         }
@@ -53,10 +51,10 @@ class ShoppingTableViewController: UITableViewController {
             var shopping = [ShoppingBasket]()
             for datum in data {
                 guard let name = datum["name"] as? String else {return}
-                guard let checkBox = datum["checkBox"] as? Bool else {return}
-                guard let favorite = datum["favorite"] as? Bool else {return}
+//                guard let checkBox = datum["checkBox"] as? Int else {return}
+//                guard let favorite = datum["favorite"] as? Int else {return}
             
-                shopping.append(ShoppingBasket(name: name, checkBox: checkBox, favorite: favorite))
+                shopping.append(ShoppingBasket(name: name))
             }
             self.lblChecklist = shopping
         }
@@ -66,9 +64,9 @@ class ShoppingTableViewController: UITableViewController {
         
         if let text = txtField.text {
             if text != "" {
-//                let shop = ShoppingBasket(name: text, checkBox: false, favorite: false)
-                let shop = ShoppingBasket(name: text, checkBox: false, favorite: false)
+                let shop = ShoppingBasket(name: text)
                 lblChecklist.append(shop)
+                txtField.text = ""
                 }
         } else {
             print("들어갈 값이 없습니다")
@@ -94,6 +92,9 @@ class ShoppingTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height / 18
+    }
+    @IBAction func endEditing(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
