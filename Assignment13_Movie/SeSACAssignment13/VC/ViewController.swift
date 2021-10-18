@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
 
@@ -81,7 +82,7 @@ class ViewController: UIViewController {
         cell.posterRate.text = "\(tv.rate)"
         cell.posterName.text = tv.title
         cell.posterRelase.text = tv.releaseDate
-        
+                
         return cell
     }
     
@@ -92,9 +93,30 @@ class ViewController: UIViewController {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let popVC = self.storyboard?.instantiateViewController(withIdentifier: "ActorVC") as! ActorVC
+        // 3. 데이터 연결해준다
+        let row = tvShowInfomation[indexPath.row]
+        popVC.tvData = row
+        
         self.navigationController?.pushViewController(popVC, animated: true)
     }
-
+    
+    @IBAction func linkedPresent(_ sender: UIButton) {
+        let sb = self.storyboard?.instantiateViewController(withIdentifier: LinkedVC.identifier) as! LinkedVC
+        let navi = UINavigationController(rootViewController: sb)
+        
+        // 에효...
+        var titleArray: [String] = []
+        let na: Int = tvShowInfomation.count
+        for i in 0..<na {
+            let vell = TvShowInfomation().tvShow[i].title
+            titleArray.append(vell)
+        }
+        
+        sb.linkedTitle = "\(titleArray)"
+        
+        self.present(navi, animated: true, completion: nil)
+    }
+    
 }
 
 

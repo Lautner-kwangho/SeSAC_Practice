@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E46B15EA271DBB5F0083D515 /* LinkedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B15E9271DBB5F0083D515 /* LinkedVC.swift */; };
 		E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B1C11271A9A3F00C1EF8E /* AppDelegate.swift */; };
 		E47B1C14271A9A3F00C1EF8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B1C13271A9A3F00C1EF8E /* SceneDelegate.swift */; };
 		E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B1C15271A9A3F00C1EF8E /* ViewController.swift */; };
 		E47B1C19271A9A3F00C1EF8E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47B1C17271A9A3F00C1EF8E /* Main.storyboard */; };
 		E47B1C1B271A9A4100C1EF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47B1C1A271A9A4100C1EF8E /* Assets.xcassets */; };
 		E47B1C1E271A9A4100C1EF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47B1C1C271A9A4100C1EF8E /* LaunchScreen.storyboard */; };
+		E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4818EB0271DAE7C00FA9CC5 /* Kingfisher */; };
 		E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */; };
 		E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C36271A9B0D005A10D9 /* TvShow.swift */; };
 		E4F75C3E271A9F20005A10D9 /* ActorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C3D271A9F20005A10D9 /* ActorTableViewCell.swift */; };
@@ -23,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E46B15E9271DBB5F0083D515 /* LinkedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedVC.swift; sourceTree = "<group>"; };
 		E47B1C0E271A9A3F00C1EF8E /* SeSACAssignment13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACAssignment13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47B1C11271A9A3F00C1EF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E47B1C13271A9A3F00C1EF8E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +112,7 @@
 				E47B1C15271A9A3F00C1EF8E /* ViewController.swift */,
 				E4F75C46271AA1E7005A10D9 /* SearchVC.swift */,
 				E4F75C48271AA1F4005A10D9 /* ActorVC.swift */,
+				E46B15E9271DBB5F0083D515 /* LinkedVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -128,6 +133,9 @@
 			dependencies = (
 			);
 			name = SeSACAssignment13;
+			packageProductDependencies = (
+				E4818EB0271DAE7C00FA9CC5 /* Kingfisher */,
+			);
 			productName = SeSACAssignment13;
 			productReference = E47B1C0E271A9A3F00C1EF8E /* SeSACAssignment13.app */;
 			productType = "com.apple.product-type.application";
@@ -156,6 +164,9 @@
 				Base,
 			);
 			mainGroup = E47B1C05271A9A3F00C1EF8E;
+			packageReferences = (
+				E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = E47B1C0F271A9A3F00C1EF8E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,6 +199,7 @@
 				E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */,
 				E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */,
 				E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */,
+				E46B15EA271DBB5F0083D515 /* LinkedVC.swift in Sources */,
 				E4F75C42271A9F5E005A10D9 /* MainTableViewCell.swift in Sources */,
 				E4F75C49271AA1F4005A10D9 /* ActorVC.swift in Sources */,
 				E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */,
@@ -414,6 +426,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4818EB0271DAE7C00FA9CC5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E47B1C06271A9A3F00C1EF8E /* Project object */;
 }
