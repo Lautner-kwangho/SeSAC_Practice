@@ -15,7 +15,7 @@ class ActorVC: UIViewController {
     @IBOutlet weak var miniBackgroundImage: UIImageView!
     @IBOutlet weak var miniPoster: UIImageView!
     @IBOutlet weak var miniTitle: UILabel!
-    
+    var myTitle: Bool = true
     // 1. 들어갈 공간을 만든다
     var tvData: TvShow?
     
@@ -49,13 +49,15 @@ class ActorVC: UIViewController {
         miniTitle.text = tvData?.title
         
         // 15일차 과제(header 구현)
+        
+        ActorTableView.sectionHeaderHeight = 100
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.identifier) as? SectionTableViewCell
         cell?.sectionTextView.text = tvData?.overview
-        
-        cell?.autoDimensionButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        let dimensionImage = myTitle ? "chevron.down" : "chevron.up"
+        cell?.autoDimensionButton.setImage(UIImage(systemName: dimensionImage), for: .normal)
         cell?.autoDimensionButton.setTitle("", for: .normal)
         cell?.autoDimensionButton.tintColor = .black
         cell?.autoDimensionButton.addTarget(self, action: #selector(autoDimension), for: .touchUpInside)
@@ -63,8 +65,19 @@ class ActorVC: UIViewController {
     }
     
     @objc func autoDimension() {
-        ActorTableView.estimatedSectionHeaderHeight = UIScreen.main.bounds.height / 6
-        ActorTableView.reloadData()
+        switch myTitle {
+        case true :
+            ActorTableView.sectionHeaderHeight = UITableView.automaticDimension
+            ActorTableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
+            ActorTableView.reloadData()
+            myTitle = false
+            print(myTitle)
+        case false :
+            ActorTableView.sectionHeaderHeight = 100
+            ActorTableView.reloadData()
+            myTitle = true
+            print(myTitle)
+        }
     }
 //
 //    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

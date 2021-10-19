@@ -11,13 +11,15 @@ class SectionTableViewCell: UITableViewCell {
 
     static let identifier = "SectionTableViewCell"
     
-    @IBOutlet weak var sectionTextView: UITextView!
+    @IBOutlet weak var sectionTextView: UILabel!
     @IBOutlet weak var autoDimensionButton: UIButton!
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         sectionTextView.font = UIFont.systemFont(ofSize: 18, weight: .light)
+        sectionTextView.numberOfLines = 0
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
