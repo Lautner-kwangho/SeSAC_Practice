@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftUI
+import Toast
 
 class BookCollectionVC: UIViewController {
 
@@ -31,6 +32,14 @@ class BookCollectionVC: UIViewController {
         layout.minimumLineSpacing = spacing
         BookCollectionView.collectionViewLayout = layout
     }
+    
+    @objc func clickedBookCell(selectButton: UIButton) {
+        // 재미삼아 넣어본 거 
+        let numv = selectButton.tag * 124018
+        self.view.makeToast("\(numv) 초 뒤에 이미지가 활성화 됩니다^^", duration: 1.0, position: .bottom)
+        self.view.makeToastActivity(.center)
+    }
+    
 
 }
 extension BookCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -50,13 +59,14 @@ extension BookCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
         
         cell.backgroundColor = UIColor(red: r, green: g, blue: b, alpha: 1)
         cell.layer.cornerRadius = cell.frame.size.height / 8
+        cell.bookButton.tag = indexPath.item
         
         cell.bookTitle.text = tv.title
         cell.bookImage.image = UIImage(named: "\(tv.title.replacingOccurrences(of: " ", with: "_").lowercased())")
         cell.bookRate.text = "\(tv.rate)"
-        
+        cell.bookButton.setTitle("", for: .normal)
+        cell.bookButton.addTarget(self, action: #selector(clickedBookCell(selectButton:)), for: .touchUpInside)
         return cell
     }
-    
-    
+
 }

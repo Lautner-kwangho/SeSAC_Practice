@@ -20,6 +20,7 @@
 		E4B58FE3271F171C00318958 /* BookCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FE2271F171C00318958 /* BookCollectionVC.swift */; };
 		E4B58FE8271F17CA00318958 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */; };
 		E4B58FE9271F17CA00318958 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B58FE7271F17CA00318958 /* BookCollectionViewCell.xib */; };
+		E4B58FEC271F279C00318958 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E4B58FEB271F279C00318958 /* Toast */; };
 		E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */; };
 		E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C36271A9B0D005A10D9 /* TvShow.swift */; };
 		E4F75C3E271A9F20005A10D9 /* ActorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C3D271A9F20005A10D9 /* ActorTableViewCell.swift */; };
@@ -58,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B58FEC271F279C00318958 /* Toast in Frameworks */,
 				E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +152,7 @@
 			name = SeSACAssignment13;
 			packageProductDependencies = (
 				E4818EB0271DAE7C00FA9CC5 /* Kingfisher */,
+				E4B58FEB271F279C00318958 /* Toast */,
 			);
 			productName = SeSACAssignment13;
 			productReference = E47B1C0E271A9A3F00C1EF8E /* SeSACAssignment13.app */;
@@ -181,6 +184,7 @@
 			mainGroup = E47B1C05271A9A3F00C1EF8E;
 			packageReferences = (
 				E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E4B58FEA271F279B00318958 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = E47B1C0F271A9A3F00C1EF8E /* Products */;
 			projectDirPath = "";
@@ -456,6 +460,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		E4B58FEA271F279B00318958 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -463,6 +475,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E4B58FEB271F279C00318958 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4B58FEA271F279B00318958 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
