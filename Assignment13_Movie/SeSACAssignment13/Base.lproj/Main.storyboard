@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -243,6 +244,52 @@
             </objects>
             <point key="canvasLocation" x="944.92753623188412" y="97.767857142857139"/>
         </scene>
+        <!--Book CollectionVC-->
+        <scene sceneID="muW-4A-B5J">
+            <objects>
+                <viewController storyboardIdentifier="BookCollectionVC" id="1bU-I4-TU9" customClass="BookCollectionVC" customModule="SeSACAssignment13" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QYF-Ty-jj2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KTx-gM-xfg">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Lia-F6-4Xh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WX1-7l-x7b">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="30P-X7-7b4">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kBq-7G-v4g"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KTx-gM-xfg" firstAttribute="trailing" secondItem="kBq-7G-v4g" secondAttribute="trailing" id="823-VP-N4h"/>
+                            <constraint firstItem="KTx-gM-xfg" firstAttribute="top" secondItem="kBq-7G-v4g" secondAttribute="top" id="TZE-aF-C2E"/>
+                            <constraint firstItem="KTx-gM-xfg" firstAttribute="leading" secondItem="kBq-7G-v4g" secondAttribute="leading" id="bci-9R-uFf"/>
+                            <constraint firstItem="kBq-7G-v4g" firstAttribute="bottom" secondItem="KTx-gM-xfg" secondAttribute="bottom" id="gYM-Pc-ZR3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="BookCollectionView" destination="KTx-gM-xfg" id="8og-sd-Ylt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2wQ-WV-rSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1840.5797101449277" y="97.767857142857139"/>
+        </scene>
         <!--LinkedVC-->
         <scene sceneID="TLy-dc-J4s">
             <objects>
@@ -256,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xSi-Ja-yvC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="767"/>
+            <point key="canvasLocation" x="1841" y="-577"/>
         </scene>
         <!--SearchVC-->
         <scene sceneID="t4R-gm-ceq">
@@ -342,7 +389,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hRw-7O-vTD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1677" y="-573"/>
+            <point key="canvasLocation" x="929" y="-577"/>
         </scene>
         <!--ActorVC-->
         <scene sceneID="6NZ-VR-pwU">
@@ -366,6 +413,7 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ks-EV-yJR">
                                             <rect key="frame" x="20" y="40" width="79" height="105"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="Fzn-BF-YlH"/>
                                                 <constraint firstAttribute="width" secondItem="6Ks-EV-yJR" secondAttribute="height" multiplier="3:4" id="JwU-MB-iGi"/>
                                             </constraints>
                                         </imageView>
@@ -381,7 +429,7 @@
                                         <constraint firstAttribute="trailing" secondItem="dFz-da-MCz" secondAttribute="trailing" constant="20" id="0Yd-sH-T5n"/>
                                         <constraint firstAttribute="bottom" secondItem="dFz-da-MCz" secondAttribute="bottom" constant="10" id="3Z7-9u-ZuS"/>
                                         <constraint firstItem="6Ks-EV-yJR" firstAttribute="leading" secondItem="hyG-xP-K49" secondAttribute="leading" constant="20" id="6hy-4b-CZP"/>
-                                        <constraint firstItem="6Ks-EV-yJR" firstAttribute="top" secondItem="hyG-xP-K49" secondAttribute="top" constant="40" id="AfN-pU-EBo"/>
+                                        <constraint firstItem="6Ks-EV-yJR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hyG-xP-K49" secondAttribute="top" constant="40" id="AfN-pU-EBo"/>
                                         <constraint firstAttribute="bottom" secondItem="6Ks-EV-yJR" secondAttribute="bottom" constant="10" id="Hhw-DB-amX"/>
                                         <constraint firstItem="h1W-2e-SEa" firstAttribute="top" secondItem="hyG-xP-K49" secondAttribute="top" id="QRX-LJ-QeY"/>
                                         <constraint firstAttribute="bottom" secondItem="h1W-2e-SEa" secondAttribute="bottom" id="aRa-jQ-n67"/>
@@ -457,7 +505,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SjK-MA-kmn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1952" y="108"/>
+            <point key="canvasLocation" x="1841" y="805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="blJ-Ec-TcC">

@@ -28,6 +28,7 @@ class ViewController: UIViewController {
         btnFilm.setting("flim", color: .green)
         btnTv.setting("tv", color: .orange)
         btnBook.setting("book", color: .systemBlue)
+        btnBook.addTarget(self, action: #selector(goToBook), for: .touchUpInside)
 
         
         // Delegate, DataSource 설정
@@ -68,6 +69,14 @@ class ViewController: UIViewController {
         secondVL?.layer.shadowOpacity = 0.3
     }
     
+    // push만 구현함 pop은 알아서 되니까 일단 냅둠(추후에 더 수정할 수 있음 수정하기로)
+    @objc func goToBook() {
+        let popBookVC = self.storyboard?.instantiateViewController(withIdentifier: "BookCollectionVC") as! BookCollectionVC
+        self.navigationController?.pushViewController(popBookVC, animated: true)
+        // 3. 데이터 연결해준다
+//        let row = tvShowInfomation[indexPath.row]
+//        popVC.tvData = row
+    }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -104,7 +113,7 @@ class ViewController: UIViewController {
         let sb = self.storyboard?.instantiateViewController(withIdentifier: LinkedVC.identifier) as! LinkedVC
         let navi = UINavigationController(rootViewController: sb)
         
-        // 에효...
+        // 타겟으로 하면 될 듯!! 일단 오늘 과제 하고 다시 하기!
         var titleArray: [String] = []
         let na: Int = tvShowInfomation.count
         for i in 0..<na {

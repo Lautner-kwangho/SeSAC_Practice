@@ -24,14 +24,17 @@ class ActorVC: UIViewController {
         
         headerSetting()
         
+        let nibNam = UINib(nibName: SectionTableViewCell.identifier, bundle: nil)
+        ActorTableView.register(nibNam, forCellReuseIdentifier: SectionTableViewCell.identifier)
+        
         ActorTableView.delegate = self
         ActorTableView.dataSource = self
     }
     
     func headerSetting() {
         // 이렇게 작성하면 contentMode 안되는 듯? UIImage 속성이라서?
-//        actorHeaderView.frame.size.height = UIScreen.main.bounds.height / 5
-//        actorHeaderView.backgroundColor = UIColor(patternImage: UIImage(named: "a_tale_dark_&_grimm")!)
+        //        actorHeaderView.backgroundColor = UIColor(patternImage: UIImage(named: "a_tale_dark_&_grimm")!)
+        actorHeaderView.frame.size.height = UIScreen.main.bounds.height / 4
         miniBackgroundImage.image = UIImage(named: "a_tale_dark_&_grimm")
         miniBackgroundImage.contentMode = .scaleAspectFill
         miniPoster.backgroundColor = .label
@@ -44,7 +47,30 @@ class ActorVC: UIViewController {
             miniPoster.image = UIImage(named: image)
         }
         miniTitle.text = tvData?.title
+        
+        // 15일차 과제(header 구현)
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.identifier) as? SectionTableViewCell
+        cell?.sectionTextView.text = tvData?.overview
+        
+        cell?.autoDimensionButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        cell?.autoDimensionButton.setTitle("", for: .normal)
+        cell?.autoDimensionButton.tintColor = .black
+        cell?.autoDimensionButton.addTarget(self, action: #selector(autoDimension), for: .touchUpInside)
+        return cell
+    }
+    
+    @objc func autoDimension() {
+        ActorTableView.estimatedSectionHeaderHeight = UIScreen.main.bounds.height / 6
+        ActorTableView.reloadData()
+    }
+//
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return UIScreen.main.bounds.height / 6
+//    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ActorTableViewCell.identifier, for: indexPath) as? ActorTableViewCell else {
@@ -63,7 +89,7 @@ class ActorVC: UIViewController {
         15
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
+        return UIScreen.main.bounds.height / 10
     }
     
 }
