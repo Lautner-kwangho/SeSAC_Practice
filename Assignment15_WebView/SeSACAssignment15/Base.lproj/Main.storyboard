@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeSACAssignment15" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="gBe-ht-CPH">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Fgy-y6-dND"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzm-f5-13g">
+                                <rect key="frame" x="0.0" y="88" width="414" height="730"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQb-gN-egJ">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xOS-oE-cXX"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="mMu-Xs-mkZ"/>
+                                    <barButtonItem systemItem="stop" id="Xdk-3O-FW9">
+                                        <connections>
+                                            <action selector="stop:" destination="BYZ-38-t0r" id="25K-Xo-Y11"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="fKM-oO-gqn"/>
+                                    <barButtonItem tag="1" title="Item" image="arrow.backward" catalog="system" id="1NB-I7-SRg">
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" id="Wvj-vJ-acb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7Gh-iA-Kvl"/>
+                                    <barButtonItem tag="2" systemItem="refresh" id="Guf-g8-GsJ">
+                                        <connections>
+                                            <action selector="reload:" destination="BYZ-38-t0r" id="0Uj-BG-W1Z"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="gLz-WO-mbm"/>
+                                    <barButtonItem tag="3" title="Item" image="arrow.forward" catalog="system" id="7ri-NU-pMS">
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" id="FYe-qJ-PHE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="XPc-G9-L7g"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tQb-gN-egJ" firstAttribute="top" secondItem="Tzm-f5-13g" secondAttribute="bottom" id="369-Kw-9Jt"/>
+                            <constraint firstItem="Tzm-f5-13g" firstAttribute="top" secondItem="gBe-ht-CPH" secondAttribute="bottom" id="C1M-CZ-6Ig"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tQb-gN-egJ" secondAttribute="bottom" id="GSI-tT-LkI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tzm-f5-13g" secondAttribute="trailing" id="KhL-Wy-KTd"/>
+                            <constraint firstItem="tQb-gN-egJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="S6R-8l-OX8"/>
+                            <constraint firstItem="tQb-gN-egJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Sto-6x-7R9"/>
+                            <constraint firstItem="gBe-ht-CPH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="f6D-zE-v9L"/>
+                            <constraint firstItem="gBe-ht-CPH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qrD-cb-mRH"/>
+                            <constraint firstItem="gBe-ht-CPH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tcC-8J-81a"/>
+                            <constraint firstItem="Tzm-f5-13g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vdG-RW-kbQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webSearchBar" destination="gBe-ht-CPH" id="BBS-5h-FbW"/>
+                        <outlet property="webToolbar" destination="tQb-gN-egJ" id="j2f-tS-qhJ"/>
+                        <outlet property="webView" destination="Tzm-f5-13g" id="4Rz-05-BUg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="391" y="58"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.backward" catalog="system" width="128" height="98"/>
+        <image name="arrow.forward" catalog="system" width="128" height="98"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

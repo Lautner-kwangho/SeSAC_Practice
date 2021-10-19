@@ -112,8 +112,6 @@ class ViewController: UIViewController {
             titleArray.append(vell)
         }
         
-        sb.linkedTitle = "\(titleArray)"
-        
         self.present(navi, animated: true, completion: nil)
     }
     
