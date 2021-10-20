@@ -305,6 +305,35 @@
             </objects>
             <point key="canvasLocation" x="1841" y="-577"/>
         </scene>
+        <!--MapVC-->
+        <scene sceneID="gui-PY-mva">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" id="AF0-hV-0vA" customClass="MapVC" customModule="SeSACAssignment13" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="44z-Jx-sTi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1eI-bg-PZn">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qeu-Bm-fPl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1eI-bg-PZn" firstAttribute="leading" secondItem="Qeu-Bm-fPl" secondAttribute="leading" id="JCC-oF-loQ"/>
+                            <constraint firstItem="Qeu-Bm-fPl" firstAttribute="trailing" secondItem="1eI-bg-PZn" secondAttribute="trailing" id="W6p-cu-gV1"/>
+                            <constraint firstItem="Qeu-Bm-fPl" firstAttribute="bottom" secondItem="1eI-bg-PZn" secondAttribute="bottom" id="rPp-nz-1C1"/>
+                            <constraint firstItem="1eI-bg-PZn" firstAttribute="top" secondItem="Qeu-Bm-fPl" secondAttribute="top" id="s2c-fs-6xI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="1eI-bg-PZn" id="43w-Wa-Neo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JV3-1G-d9r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35" y="-577"/>
+        </scene>
         <!--SearchVC-->
         <scene sceneID="t4R-gm-ceq">
             <objects>

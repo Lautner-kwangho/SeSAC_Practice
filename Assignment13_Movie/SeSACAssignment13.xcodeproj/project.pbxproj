@@ -15,6 +15,9 @@
 		E47B1C1B271A9A4100C1EF8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47B1C1A271A9A4100C1EF8E /* Assets.xcassets */; };
 		E47B1C1E271A9A4100C1EF8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47B1C1C271A9A4100C1EF8E /* LaunchScreen.storyboard */; };
 		E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4818EB0271DAE7C00FA9CC5 /* Kingfisher */; };
+		E486557827200D400052DBDB /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557727200D400052DBDB /* TheaterLocation.swift */; };
+		E486557A27200DE30052DBDB /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557927200DE30052DBDB /* MapAnnotations.swift */; };
+		E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B2BE272008BB0031143B /* MapVC.swift */; };
 		E4B58FE0271EDD7E00318958 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FDE271EDD7E00318958 /* SectionTableViewCell.swift */; };
 		E4B58FE1271EDD7E00318958 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */; };
 		E4B58FE3271F171C00318958 /* BookCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FE2271F171C00318958 /* BookCollectionVC.swift */; };
@@ -40,6 +43,9 @@
 		E47B1C1A271A9A4100C1EF8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E47B1C1D271A9A4100C1EF8E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E47B1C1F271A9A4100C1EF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E486557727200D400052DBDB /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
+		E486557927200DE30052DBDB /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
+		E4B3B2BE272008BB0031143B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E4B58FDE271EDD7E00318958 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
 		E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
 		E4B58FE2271F171C00318958 /* BookCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionVC.swift; sourceTree = "<group>"; };
@@ -88,7 +94,7 @@
 			children = (
 				E4F75C45271A9F74005A10D9 /* VC */,
 				E4F75C43271A9F63005A10D9 /* Cell */,
-				E4F75C38271A9CB4005A10D9 /* Struct */,
+				E4F75C38271A9CB4005A10D9 /* Model */,
 				E47B1C17271A9A3F00C1EF8E /* Main.storyboard */,
 				E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */,
 				E4B58FE7271F17CA00318958 /* BookCollectionViewCell.xib */,
@@ -101,13 +107,15 @@
 			path = SeSACAssignment13;
 			sourceTree = "<group>";
 		};
-		E4F75C38271A9CB4005A10D9 /* Struct */ = {
+		E4F75C38271A9CB4005A10D9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E4F75C36271A9B0D005A10D9 /* TvShow.swift */,
 				E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */,
+				E486557727200D400052DBDB /* TheaterLocation.swift */,
+				E486557927200DE30052DBDB /* MapAnnotations.swift */,
 			);
-			path = Struct;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E4F75C43271A9F63005A10D9 /* Cell */ = {
@@ -130,6 +138,7 @@
 				E4F75C48271AA1F4005A10D9 /* ActorVC.swift */,
 				E46B15E9271DBB5F0083D515 /* LinkedVC.swift */,
 				E4B58FE2271F171C00318958 /* BookCollectionVC.swift */,
+				E4B3B2BE272008BB0031143B /* MapVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -221,6 +230,7 @@
 				E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */,
 				E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */,
 				E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */,
+				E486557827200D400052DBDB /* TheaterLocation.swift in Sources */,
 				E46B15EA271DBB5F0083D515 /* LinkedVC.swift in Sources */,
 				E4F75C42271A9F5E005A10D9 /* MainTableViewCell.swift in Sources */,
 				E4F75C49271AA1F4005A10D9 /* ActorVC.swift in Sources */,
@@ -228,7 +238,9 @@
 				E4B58FE0271EDD7E00318958 /* SectionTableViewCell.swift in Sources */,
 				E4B58FE8271F17CA00318958 /* BookCollectionViewCell.swift in Sources */,
 				E47B1C14271A9A3F00C1EF8E /* SceneDelegate.swift in Sources */,
+				E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */,
 				E4F75C3E271A9F20005A10D9 /* ActorTableViewCell.swift in Sources */,
+				E486557A27200DE30052DBDB /* MapAnnotations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,12 +387,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACAssignment13/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Movie;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "영화관의 위치를 사용자에게 제공하기 위하여 위치 공유를 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -393,6 +407,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kwanghochoi2-com.naver.blog.SeSACAssignment13";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -410,6 +425,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACAssignment13/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Movie;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "영화관의 위치를 사용자에게 제공하기 위하여 위치 공유를 허용하시겠습니까?";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

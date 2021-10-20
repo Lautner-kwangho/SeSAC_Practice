@@ -43,12 +43,23 @@ class ViewController: UIViewController {
     func naviSetting() {
         navigationItem.title = "TREND Media"
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem()
-        navigationItem.leftBarButtonItem?.image = UIImage(systemName: "list.dash")
-        navigationItem.leftBarButtonItem?.tintColor = .systemGray3
+        let listButton = UIBarButtonItem(image: UIImage(systemName: "list.dash"), style: .plain, target: self, action: nil)
+        let goToMapButton = UIBarButtonItem(image: UIImage(systemName: "map.circle"), style: .plain, target: self, action: #selector(goToMap))
+        
+        let leftItems = [listButton, goToMapButton]
+        navigationItem.leftBarButtonItems = leftItems
+        
+        for leftItem in 0..<leftItems.count {
+            navigationItem.leftBarButtonItems?[leftItem].tintColor = .black
+        }
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchVC))
         navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    @objc func goToMap() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: MapVC.identifier) as! MapVC
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @objc func searchVC() {
