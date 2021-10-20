@@ -15,7 +15,7 @@ class ActorVC: UIViewController {
     @IBOutlet weak var miniBackgroundImage: UIImageView!
     @IBOutlet weak var miniPoster: UIImageView!
     @IBOutlet weak var miniTitle: UILabel!
-    var myTitle: Bool = true
+    var myTitle: Bool = false
     // 1. 들어갈 공간을 만든다
     var tvData: TvShow?
     
@@ -56,7 +56,7 @@ class ActorVC: UIViewController {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.identifier) as? SectionTableViewCell
         cell?.sectionTextView.text = tvData?.overview
-        let dimensionImage = myTitle ? "chevron.down" : "chevron.up"
+        let dimensionImage = myTitle ? "chevron.up" : "chevron.down"
         cell?.autoDimensionButton.setImage(UIImage(systemName: dimensionImage), for: .normal)
         cell?.autoDimensionButton.setTitle("", for: .normal)
         cell?.autoDimensionButton.tintColor = .black
@@ -65,18 +65,14 @@ class ActorVC: UIViewController {
     }
     
     @objc func autoDimension() {
+        myTitle = !myTitle
         switch myTitle {
         case true :
             ActorTableView.sectionHeaderHeight = UITableView.automaticDimension
-            ActorTableView.estimatedSectionHeaderHeight = UITableView.automaticDimension
             ActorTableView.reloadData()
-            myTitle = false
-            print(myTitle)
         case false :
             ActorTableView.sectionHeaderHeight = 100
             ActorTableView.reloadData()
-            myTitle = true
-            print(myTitle)
         }
     }
 //
