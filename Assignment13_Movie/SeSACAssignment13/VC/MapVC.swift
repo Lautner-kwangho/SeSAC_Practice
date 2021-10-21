@@ -28,8 +28,7 @@ class MapVC: UIViewController {
         mapView.delegate = self
         locationManager.delegate = self
         
-        let annotations = mapView.annotations
-        mapView.removeAnnotations(annotations)
+        loopLocation(name: "전체보기")
 
         
     }
@@ -75,8 +74,6 @@ class MapVC: UIViewController {
     }
     
     @objc func activationAlert() {
-        // 수정 필요함 ㅜㅜ 핵어렵... 머리 식히고 나중에 해야겠다...
-        
         
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let megaAction = UIAlertAction(title: "메가박스", style: .default, handler: {_ in
@@ -109,6 +106,19 @@ class MapVC: UIViewController {
 extension MapVC: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(#function)
+        guard let annotaionLocation = locations.last else { return }
+        CLGeocoder().reverseGeocodeLocation(annotaionLocation) { placemarks, Error in
+            guard let pm = placemarks?.first else { return }
+            guard let contry = pm.locality else {return}
+            var address: String = contry
+
+            if let fare = pm.thoroughfare {
+                address += " "
+                address += fare
+            }
+            self.navigationItem.title = address
+        }
+        
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -193,6 +203,7 @@ extension MapVC: CLLocationManagerDelegate {
 extension MapVC: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         print(#function)
+        print(mapView.selectedAnnotations)
         print("나 여기")
     }
 }
