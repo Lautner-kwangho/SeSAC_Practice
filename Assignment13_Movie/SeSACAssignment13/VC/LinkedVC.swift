@@ -10,14 +10,10 @@ import UIKit
 class LinkedVC: UIViewController {
     static let identifier = "LinkedVC"
     
-    // 1. Pass
-    var linkedTitle: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        // 2. Pass
-        title = linkedTitle ?? "되나?"
     }
     
 }

@@ -103,6 +103,7 @@ class ViewController: UIViewController {
         cell.posterName.text = tv.title
         cell.posterRelase.text = tv.releaseDate
                 
+        cell.linkTvShow.tag = indexPath.row
         return cell
     }
     
@@ -124,14 +125,8 @@ class ViewController: UIViewController {
         let sb = self.storyboard?.instantiateViewController(withIdentifier: LinkedVC.identifier) as! LinkedVC
         let navi = UINavigationController(rootViewController: sb)
         
-        // 타겟으로 하면 될 듯!! 일단 오늘 과제 하고 다시 하기!
-        var titleArray: [String] = []
-        let na: Int = tvShowInfomation.count
-        for i in 0..<na {
-            let vell = TvShowInfomation().tvShow[i].title
-            titleArray.append(vell)
-        }
-        
+        let row = TvShowInfomation().tvShow[sender.tag].title
+        sb.title = "\(row)"
         self.present(navi, animated: true, completion: nil)
     }
     
