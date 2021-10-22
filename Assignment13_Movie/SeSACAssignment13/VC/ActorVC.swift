@@ -54,6 +54,7 @@ class ActorVC: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.identifier) as? SectionTableViewCell
         cell?.sectionTextView.text = tvData?.overview
         let dimensionImage = myTitle ? "chevron.up" : "chevron.down"
