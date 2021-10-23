@@ -19,24 +19,30 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var posterRate: UILabel!
     @IBOutlet weak var posterName: UILabel!
     @IBOutlet weak var posterRelase: UILabel!
+    @IBOutlet weak var btnOtherView: UIView!
     @IBOutlet weak var btnOtherContent: UIButton!
     
     @IBOutlet weak var linkTvShow: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        imgPoster.contentMode = .scaleToFill
+        posterView.layer.cornerRadius = posterView.frame.size.width * 0.05
+        posterView.backgroundColor = .systemGray6
+        posterView.clipsToBounds = true
+        imgPoster.contentMode = .scaleAspectFill
         
         lblTag.grayFontSetting()
         lblName.fontSetting(size: 20)
         posterName.fontSetting(size: 25)
         posterRelase.grayFontSetting()
         btnOtherContent.tintColor = .black
+        btnOtherView.layer.addBorder([.top], color: .gray, width: 1)
         
         // extension이 왜 안되지;
         linkTvShow.setImage(UIImage(systemName: "paperclip.circle.fill"), for: .normal)
         linkTvShow.setTitle("", for: .normal)
         linkTvShow.tintColor = .white
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -55,5 +61,22 @@ extension UILabel {
     
     func fontSetting(size: CGFloat) {
         self.font = UIFont.boldSystemFont(ofSize: size)
+    }
+}
+
+extension CALayer {
+    func addBorder(_ arr_edge: [UIRectEdge], color: UIColor, width: CGFloat) {
+        for edge in arr_edge {
+            let border = CALayer()
+            switch edge {
+            case UIRectEdge.top:
+                border.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: width)
+                break
+            default:
+                break
+            }
+            border.backgroundColor = color.cgColor;
+            self.addSublayer(border)
+        }
     }
 }

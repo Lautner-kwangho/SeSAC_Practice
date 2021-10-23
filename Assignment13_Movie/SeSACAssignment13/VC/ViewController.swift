@@ -35,10 +35,9 @@ class ViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.dataSource = self
         // 사용시, viewDidLoad에 작성하며, rowforHeight는 override하지 않는다 추가로 포스터와 같은 형식은 세로 값을 기준으로 사용되는 듯하다!
-        mainTableView.estimatedRowHeight = UIScreen.main.bounds.height / 4
-        mainTableView.rowHeight = UITableView.automaticDimension
+//        mainTableView.estimatedRowHeight = UIScreen.main.bounds.height / 4
+//        mainTableView.rowHeight = UITableView.automaticDimension
     }
-    
     
     func naviSetting() {
         navigationItem.title = "TREND Media"
@@ -56,6 +55,7 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchVC))
         navigationItem.rightBarButtonItem?.tintColor = .black
     }
+    
     @objc func goToMap() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: MapVC.identifier) as! MapVC
         self.navigationController?.pushViewController(vc, animated: true)
@@ -109,6 +109,10 @@ class ViewController: UIViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tvShowInfomation.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UIScreen.main.bounds.height / 1.3
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

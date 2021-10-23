@@ -62,6 +62,7 @@ extension BookCollectionVC: UICollectionViewDelegate, UICollectionViewDataSource
         cell.bookButton.tag = indexPath.item
         
         cell.bookTitle.text = tv.title
+        cell.bookTitle.adjustsFontSizeToFitWidth = true
         cell.bookImage.image = UIImage(named: "\(tv.title.replacingOccurrences(of: " ", with: "_").lowercased())")
         cell.bookRate.text = "\(tv.rate)"
         cell.bookButton.setTitle("", for: .normal)
