@@ -18,7 +18,7 @@
 		E486557827200D400052DBDB /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557727200D400052DBDB /* TheaterLocation.swift */; };
 		E486557A27200DE30052DBDB /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557927200DE30052DBDB /* MapAnnotations.swift */; };
 		E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B2BE272008BB0031143B /* MapVC.swift */; };
-		E4B58FE0271EDD7E00318958 /* SectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FDE271EDD7E00318958 /* SectionTableViewCell.swift */; };
+		E4B58FE0271EDD7E00318958 /* DimensionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */; };
 		E4B58FE1271EDD7E00318958 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */; };
 		E4B58FE3271F171C00318958 /* BookCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FE2271F171C00318958 /* BookCollectionVC.swift */; };
 		E4B58FE8271F17CA00318958 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */; };
@@ -46,7 +46,7 @@
 		E486557727200D400052DBDB /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
 		E486557927200DE30052DBDB /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
 		E4B3B2BE272008BB0031143B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
-		E4B58FDE271EDD7E00318958 /* SectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTableViewCell.swift; sourceTree = "<group>"; };
+		E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTableViewCell.swift; sourceTree = "<group>"; };
 		E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
 		E4B58FE2271F171C00318958 /* BookCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionVC.swift; sourceTree = "<group>"; };
 		E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 				E4F75C41271A9F5E005A10D9 /* MainTableViewCell.swift */,
 				E4F75C3F271A9F2F005A10D9 /* SearchTableViewCell.swift */,
 				E4F75C3D271A9F20005A10D9 /* ActorTableViewCell.swift */,
-				E4B58FDE271EDD7E00318958 /* SectionTableViewCell.swift */,
+				E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */,
 				E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */,
 			);
 			path = Cell;
@@ -235,7 +235,7 @@
 				E4F75C42271A9F5E005A10D9 /* MainTableViewCell.swift in Sources */,
 				E4F75C49271AA1F4005A10D9 /* ActorVC.swift in Sources */,
 				E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */,
-				E4B58FE0271EDD7E00318958 /* SectionTableViewCell.swift in Sources */,
+				E4B58FE0271EDD7E00318958 /* DimensionTableViewCell.swift in Sources */,
 				E4B58FE8271F17CA00318958 /* BookCollectionViewCell.swift in Sources */,
 				E47B1C14271A9A3F00C1EF8E /* SceneDelegate.swift in Sources */,
 				E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */,

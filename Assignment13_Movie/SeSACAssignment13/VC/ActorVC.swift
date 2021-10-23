@@ -24,9 +24,6 @@ class ActorVC: UIViewController {
         
         headerSetting()
         
-        let nibNam = UINib(nibName: SectionTableViewCell.identifier, bundle: nil)
-        ActorTableView.register(nibNam, forCellReuseIdentifier: SectionTableViewCell.identifier)
-        
         ActorTableView.delegate = self
         ActorTableView.dataSource = self
     }
@@ -49,58 +46,59 @@ class ActorVC: UIViewController {
         miniTitle.text = tvData?.title
         
         // 15일차 과제(header 구현)
-        
-        ActorTableView.sectionHeaderHeight = 100
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: SectionTableViewCell.identifier) as? SectionTableViewCell
-        cell?.sectionTextView.text = tvData?.overview
-        let dimensionImage = myTitle ? "chevron.up" : "chevron.down"
-        cell?.autoDimensionButton.setImage(UIImage(systemName: dimensionImage), for: .normal)
-        cell?.autoDimensionButton.setTitle("", for: .normal)
-        cell?.autoDimensionButton.tintColor = .black
-        cell?.autoDimensionButton.addTarget(self, action: #selector(autoDimension), for: .touchUpInside)
-        return cell
+        ActorTableView.rowHeight = UITableView.automaticDimension
     }
     
     @objc func autoDimension() {
         myTitle = !myTitle
-        switch myTitle {
-        case true :
-            ActorTableView.sectionHeaderHeight = UITableView.automaticDimension
-            ActorTableView.reloadData()
-        case false :
-            ActorTableView.sectionHeaderHeight = 100
-            ActorTableView.reloadData()
-        }
+        ActorTableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
     }
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return UIScreen.main.bounds.height / 6
-//    }
-
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ActorTableViewCell.identifier, for: indexPath) as? ActorTableViewCell else {
-            return UITableViewCell()
+        if indexPath.section == 0 {
+            let nibNam = UINib(nibName: DimensionTableViewCell.identifier, bundle: nil)
+            ActorTableView.register(nibNam, forCellReuseIdentifier: DimensionTableViewCell.identifier)
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: DimensionTableViewCell.identifier) as? DimensionTableViewCell else { return UITableViewCell()}
+            cell.lblDimension.text = tvData?.overview
+            let dimensionImage = myTitle ? "chevron.up" : "chevron.down"
+            cell.lblDimension.numberOfLines = myTitle ? 0 : 2
+            cell.autoDimensionButton.setImage(UIImage(systemName: dimensionImage), for: .normal)
+            cell.autoDimensionButton.setTitle("", for: .normal)
+            cell.autoDimensionButton.tintColor = .black
+            cell.autoDimensionButton.addTarget(self, action: #selector(autoDimension), for: .touchUpInside)
+            return cell
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ActorTableViewCell.identifier, for: indexPath) as? ActorTableViewCell else {
+                return UITableViewCell()
+            }
+            
+            // 나중에 Data받으면 교체!
+            cell.actorImage.image = UIImage(systemName: "face.dashed.fill")
+            cell.actorName.text = "나는 배우야!"
+            cell.actorRole.text = "그리고 주연이야!"
+            
+            return cell
+
         }
-        
-        // 나중에 Data받으면 교체!
-        cell.actorImage.image = UIImage(systemName: "face.dashed.fill")
-        cell.actorName.text = "나는 배우야!"
-        cell.actorRole.text = "그리고 주연이야!"
-        
-        return cell
+        return UITableViewCell()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        15
+        section == 0 ? 1 : 15
     }
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UIScreen.main.bounds.height / 10
+        if indexPath.section == 0 {
+            return UITableView.automaticDimension
+        } else {
+            return 80
+        }
     }
+
     
 }
 
