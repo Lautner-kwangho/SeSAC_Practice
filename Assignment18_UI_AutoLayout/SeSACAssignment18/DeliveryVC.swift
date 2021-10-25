@@ -41,6 +41,7 @@ class DeliveryVC: UIViewController {
     }
     
     func border(_ view: UIView) {
+        view.clipsToBounds = true
         view.layer.cornerRadius = view.frame.height * 0.1
     }
 
