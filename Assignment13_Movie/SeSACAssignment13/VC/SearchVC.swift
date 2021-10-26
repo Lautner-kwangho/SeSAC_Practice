@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class SearchVC: UIViewController {
 
     @IBOutlet weak var SearchTableView: UITableView!
+    var movieData: [MovieModel] = []
     
     let searchBar = { () -> UISearchBar in
         let search = UISearchBar()
@@ -27,6 +30,50 @@ class SearchVC: UIViewController {
         // TableView 입력
         SearchTableView.delegate = self
         SearchTableView.dataSource = self
+        
+        // 통신
+        fetchMovieData()
+    }
+    // 네이버 영화 네트워크 통신
+    func fetchMovieData() {
+        
+        // 네이버 영화 API 호출해서 debug 해보기
+        if let query = "스파이더맨".addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) {
+            let url = "https://openapi.naver.com/v1/search/movie.json?query=\(query)&display=15&start=16"
+            
+            let header: HTTPHeaders = [
+                "X-Naver-Client-Id" : APIKEY.clientNaverID,
+                "X-Naver-Client-Secret" : APIKEY.clientNaverPassWord
+            ]
+            
+            AF.request(url, method: .get, headers: header).validate().responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    print("JSON: \(json)")
+                    
+                    for item in json["items"].arrayValue {
+                        let value = item["title"].stringValue.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+                        let image = item["image"].stringValue
+                        let link = item["link"].stringValue
+                        let userRating = item["userRating"].stringValue
+                        let sub = item["subtitle"].stringValue
+                        
+                        let data = MovieModel(titleData: value, imageData: image, linkData: link, userRatingData: userRating, subtitle: sub)
+                        
+                        self.movieData.append(data)
+                    }
+                    print(self.movieData)
+                    
+                    // 중요!!
+                    self.SearchTableView.reloadData()
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
     }
     
     @objc func closedClicked() {
@@ -37,18 +84,21 @@ class SearchVC: UIViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier, for: indexPath) as? SearchTableViewCell else {
             return UITableViewCell()
         }
+        let row = movieData[indexPath.row]
         
         // 나중에 Data받으면 교체!
-        cell.imgPoster.image = UIImage(systemName: "network.badge.shield.half.filled")
-        cell.posterName.text = "영화제목영화제목영화제목"
-        cell.posterRelase.text = "개봉일"
-        cell.posterOverview.text = "이 편지는 영국에서 최초로 시작되어 일년에 한바퀴 돌면서 받는 사람에게 행운을 주었고 지금은 당신에게로 옮겨진 이 편지는 4일 안에 당신 곁을 떠나야 합니다. 이 편지를 포함해서 7통을 행운이 필요한 사람에게 보내 주셔야 합니다. 복사를 해도 좋습니다. 혹 미신이라 하실지 모르지만 사실입니다.영국에서 HGXWCH이라는 사람은 1930년에 이 편지를 받았습니다. "
+        cell.imgPoster.kingfisher("\(row.imageData)")
+        cell.posterName.text = row.titleData
+        cell.posterRelase.text = row.subtitle
+        cell.posterOverview.text = row.userRatingData
+        
+        print(row.imageData)
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        30
+        movieData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

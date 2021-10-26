@@ -106,5 +106,6 @@ extension UIImageView {
     func kingfisher(_ url: String){
         let url = URL(string: url)
         self.kf.setImage(with: url)
+//        self.kf.placeholder
     }
 }

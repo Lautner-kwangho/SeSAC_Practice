@@ -24,6 +24,10 @@
 		E4B58FE8271F17CA00318958 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */; };
 		E4B58FE9271F17CA00318958 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B58FE7271F17CA00318958 /* BookCollectionViewCell.xib */; };
 		E4B58FEC271F279C00318958 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E4B58FEB271F279C00318958 /* Toast */; };
+		E4BDED7627279D3800B1049A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4BDED7527279D3800B1049A /* SwiftyJSON */; };
+		E4BDED7927279D3F00B1049A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4BDED7827279D3F00B1049A /* Alamofire */; };
+		E4BDED7B2727A7D900B1049A /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDED7A2727A7D900B1049A /* MovieModel.swift */; };
+		E4D47B192727EEA400914063 /* APIKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D47B182727EEA400914063 /* APIKEY.swift */; };
 		E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */; };
 		E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C36271A9B0D005A10D9 /* TvShow.swift */; };
 		E4F75C3E271A9F20005A10D9 /* ActorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C3D271A9F20005A10D9 /* ActorTableViewCell.swift */; };
@@ -51,6 +55,8 @@
 		E4B58FE2271F171C00318958 /* BookCollectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionVC.swift; sourceTree = "<group>"; };
 		E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		E4B58FE7271F17CA00318958 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
+		E4BDED7A2727A7D900B1049A /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
+		E4D47B182727EEA400914063 /* APIKEY.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKEY.swift; sourceTree = "<group>"; };
 		E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShowInfomation.swift; sourceTree = "<group>"; };
 		E4F75C36271A9B0D005A10D9 /* TvShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvShow.swift; sourceTree = "<group>"; };
 		E4F75C3D271A9F20005A10D9 /* ActorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorTableViewCell.swift; sourceTree = "<group>"; };
@@ -65,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BDED7627279D3800B1049A /* SwiftyJSON in Frameworks */,
+				E4BDED7927279D3F00B1049A /* Alamofire in Frameworks */,
 				E4B58FEC271F279C00318958 /* Toast in Frameworks */,
 				E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */,
 			);
@@ -103,6 +111,7 @@
 				E47B1C1F271A9A4100C1EF8E /* Info.plist */,
 				E47B1C11271A9A3F00C1EF8E /* AppDelegate.swift */,
 				E47B1C13271A9A3F00C1EF8E /* SceneDelegate.swift */,
+				E4D47B182727EEA400914063 /* APIKEY.swift */,
 			);
 			path = SeSACAssignment13;
 			sourceTree = "<group>";
@@ -112,6 +121,7 @@
 			children = (
 				E4F75C36271A9B0D005A10D9 /* TvShow.swift */,
 				E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */,
+				E4BDED7A2727A7D900B1049A /* MovieModel.swift */,
 				E486557727200D400052DBDB /* TheaterLocation.swift */,
 				E486557927200DE30052DBDB /* MapAnnotations.swift */,
 			);
@@ -162,6 +172,8 @@
 			packageProductDependencies = (
 				E4818EB0271DAE7C00FA9CC5 /* Kingfisher */,
 				E4B58FEB271F279C00318958 /* Toast */,
+				E4BDED7527279D3800B1049A /* SwiftyJSON */,
+				E4BDED7827279D3F00B1049A /* Alamofire */,
 			);
 			productName = SeSACAssignment13;
 			productReference = E47B1C0E271A9A3F00C1EF8E /* SeSACAssignment13.app */;
@@ -194,6 +206,8 @@
 			packageReferences = (
 				E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E4B58FEA271F279B00318958 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				E4BDED7427279D3800B1049A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				E4BDED7727279D3F00B1049A /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = E47B1C0F271A9A3F00C1EF8E /* Products */;
 			projectDirPath = "";
@@ -224,9 +238,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4BDED7B2727A7D900B1049A /* MovieModel.swift in Sources */,
 				E4F75C40271A9F2F005A10D9 /* SearchTableViewCell.swift in Sources */,
 				E4F75C47271AA1E7005A10D9 /* SearchVC.swift in Sources */,
 				E4B58FE3271F171C00318958 /* BookCollectionVC.swift in Sources */,
+				E4D47B192727EEA400914063 /* APIKEY.swift in Sources */,
 				E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */,
 				E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */,
 				E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */,
@@ -484,6 +500,22 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		E4BDED7427279D3800B1049A /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+		E4BDED7727279D3F00B1049A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -496,6 +528,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E4B58FEA271F279B00318958 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		E4BDED7527279D3800B1049A /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4BDED7427279D3800B1049A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		E4BDED7827279D3F00B1049A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4BDED7727279D3F00B1049A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
