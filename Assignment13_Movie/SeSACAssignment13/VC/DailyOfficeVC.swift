@@ -69,14 +69,16 @@ class DailyOfficeVC: UIViewController {
         dailyOfficeTableView.tableHeaderView?.backgroundColor = .clear
         dailyTextField.placeholder = "일일 BoxOffice 날짜로 검색하기"
         dailyTextField.backgroundColor = .clear
-        dailyTextField.font = UIFont.systemFont(ofSize: 25)
+        dailyTextField.font = UIFont.systemFont(ofSize: 20)
         view.backgroundColor = UIColor(patternImage: UIImage(named: "바탕화면")!).withAlphaComponent(0.7)
         
-        // wheel 하려면 분기 처리알고 있지만.. 나중에 시간되면 ㅜ
+        /*
+         wheel 하려면 분기 처리알고 있지만.. 나중에 시간되면 ㅜ
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
         datePicker.frame = CGRect(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.width / 2, width: 0, height: 100)
         dailyTextField.inputView = datePicker
+         */
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
