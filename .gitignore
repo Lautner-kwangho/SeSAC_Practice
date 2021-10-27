@@ -4,6 +4,7 @@
 
 # APIKEY
 APIKEY.swift
+Constants.swift
 
 # DS_Store
 .DS_Store
