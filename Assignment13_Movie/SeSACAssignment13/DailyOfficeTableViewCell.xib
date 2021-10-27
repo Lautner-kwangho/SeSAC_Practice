@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" restorationIdentifier="DailyOfficeTableViewCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DailyOfficeTableViewCell" rowHeight="68" id="KGk-i7-Jjw" customClass="DailyOfficeTableViewCell" customModule="SeSACAssignment13" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcj-oa-3Mi">
+                        <rect key="frame" x="10" y="10" width="72" height="48"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="wcj-oa-3Mi" secondAttribute="height" multiplier="1.5:1" id="H9Y-Sl-wKf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIZ-gV-8CK">
+                        <rect key="frame" x="92" y="10" width="44.5" height="48"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ti3-4m-Sei">
+                        <rect key="frame" x="260" y="10" width="50" height="48"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="nIy-w5-9Lg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="JIZ-gV-8CK" secondAttribute="bottom" constant="10" id="8DK-Gb-kFZ"/>
+                    <constraint firstItem="Ti3-4m-Sei" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Dq0-ul-Z3a"/>
+                    <constraint firstItem="wcj-oa-3Mi" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="GrE-hV-BEj"/>
+                    <constraint firstAttribute="bottom" secondItem="Ti3-4m-Sei" secondAttribute="bottom" constant="10" id="N0o-ZU-ehY"/>
+                    <constraint firstItem="JIZ-gV-8CK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="VEa-FI-cue"/>
+                    <constraint firstItem="Ti3-4m-Sei" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JIZ-gV-8CK" secondAttribute="trailing" constant="10" id="iVq-FT-Q29"/>
+                    <constraint firstItem="JIZ-gV-8CK" firstAttribute="leading" secondItem="wcj-oa-3Mi" secondAttribute="trailing" constant="10" id="jgY-yf-pMG"/>
+                    <constraint firstItem="wcj-oa-3Mi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="juA-yl-gqH"/>
+                    <constraint firstAttribute="trailing" secondItem="Ti3-4m-Sei" secondAttribute="trailing" constant="10" id="kXo-wF-6HG"/>
+                    <constraint firstAttribute="bottom" secondItem="wcj-oa-3Mi" secondAttribute="bottom" constant="10" id="zg4-Nf-71x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="movieName" destination="JIZ-gV-8CK" id="xT2-n8-fhQ"/>
+                <outlet property="movieRelease" destination="Ti3-4m-Sei" id="skL-k5-IDY"/>
+                <outlet property="rankLabel" destination="wcj-oa-3Mi" id="aAw-RB-hTL"/>
+            </connections>
+            <point key="canvasLocation" x="236" y="62"/>
+        </tableViewCell>
+    </objects>
+</document>

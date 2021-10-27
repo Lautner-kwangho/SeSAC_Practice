@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E43AF78427296E3800A4613C /* DailyOfficeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF78327296E3800A4613C /* DailyOfficeVC.swift */; };
+		E43AF78727296EE800A4613C /* DailyOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF78527296EE800A4613C /* DailyOfficeTableViewCell.swift */; };
+		E43AF78827296EE800A4613C /* DailyOfficeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43AF78627296EE800A4613C /* DailyOfficeTableViewCell.xib */; };
+		E43AF78C27297C5100A4613C /* DailyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF78B27297C5100A4613C /* DailyModel.swift */; };
+		E43AF78F27297D0200A4613C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E43AF78E27297D0200A4613C /* Alamofire */; };
 		E46B15EA271DBB5F0083D515 /* LinkedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46B15E9271DBB5F0083D515 /* LinkedVC.swift */; };
 		E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B1C11271A9A3F00C1EF8E /* AppDelegate.swift */; };
 		E47B1C14271A9A3F00C1EF8E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47B1C13271A9A3F00C1EF8E /* SceneDelegate.swift */; };
@@ -25,8 +30,8 @@
 		E4B58FE9271F17CA00318958 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B58FE7271F17CA00318958 /* BookCollectionViewCell.xib */; };
 		E4B58FEC271F279C00318958 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E4B58FEB271F279C00318958 /* Toast */; };
 		E4BDED7627279D3800B1049A /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = E4BDED7527279D3800B1049A /* SwiftyJSON */; };
-		E4BDED7927279D3F00B1049A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E4BDED7827279D3F00B1049A /* Alamofire */; };
 		E4BDED7B2727A7D900B1049A /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BDED7A2727A7D900B1049A /* MovieModel.swift */; };
+		E4CE1C772729A302003ADF83 /* TextFieldEffects in Frameworks */ = {isa = PBXBuildFile; productRef = E4CE1C762729A302003ADF83 /* TextFieldEffects */; };
 		E4D47B192727EEA400914063 /* APIKEY.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D47B182727EEA400914063 /* APIKEY.swift */; };
 		E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */; };
 		E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F75C36271A9B0D005A10D9 /* TvShow.swift */; };
@@ -38,6 +43,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E43AF78327296E3800A4613C /* DailyOfficeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyOfficeVC.swift; sourceTree = "<group>"; };
+		E43AF78527296EE800A4613C /* DailyOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyOfficeTableViewCell.swift; sourceTree = "<group>"; };
+		E43AF78627296EE800A4613C /* DailyOfficeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyOfficeTableViewCell.xib; sourceTree = "<group>"; };
+		E43AF78B27297C5100A4613C /* DailyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyModel.swift; sourceTree = "<group>"; };
 		E46B15E9271DBB5F0083D515 /* LinkedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedVC.swift; sourceTree = "<group>"; };
 		E47B1C0E271A9A3F00C1EF8E /* SeSACAssignment13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACAssignment13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E47B1C11271A9A3F00C1EF8E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,9 +81,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4BDED7627279D3800B1049A /* SwiftyJSON in Frameworks */,
-				E4BDED7927279D3F00B1049A /* Alamofire in Frameworks */,
+				E43AF78F27297D0200A4613C /* Alamofire in Frameworks */,
 				E4B58FEC271F279C00318958 /* Toast in Frameworks */,
 				E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */,
+				E4CE1C772729A302003ADF83 /* TextFieldEffects in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +115,7 @@
 				E4F75C38271A9CB4005A10D9 /* Model */,
 				E47B1C17271A9A3F00C1EF8E /* Main.storyboard */,
 				E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */,
+				E43AF78627296EE800A4613C /* DailyOfficeTableViewCell.xib */,
 				E4B58FE7271F17CA00318958 /* BookCollectionViewCell.xib */,
 				E47B1C1C271A9A4100C1EF8E /* LaunchScreen.storyboard */,
 				E47B1C1A271A9A4100C1EF8E /* Assets.xcassets */,
@@ -122,6 +133,7 @@
 				E4F75C36271A9B0D005A10D9 /* TvShow.swift */,
 				E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */,
 				E4BDED7A2727A7D900B1049A /* MovieModel.swift */,
+				E43AF78B27297C5100A4613C /* DailyModel.swift */,
 				E486557727200D400052DBDB /* TheaterLocation.swift */,
 				E486557927200DE30052DBDB /* MapAnnotations.swift */,
 			);
@@ -135,6 +147,7 @@
 				E4F75C3F271A9F2F005A10D9 /* SearchTableViewCell.swift */,
 				E4F75C3D271A9F20005A10D9 /* ActorTableViewCell.swift */,
 				E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */,
+				E43AF78527296EE800A4613C /* DailyOfficeTableViewCell.swift */,
 				E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */,
 			);
 			path = Cell;
@@ -147,6 +160,7 @@
 				E4F75C46271AA1E7005A10D9 /* SearchVC.swift */,
 				E4F75C48271AA1F4005A10D9 /* ActorVC.swift */,
 				E46B15E9271DBB5F0083D515 /* LinkedVC.swift */,
+				E43AF78327296E3800A4613C /* DailyOfficeVC.swift */,
 				E4B58FE2271F171C00318958 /* BookCollectionVC.swift */,
 				E4B3B2BE272008BB0031143B /* MapVC.swift */,
 			);
@@ -173,7 +187,8 @@
 				E4818EB0271DAE7C00FA9CC5 /* Kingfisher */,
 				E4B58FEB271F279C00318958 /* Toast */,
 				E4BDED7527279D3800B1049A /* SwiftyJSON */,
-				E4BDED7827279D3F00B1049A /* Alamofire */,
+				E43AF78E27297D0200A4613C /* Alamofire */,
+				E4CE1C762729A302003ADF83 /* TextFieldEffects */,
 			);
 			productName = SeSACAssignment13;
 			productReference = E47B1C0E271A9A3F00C1EF8E /* SeSACAssignment13.app */;
@@ -207,7 +222,8 @@
 				E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				E4B58FEA271F279B00318958 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				E4BDED7427279D3800B1049A /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				E4BDED7727279D3F00B1049A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E43AF78D27297D0200A4613C /* XCRemoteSwiftPackageReference "Alamofire" */,
+				E4CE1C752729A302003ADF83 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 			);
 			productRefGroup = E47B1C0F271A9A3F00C1EF8E /* Products */;
 			projectDirPath = "";
@@ -224,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47B1C1E271A9A4100C1EF8E /* LaunchScreen.storyboard in Resources */,
+				E43AF78827296EE800A4613C /* DailyOfficeTableViewCell.xib in Resources */,
 				E4B58FE1271EDD7E00318958 /* SectionTableViewCell.xib in Resources */,
 				E47B1C1B271A9A4100C1EF8E /* Assets.xcassets in Resources */,
 				E47B1C19271A9A3F00C1EF8E /* Main.storyboard in Resources */,
@@ -244,6 +261,7 @@
 				E4B58FE3271F171C00318958 /* BookCollectionVC.swift in Sources */,
 				E4D47B192727EEA400914063 /* APIKEY.swift in Sources */,
 				E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */,
+				E43AF78427296E3800A4613C /* DailyOfficeVC.swift in Sources */,
 				E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */,
 				E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */,
 				E486557827200D400052DBDB /* TheaterLocation.swift in Sources */,
@@ -251,11 +269,13 @@
 				E4F75C42271A9F5E005A10D9 /* MainTableViewCell.swift in Sources */,
 				E4F75C49271AA1F4005A10D9 /* ActorVC.swift in Sources */,
 				E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */,
+				E43AF78727296EE800A4613C /* DailyOfficeTableViewCell.swift in Sources */,
 				E4B58FE0271EDD7E00318958 /* DimensionTableViewCell.swift in Sources */,
 				E4B58FE8271F17CA00318958 /* BookCollectionViewCell.swift in Sources */,
 				E47B1C14271A9A3F00C1EF8E /* SceneDelegate.swift in Sources */,
 				E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */,
 				E4F75C3E271A9F20005A10D9 /* ActorTableViewCell.swift in Sources */,
+				E43AF78C27297C5100A4613C /* DailyModel.swift in Sources */,
 				E486557A27200DE30052DBDB /* MapAnnotations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,6 +504,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E43AF78D27297D0200A4613C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -508,17 +536,22 @@
 				version = 5.0.0;
 			};
 		};
-		E4BDED7727279D3F00B1049A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		E4CE1C752729A302003ADF83 /* XCRemoteSwiftPackageReference "TextFieldEffects" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			repositoryURL = "https://github.com/raulriera/TextFieldEffects.git";
 			requirement = {
-				branch = master;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E43AF78E27297D0200A4613C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E43AF78D27297D0200A4613C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		E4818EB0271DAE7C00FA9CC5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
@@ -534,10 +567,10 @@
 			package = E4BDED7427279D3800B1049A /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
 		};
-		E4BDED7827279D3F00B1049A /* Alamofire */ = {
+		E4CE1C762729A302003ADF83 /* TextFieldEffects */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E4BDED7727279D3F00B1049A /* XCRemoteSwiftPackageReference "Alamofire" */;
-			productName = Alamofire;
+			package = E4CE1C752729A302003ADF83 /* XCRemoteSwiftPackageReference "TextFieldEffects" */;
+			productName = TextFieldEffects;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -26,6 +26,7 @@ class ViewController: UIViewController {
         // HeaderView 설정
         HeaderView()
         btnFilm.setting("flim", color: .green)
+        btnFilm.addTarget(self, action: #selector(goToDaily), for: .touchUpInside)
         btnTv.setting("tv", color: .orange)
         btnBook.setting("book", color: .systemBlue)
         btnBook.addTarget(self, action: #selector(goToBook), for: .touchUpInside)
@@ -54,6 +55,10 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(searchVC))
         navigationItem.rightBarButtonItem?.tintColor = .black
+    }
+    @objc func goToDaily() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: DailyOfficeVC.identifier) as! DailyOfficeVC
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func goToMap() {
