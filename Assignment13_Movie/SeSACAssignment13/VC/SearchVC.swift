@@ -9,10 +9,29 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class SearchVC: UIViewController {
+class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
+    
+    //셀이 화면에 보이기 전에 필요한 리소스를 미리 다운 받는 기능
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        
+        for indexPath in indexPaths {
+            if movieData.count - 1 == indexPath.row && movieData.count <= totalCount {
+                startPage += 10
+                fetchMovieData()
+                print("prefetch: \(indexPath)")
+            }
+        }
+
+    }
+    //취소
+    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+        print("취소: \(indexPaths)")
+    }
 
     @IBOutlet weak var SearchTableView: UITableView!
     var movieData: [MovieModel] = []
+    var startPage = 1
+    var totalCount = 2138
     
     let searchBar = { () -> UISearchBar in
         let search = UISearchBar()
@@ -33,13 +52,14 @@ class SearchVC: UIViewController {
         
         // 통신
         fetchMovieData()
+        SearchTableView.prefetchDataSource = self
     }
     // 네이버 영화 네트워크 통신
     func fetchMovieData() {
         
         // 네이버 영화 API 호출해서 debug 해보기
-        if let query = "스파이더맨".addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) {
-            let url = "https://openapi.naver.com/v1/search/movie.json?query=\(query)&display=15&start=16"
+        if let query = "별빛".addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) {
+            let url = "https://openapi.naver.com/v1/search/movie.json?query=\(query)&display=10&start=\(startPage)"
             
             let header: HTTPHeaders = [
                 "X-Naver-Client-Id" : APIKEY.clientNaverID,
@@ -51,6 +71,8 @@ class SearchVC: UIViewController {
                 case .success(let value):
                     let json = JSON(value)
                     print("JSON: \(json)")
+                    
+                    // totalCount = json["total임의로"].intValue
                     
                     for item in json["items"].arrayValue {
                         let value = item["title"].stringValue.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
@@ -87,6 +109,13 @@ class SearchVC: UIViewController {
         let row = movieData[indexPath.row]
         
         // 나중에 Data받으면 교체!
+        /*
+         if let url = URL(string: row.imageData {
+            cell.img.kr.setImage(url:url)
+         } else {
+            cell.img.image = UIImage(systemName: "Star")
+         }
+         */
         cell.imgPoster.kingfisher("\(row.imageData)")
         cell.posterName.text = row.titleData
         cell.posterRelase.text = row.subtitle
