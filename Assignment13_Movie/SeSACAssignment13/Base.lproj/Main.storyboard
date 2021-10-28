@@ -28,14 +28,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="440"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="##테그 들어갈 자리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-3U-AO4">
-                                                    <rect key="frame" x="20" y="10" width="110" height="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜아아앙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XD9-3U-AO4">
+                                                    <rect key="frame" x="20" y="10" width="61" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목 들어갈 자리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKL-ju-KMv">
-                                                    <rect key="frame" x="20" y="37" width="131" height="24"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르으으으" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKL-ju-KMv">
+                                                    <rect key="frame" x="20" y="37" width="86.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,8 +52,8 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xo-T0-z6T">
-                                                            <rect key="frame" x="10" y="306.5" width="52" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오버뷰우우" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xo-T0-z6T">
+                                                            <rect key="frame" x="10" y="306.5" width="65" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -125,6 +125,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="PWy-EK-eDb" secondAttribute="trailing" multiplier="1:1" id="tEu-Pt-ylx"/>
                                                         <constraint firstItem="Cid-OK-n2B" firstAttribute="leading" secondItem="0eJ-G1-KeO" secondAttribute="leading" constant="10" id="vPY-qP-3Rq"/>
                                                         <constraint firstItem="zY8-VO-Z55" firstAttribute="top" secondItem="0eJ-G1-KeO" secondAttribute="top" constant="10" id="vfy-Xh-mfB"/>
+                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0xo-T0-z6T" secondAttribute="trailing" constant="20" id="wij-66-7sO"/>
                                                         <constraint firstItem="Cid-OK-n2B" firstAttribute="top" secondItem="PWy-EK-eDb" secondAttribute="bottom" constant="10" id="y4n-d1-W9R"/>
                                                         <constraint firstAttribute="trailing" secondItem="zY8-VO-Z55" secondAttribute="trailing" constant="10" id="yXo-AW-Vcq"/>
                                                         <constraint firstItem="3oq-nU-guX" firstAttribute="bottom" secondItem="PWy-EK-eDb" secondAttribute="bottom" constant="-20" id="zYx-T7-aQ2"/>
@@ -146,13 +147,13 @@
                                             <outlet property="btnOtherContent" destination="qwo-rs-7e8" id="0QD-WR-gW8"/>
                                             <outlet property="btnOtherView" destination="OzB-Mw-N3e" id="rjr-Pd-lM2"/>
                                             <outlet property="imgPoster" destination="PWy-EK-eDb" id="if8-DD-Dgp"/>
-                                            <outlet property="lblName" destination="FKL-ju-KMv" id="Vtz-30-eiQ"/>
-                                            <outlet property="lblTag" destination="XD9-3U-AO4" id="AtH-Ba-pBD"/>
                                             <outlet property="linkTvShow" destination="zY8-VO-Z55" id="E0R-vl-9uu"/>
-                                            <outlet property="posterName" destination="Cid-OK-n2B" id="Pqu-Nk-VW3"/>
-                                            <outlet property="posterRate" destination="NAd-hi-aGe" id="m6W-h3-4Kw"/>
-                                            <outlet property="posterRelase" destination="0xo-T0-z6T" id="vQy-G2-0h4"/>
                                             <outlet property="posterView" destination="0eJ-G1-KeO" id="o9k-Gb-sYT"/>
+                                            <outlet property="trendGenre" destination="FKL-ju-KMv" id="eXP-wf-UnW"/>
+                                            <outlet property="trendName" destination="Cid-OK-n2B" id="Pqu-Nk-VW3"/>
+                                            <outlet property="trendOverview" destination="0xo-T0-z6T" id="vQy-G2-0h4"/>
+                                            <outlet property="trendRate" destination="NAd-hi-aGe" id="m6W-h3-4Kw"/>
+                                            <outlet property="trendRelease" destination="XD9-3U-AO4" id="aMe-cR-02U"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

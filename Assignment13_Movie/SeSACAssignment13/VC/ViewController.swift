@@ -7,9 +7,15 @@
 
 import UIKit
 import SwiftUI
+import SwiftyJSON
+import Kingfisher
 
 class ViewController: UIViewController {
-
+    var mainTotalCount = 1000
+    var pageCount = 1
+    var mainData: [MainModel] = []
+    var genreData: [GenreModel] = []
+    
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var headerView: UIView!
     
@@ -35,9 +41,14 @@ class ViewController: UIViewController {
         // Delegate, DataSource 설정
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        mainTableView.prefetchDataSource = self
         // 사용시, viewDidLoad에 작성하며, rowforHeight는 override하지 않는다 추가로 포스터와 같은 형식은 세로 값을 기준으로 사용되는 듯하다!
 //        mainTableView.estimatedRowHeight = UIScreen.main.bounds.height / 4
 //        mainTableView.rowHeight = UITableView.automaticDimension
+        
+        // TVDB - json
+        callMainData()
+        callGenreData()
     }
     
     func naviSetting() {
@@ -100,20 +111,20 @@ class ViewController: UIViewController {
             return UITableViewCell()
         }
         
-        let tv = tvShowInfomation[indexPath.row]
-        cell.lblName.text = tv.title
-        cell.lblTag.text = tv.genre
-        cell.imgPoster.image = UIImage(named: "\(tv.title.replacingOccurrences(of: " ", with: "_").lowercased())")
-        cell.posterRate.text = "\(tv.rate)"
-        cell.posterName.text = tv.title
-        cell.posterRelase.text = tv.releaseDate
+        let md = mainData[indexPath.row]
+        
+        cell.trendRelease.text = "\(md.genreIds)"
+        cell.imgPoster.kingfisher("https://image.tmdb.org/t/p/w500/\(md.posterPath)")
+        cell.trendRate.text = md.voteAverage
+        cell.trendName.text = md.title
+        cell.trendOverview.text = md.overView
                 
         cell.linkTvShow.tag = indexPath.row
         return cell
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tvShowInfomation.count
+        return mainData.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

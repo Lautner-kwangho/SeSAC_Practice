@@ -11,14 +11,14 @@ class MainTableViewCell: UITableViewCell {
 
     static let identifier = "MainTableViewCell"
     
-    @IBOutlet weak var lblTag: UILabel!
-    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var trendRelease: UILabel!
+    @IBOutlet weak var trendGenre: UILabel!
     
     @IBOutlet weak var posterView: UIView!
     @IBOutlet weak var imgPoster: UIImageView!
-    @IBOutlet weak var posterRate: UILabel!
-    @IBOutlet weak var posterName: UILabel!
-    @IBOutlet weak var posterRelase: UILabel!
+    @IBOutlet weak var trendRate: UILabel!
+    @IBOutlet weak var trendName: UILabel!
+    @IBOutlet weak var trendOverview: UILabel!
     @IBOutlet weak var btnOtherView: UIView!
     @IBOutlet weak var btnOtherContent: UIButton!
     
@@ -31,10 +31,10 @@ class MainTableViewCell: UITableViewCell {
         posterView.clipsToBounds = true
         imgPoster.contentMode = .scaleAspectFill
         
-        lblTag.grayFontSetting()
-        lblName.fontSetting(size: 20)
-        posterName.fontSetting(size: 25)
-        posterRelase.grayFontSetting()
+        trendRelease.grayFontSetting()
+        trendGenre.fontSetting(size: 20)
+        trendName.fontSetting(size: 25)
+        trendOverview.grayFontSetting()
         btnOtherContent.tintColor = .black
         btnOtherView.layer.addBorder([.top], color: .gray, width: 1)
         

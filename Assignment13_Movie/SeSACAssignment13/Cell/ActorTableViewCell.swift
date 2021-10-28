@@ -18,7 +18,7 @@ class ActorTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        actorImage.image = UIImage(systemName: "face.dashed.fill")
+        actorImage.backgroundColor = .clear
         actorImage.layer.cornerRadius = 10
         actorName.text = "나는 배우!"
         actorName.fontSetting(size: 15)
