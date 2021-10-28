@@ -17,7 +17,7 @@ class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
         for indexPath in indexPaths {
             if movieData.count - 1 == indexPath.row && movieData.count <= totalCount {
                 startPage += 10
-                fetchMovieData()
+                fetchMovieData(query: searchBar.text!)
                 print("prefetch: \(indexPath)")
             }
         }
@@ -37,28 +37,28 @@ class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
         let search = UISearchBar()
         search.placeholder = "어떤 영화 찾아?"
         return search
-    }
+    }()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // NavigationBar
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closedClicked))
-        self.navigationItem.titleView = searchBar()
+        self.navigationItem.titleView = searchBar
         
         // TableView 입력
         SearchTableView.delegate = self
         SearchTableView.dataSource = self
-        
+        searchBar.delegate = self
         // 통신
-        fetchMovieData()
+//        fetchMovieData()
         SearchTableView.prefetchDataSource = self
     }
     // 네이버 영화 네트워크 통신
-    func fetchMovieData() {
+    func fetchMovieData(query: String) {
         
         // 네이버 영화 API 호출해서 debug 해보기
-        if let query = "별빛".addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) {
+        if let query = query.addingPercentEncoding(withAllowedCharacters: .afURLQueryAllowed) {
             let url = "https://openapi.naver.com/v1/search/movie.json?query=\(query)&display=10&start=\(startPage)"
             
             let header: HTTPHeaders = [
@@ -70,10 +70,8 @@ class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
                 switch response.result {
                 case .success(let value):
                     let json = JSON(value)
-                    print("JSON: \(json)")
-                    
+                    print(json)
                     // totalCount = json["total임의로"].intValue
-                    
                     for item in json["items"].arrayValue {
                         let value = item["title"].stringValue.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
                         let image = item["image"].stringValue
@@ -134,4 +132,30 @@ class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
         return UIScreen.main.bounds.height / 8
     }
     
+}
+
+extension SearchVC: UISearchBarDelegate {
+    // 검색 버튼 (키보드 리턴키) 눌렀을 때 실행
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+        if let text = searchBar.text {
+            movieData.removeAll()
+            startPage = 1
+            fetchMovieData(query: text)
+            //progress 구현
+        }
+    }
+    // 취소 버튼 눌렀을 때
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+        movieData.removeAll()
+        SearchTableView.reloadData()
+        searchBar.text = ""
+        searchBar.setShowsCancelButton(false, animated: true)
+    }
+    // 서치바에 커서가 깜빡이기 시작할 때
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        print(#function)
+        searchBar.setShowsCancelButton(true, animated: true)
+    }
 }

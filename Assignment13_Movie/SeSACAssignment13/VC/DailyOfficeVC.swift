@@ -65,7 +65,6 @@ class DailyOfficeVC: UIViewController {
     }
     
     func headerSet() {
-        self.navigationController?.navigationBar.tintColor = .white
         dailyOfficeTableView.tableHeaderView?.backgroundColor = .clear
         dailyTextField.placeholder = "일일 BoxOffice 날짜로 검색하기"
         dailyTextField.backgroundColor = .clear

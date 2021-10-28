@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E4382E3C272ABC16009ACDD6 /* MainAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382E3B272ABC16009ACDD6 /* MainAPIManager.swift */; };
 		E43AF78427296E3800A4613C /* DailyOfficeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF78327296E3800A4613C /* DailyOfficeVC.swift */; };
 		E43AF78727296EE800A4613C /* DailyOfficeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E43AF78527296EE800A4613C /* DailyOfficeTableViewCell.swift */; };
 		E43AF78827296EE800A4613C /* DailyOfficeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E43AF78627296EE800A4613C /* DailyOfficeTableViewCell.xib */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E4382E3B272ABC16009ACDD6 /* MainAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIManager.swift; sourceTree = "<group>"; };
 		E43AF78327296E3800A4613C /* DailyOfficeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyOfficeVC.swift; sourceTree = "<group>"; };
 		E43AF78527296EE800A4613C /* DailyOfficeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyOfficeTableViewCell.swift; sourceTree = "<group>"; };
 		E43AF78627296EE800A4613C /* DailyOfficeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyOfficeTableViewCell.xib; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */,
 				E4BDED7A2727A7D900B1049A /* MovieModel.swift */,
 				E43AF78B27297C5100A4613C /* DailyModel.swift */,
+				E4382E3B272ABC16009ACDD6 /* MainAPIManager.swift */,
 				E486557727200D400052DBDB /* TheaterLocation.swift */,
 				E486557927200DE30052DBDB /* MapAnnotations.swift */,
 			);
@@ -263,6 +266,7 @@
 				E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */,
 				E43AF78427296E3800A4613C /* DailyOfficeVC.swift in Sources */,
 				E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */,
+				E4382E3C272ABC16009ACDD6 /* MainAPIManager.swift in Sources */,
 				E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */,
 				E486557827200D400052DBDB /* TheaterLocation.swift in Sources */,
 				E46B15EA271DBB5F0083D515 /* LinkedVC.swift in Sources */,
@@ -426,7 +430,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J3L38PYNZQ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACAssignment13/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Movie;
