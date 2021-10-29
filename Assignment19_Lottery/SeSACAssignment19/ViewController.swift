@@ -22,14 +22,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbl6: UILabel!
     @IBOutlet weak var lbl7: UILabel!
     
+    @IBOutlet weak var drawRound: UILabel!
     @IBOutlet weak var drawDay: UILabel!
     var drawData: [String] = []
-    var drawCount = 902
+    
+    var drawCount = 0
     
     var numberIndex: Array<Int> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setDate()
+        
         let selfPicker = UIPickerView()
         selfPicker.delegate = self
         selfPicker.dataSource = self
@@ -40,6 +45,26 @@ class ViewController: UIViewController {
         
         urlSet()
     }
+    
+    func setDate() {
+        var component = Calendar.current.dateComponents([.weekOfYear, .yearForWeekOfYear, .weekday],from: Date())
+        component.weekday = 7
+            
+        let dateFomatter = DateFormatter()
+        dateFomatter.dateFormat = "yyyy-MM-dd"
+        
+        // 만약 내가 처음 창조? 만드는? 시점이면 이렇게 하는 게 좋을 거 같음? 아닌가 ㅎㅎ;
+        guard let date = Calendar.current.date(from: component) else {return}
+        // 로또가 처음 시작한 날!
+        guard let mainDate = dateFomatter.date(from: "2002-12-07") else {return}
+        
+        let initRound = Calendar.current.dateComponents([.weekOfYear], from: mainDate, to: date)
+        
+        if let round = initRound.weekOfYear {
+            drawCount = round
+        }
+    }
+    
     func lblSet() {
         let labelArray = [lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7]
         for labelArray in labelArray {
@@ -67,6 +92,7 @@ class ViewController: UIViewController {
                 self.lbl5.text = self.drawData[4]
                 self.lbl6.text = self.drawData[5]
                 self.lbl7.text = self.drawData[6]
+                self.drawRound.text = "\(self.drawData[7]) 회차"
                 self.drawDay.text = self.drawData[8]
             case .failure(let error):
                 print(error)

@@ -113,9 +113,22 @@ class ViewController: UIViewController {
         
         let md = mainData[indexPath.row]
         
-        cell.trendRelease.text = "\(md.genreIds)"
+        
+//        for genreDatum in genreData {
+//            for genre in md.genreIds {
+//                print("\(genreDatum)")
+//            }
+//        }
+//        for genre in md.genreIds {
+//            for (datum) in genreData {
+//                print(datum.name)
+//            }
+//        }
+        // ㅏ아아 바보다 GenreModel dic형태인줄; 내일 다시 해야겠다..
+        
+        cell.trendRelease.text = md.releaseDate
         cell.imgPoster.kingfisher("https://image.tmdb.org/t/p/w500/\(md.posterPath)")
-        cell.trendRate.text = md.voteAverage
+        cell.trendRate.text = "\(round(Double(md.voteAverage)!))"
         cell.trendName.text = md.title
         cell.trendOverview.text = md.overView
                 
