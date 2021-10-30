@@ -25,8 +25,10 @@ extension ViewController {
                 }
                 let voteAverage = item["vote_average"].stringValue
                 let genreIds = item["genre_ids"].rawValue
+                let id = item["id"].stringValue
+                let mediaType = item["media_type"].stringValue
 
-                let data = MainModel(posterPath: posterImage, backDropPath: backDropImage, overView: overview, title: title(), releaseDate: relaseDate(), voteAverage: voteAverage, genreIds: genreIds as! Array<Int>)
+                let data = MainModel(posterPath: posterImage, backDropPath: backDropImage, overView: overview, title: title(), releaseDate: relaseDate(), voteAverage: voteAverage, id: id, media_type: mediaType, genreIds: genreIds as! Array<Int>)
                 self.mainData.append(data)
             }
             self.mainTableView.reloadData()

@@ -8,7 +8,6 @@
 import UIKit
 import SwiftUI
 import SwiftyJSON
-import JGProgressHUD
 import Kingfisher
 
 class ViewController: UIViewController {
@@ -24,7 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnTv: UIButton!
     @IBOutlet weak var btnBook: UIButton!
     let tvShowInfomation = TvShowInfomation().tvShow
-    let progress = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()

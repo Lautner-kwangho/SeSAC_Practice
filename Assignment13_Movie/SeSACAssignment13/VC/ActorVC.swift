@@ -7,7 +7,6 @@
 
 import UIKit
 import Kingfisher
-import JGProgressHUD
 
 class ActorVC: UIViewController {
 
@@ -17,6 +16,7 @@ class ActorVC: UIViewController {
     @IBOutlet weak var miniPoster: UIImageView!
     @IBOutlet weak var miniTitle: UILabel!
     var myTitle: Bool = false
+    var actorData: [ActorModel] = []
     // 1. 들어갈 공간을 만든다
     var tvData: MainModel?
     
@@ -27,6 +27,10 @@ class ActorVC: UIViewController {
         
         ActorTableView.delegate = self
         ActorTableView.dataSource = self
+        
+        if let id = tvData?.id, let type = tvData?.media_type {
+            callCreditData(genre: type, ID: id)
+        }
     }
     
     func headerSetting() {
@@ -74,10 +78,10 @@ class ActorVC: UIViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ActorTableViewCell.identifier, for: indexPath) as? ActorTableViewCell else {
                 return UITableViewCell()
             }
-            
+            let actor = actorData[indexPath.row]
             // 나중에 Data받으면 교체!
-            cell.actorImage.image = UIImage(systemName: "face.dashed.fill")
-            cell.actorName.text = "나는 배우야!"
+            cell.actorImage.kingfisher("https://image.tmdb.org/t/p/w500/\(actor.profile_path)")
+            cell.actorName.text = actor.name
             cell.actorRole.text = "그리고 주연이야!"
             
             return cell
@@ -87,7 +91,7 @@ class ActorVC: UIViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        section == 0 ? 1 : 15
+        section == 0 ? 1 : self.actorData.count
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -103,9 +107,15 @@ class ActorVC: UIViewController {
 
 extension UIImageView {
     func kingfisher(_ url: String){
-        self.kf.indicatorType = .activity
+        kf.indicatorType = .activity
         let url = URL(string: url)
-        self.kf.setImage(with: url)
-//        self.kf.placeholder
+        self.kf.setImage(with: url, options: [.scaleFactor(UIScreen.main.scale), .transition(.fade(1)), .cacheOriginalImage]) { result in
+            switch result {
+            case .failure(let error):
+                self.image = UIImage(named: "이미지준비중")
+            case .success(_):
+                self.kf.setImage(with: url)
+            }
+        }
     }
 }

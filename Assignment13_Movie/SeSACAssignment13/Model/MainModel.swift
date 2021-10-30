@@ -14,5 +14,7 @@ struct MainModel {
     var title: String
     var releaseDate: String
     var voteAverage: String
+    var id: String
+    var media_type: String
     var genreIds: Array<Int>
 }
