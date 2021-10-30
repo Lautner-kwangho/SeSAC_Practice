@@ -14,6 +14,7 @@ extension ViewController {
         MainAPIManager.shared.fetchMainApi(frontURL: "https://api.themoviedb.org/3/trending/all/day", pageCount: pageCount) { json in
             for item in json["results"].arrayValue {
                 let posterImage = item["poster_path"].stringValue
+                let backDropImage = item["backdrop_path"].stringValue
                 let overview = item["overview"].stringValue
 //                let title = item["title"].stringValue
                 let title = {
@@ -25,7 +26,7 @@ extension ViewController {
                 let voteAverage = item["vote_average"].stringValue
                 let genreIds = item["genre_ids"].rawValue
 
-                let data = MainModel(posterPath: posterImage, overView: overview, title: title(), releaseDate: relaseDate(), voteAverage: voteAverage, genreIds: genreIds as! Array<Int>)
+                let data = MainModel(posterPath: posterImage, backDropPath: backDropImage, overView: overview, title: title(), releaseDate: relaseDate(), voteAverage: voteAverage, genreIds: genreIds as! Array<Int>)
                 self.mainData.append(data)
             }
             self.mainTableView.reloadData()
@@ -54,7 +55,7 @@ extension ViewController {
 extension ViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-            if mainData.count - 1 == indexPath.row && mainData.count <= mainTotalCount {
+            if self.mainData.count - 1 == indexPath.row && self.mainData.count <= mainTotalCount {
                 pageCount += 1
                 callMainData()
                 // 이건 끝 페이지가 1000이라서 누가...하루 종일 내릴까..

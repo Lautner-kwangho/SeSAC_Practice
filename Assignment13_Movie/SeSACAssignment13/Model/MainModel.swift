@@ -9,6 +9,7 @@ import Foundation
 
 struct MainModel {
     var posterPath: String
+    var backDropPath: String
     var overView: String
     var title: String
     var releaseDate: String

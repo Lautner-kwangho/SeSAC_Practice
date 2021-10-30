@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import JGProgressHUD
 
 class ActorVC: UIViewController {
 
@@ -17,11 +18,11 @@ class ActorVC: UIViewController {
     @IBOutlet weak var miniTitle: UILabel!
     var myTitle: Bool = false
     // 1. 들어갈 공간을 만든다
-    var tvData: TvShow?
+    var tvData: MainModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         headerSetting()
         
         ActorTableView.delegate = self
@@ -30,18 +31,16 @@ class ActorVC: UIViewController {
     
     func headerSetting() {
         // 이렇게 작성하면 contentMode 안되는 듯? UIImage 속성이라서?
-        //        actorHeaderView.backgroundColor = UIColor(patternImage: UIImage(named: "a_tale_dark_&_grimm")!)
         actorHeaderView.frame.size.height = UIScreen.main.bounds.height / 4
-        miniBackgroundImage.image = UIImage(named: "a_tale_dark_&_grimm")
+        miniBackgroundImage.backgroundColor = .gray
         miniBackgroundImage.contentMode = .scaleAspectFill
         miniPoster.backgroundColor = .label
         miniTitle.textColor = .white
         
         // 2. 어떤 걸 표현할지 정한다
-        // kigfisher 오, 가져오려면 옵셔널 처리해줘야 한다 ㅎㅎ...
-        if let backImage = tvData?.backdropImage, let image = tvData?.title.replacingOccurrences(of: " ", with: "_").lowercased() {
-            miniBackgroundImage.kingfisher(backImage)
-            miniPoster.image = UIImage(named: image)
+        if let frontImage = tvData?.posterPath, let backImage = tvData?.backDropPath {
+            miniBackgroundImage.kingfisher("https://image.tmdb.org/t/p/w500/\(backImage)")
+            miniPoster.kingfisher("https://image.tmdb.org/t/p/w500/\(frontImage)")
         }
         miniTitle.text = tvData?.title
         
@@ -63,7 +62,7 @@ class ActorVC: UIViewController {
             ActorTableView.register(nibNam, forCellReuseIdentifier: DimensionTableViewCell.identifier)
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DimensionTableViewCell.identifier) as? DimensionTableViewCell else { return UITableViewCell()}
-            cell.lblDimension.text = tvData?.overview
+            cell.lblDimension.text = tvData?.overView
             let dimensionImage = myTitle ? "chevron.up" : "chevron.down"
             cell.lblDimension.numberOfLines = myTitle ? 0 : 2
             cell.autoDimensionButton.setImage(UIImage(systemName: dimensionImage), for: .normal)
@@ -104,9 +103,9 @@ class ActorVC: UIViewController {
 
 extension UIImageView {
     func kingfisher(_ url: String){
+        self.kf.indicatorType = .activity
         let url = URL(string: url)
         self.kf.setImage(with: url)
-        self.kf.indicatorType = .activity
 //        self.kf.placeholder
     }
 }

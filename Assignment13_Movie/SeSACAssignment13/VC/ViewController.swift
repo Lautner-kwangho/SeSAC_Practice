@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 import SwiftyJSON
+import JGProgressHUD
 import Kingfisher
 
 class ViewController: UIViewController {
@@ -23,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnTv: UIButton!
     @IBOutlet weak var btnBook: UIButton!
     let tvShowInfomation = TvShowInfomation().tvShow
+    let progress = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -148,7 +150,7 @@ class ViewController: UIViewController {
         
         let popVC = self.storyboard?.instantiateViewController(withIdentifier: "ActorVC") as! ActorVC
         // 3. 데이터 연결해준다
-        let row = tvShowInfomation[indexPath.row]
+        let row = mainData[indexPath.row]
         popVC.tvData = row
         
         self.navigationController?.pushViewController(popVC, animated: true)
