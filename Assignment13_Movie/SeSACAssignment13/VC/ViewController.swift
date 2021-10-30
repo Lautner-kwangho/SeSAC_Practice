@@ -125,7 +125,7 @@ class ViewController: UIViewController {
 //            }
 //        }
         // ㅏ아아 바보다 GenreModel dic형태인줄; 내일 다시 해야겠다..
-        
+        cell.trendGenre.text = "\(md.genreIds)"
         cell.trendRelease.text = md.releaseDate
         cell.imgPoster.kingfisher("https://image.tmdb.org/t/p/w500/\(md.posterPath)")
         cell.trendRate.text = "\(round(Double(md.voteAverage)!))"

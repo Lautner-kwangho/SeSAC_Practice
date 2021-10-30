@@ -19,11 +19,13 @@ extension ViewController {
                 let title = {
                     item["media_type"] == "movie" ? item["title"].stringValue : item["name"].stringValue
                 }
-                let relaseDate = item["release_date"].stringValue
+                let relaseDate = {
+                    item["media_type"] == "movie" ? item["release_date"].stringValue : item["first_air_date"].stringValue
+                }
                 let voteAverage = item["vote_average"].stringValue
                 let genreIds = item["genre_ids"].rawValue
 
-                let data = MainModel(posterPath: posterImage, overView: overview, title: title(), releaseDate: relaseDate, voteAverage: voteAverage, genreIds: genreIds as! Array<Int>)
+                let data = MainModel(posterPath: posterImage, overView: overview, title: title(), releaseDate: relaseDate(), voteAverage: voteAverage, genreIds: genreIds as! Array<Int>)
                 self.mainData.append(data)
             }
             self.mainTableView.reloadData()

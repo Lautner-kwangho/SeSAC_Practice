@@ -22,12 +22,20 @@ class DailyOfficeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateUpdating()
         dailyOfficeAPIManager()
         
         headerSet()
         
         dailyOfficeTableView.delegate = self
         dailyOfficeTableView.dataSource = self
+    }
+    
+    func dateUpdating() {
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+        let component = Calendar.current.dateComponents([.year, .month, .day], from: yesterday!)
+        
+        dailyDate = "\(component.year!)" + "\(component.month!)"+"\(component.day!)"
     }
     
     func dailyOfficeAPIManager() {
