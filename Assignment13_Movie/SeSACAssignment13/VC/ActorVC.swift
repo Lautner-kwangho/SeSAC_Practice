@@ -59,7 +59,9 @@ class ActorVC: UIViewController {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
-    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return section == 0 ? "" : "배우"
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let nibNam = UINib(nibName: DimensionTableViewCell.identifier, bundle: nil)

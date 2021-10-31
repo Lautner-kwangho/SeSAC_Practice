@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import Network
+import Toast
+
 import SwiftUI
 import SwiftyJSON
 import Kingfisher
 
 class ViewController: UIViewController {
+    let networkMonitor = NWPathMonitor()
+    
     var mainTotalCount = 1000
     var pageCount = 1
     var mainData: [MainModel] = []
@@ -38,6 +43,23 @@ class ViewController: UIViewController {
         btnBook.setting("book", color: .systemBlue)
         btnBook.addTarget(self, action: #selector(goToBook), for: .touchUpInside)
 
+        // NetWork 작업
+        networkMonitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                // 여기에 토스트 넣으니까 보라색으로 Thread 접근 권한 이야기 나옴..
+                // Threa를 main에 넣어달라..?
+                if path.usesInterfaceType(.cellular) {
+                    self.view.makeToast("인터넷이 연결되었습니다")
+                } else if path.usesInterfaceType(.wifi) {
+                    print("Cellular wifi")
+                } else {
+                    print("others")
+                }
+            } else {
+                self.view.makeToast("인터넷이 끊겼습니다. 서비스 이용에 원활하지 않을 수 있습니다.")
+            }
+        }
+        networkMonitor.start(queue: DispatchQueue.main)
         
         // Delegate, DataSource 설정
         mainTableView.delegate = self

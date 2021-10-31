@@ -15,7 +15,7 @@ class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         
         for indexPath in indexPaths {
-            if movieData.count - 1 == indexPath.row && movieData.count <= totalCount {
+            if movieData.count - 1 == indexPath.row && movieData.count < totalCount {
                 startPage += 10
                 fetchMovieData(query: searchBar.text!)
                 print("prefetch: \(indexPath)")
@@ -84,6 +84,8 @@ class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
                         
                         self.movieData.append(data)
                     }
+                    let total = json["total"].intValue
+                    self.totalCount = total
                     print(self.movieData)
                     
                     // 중요!!
