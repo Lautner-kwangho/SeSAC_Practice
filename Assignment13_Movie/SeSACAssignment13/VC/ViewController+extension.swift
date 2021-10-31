@@ -32,7 +32,7 @@ extension ViewController {
                 self.mainData.append(data)
             }
             self.mainTableView.reloadData()
-            print(self.mainData)
+//            print(self.mainData)
         }
     }
     
@@ -48,7 +48,7 @@ extension ViewController {
                     self.genreData.append(data)
                 }
                 self.mainTableView.reloadData()
-                print(self.genreData)
+//                print(self.genreData)
             }
         }
     }

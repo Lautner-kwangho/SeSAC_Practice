@@ -14,14 +14,17 @@ extension ActorVC {
     
     func callCreditData(genre: String ,ID: String) {
         MainAPIManager.shared.fetchActorApi(genre: genre, genreID: ID) { json in
-            for item in json["crew"].arrayValue {
+            
+            for item in json["cast"].arrayValue {
                 let profile = item["profile_path"].stringValue
                 let name = item["name"].stringValue
-                let data = ActorModel(profile_path: profile, name: name)
+                let character = item["character"].stringValue
+                let data = ActorModel(profile_path: profile, name: name, character: character)
                 
                 self.actorData.append(data)
             }
             self.ActorTableView.reloadData()
+            print(self.actorData)
         }
     }
 }

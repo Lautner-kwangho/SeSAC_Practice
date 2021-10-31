@@ -82,7 +82,7 @@ class ActorVC: UIViewController {
             // 나중에 Data받으면 교체!
             cell.actorImage.kingfisher("https://image.tmdb.org/t/p/w500/\(actor.profile_path)")
             cell.actorName.text = actor.name
-            cell.actorRole.text = "그리고 주연이야!"
+            cell.actorRole.text = "Role : \(actor.character)"
             
             return cell
 
