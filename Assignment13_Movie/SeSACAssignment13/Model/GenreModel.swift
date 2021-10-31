@@ -11,3 +11,7 @@ struct GenreModel {
     var id: Int
     var name: String
 }
+
+struct SortModel {
+    var name: String
+}

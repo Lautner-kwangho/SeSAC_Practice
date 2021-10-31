@@ -18,6 +18,11 @@ class LinkedVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .black
+        linkedTableView.backgroundColor = .black
+        self.navigationItem.title = linkDB?.title
+        self.navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
         if let type = linkDB?.media_type, let ID = linkDB?.id {
             callLinkedData(type: type, genreID: ID)
         }

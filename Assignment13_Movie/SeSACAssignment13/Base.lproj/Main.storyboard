@@ -34,7 +34,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르으으으" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKL-ju-KMv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장르으으으" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.29999999999999999" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FKL-ju-KMv">
                                                     <rect key="frame" x="20" y="37" width="86.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -139,6 +139,7 @@
                                                 <constraint firstItem="0eJ-G1-KeO" firstAttribute="leading" secondItem="FKL-ju-KMv" secondAttribute="leading" id="QY3-eC-6Ww"/>
                                                 <constraint firstAttribute="bottom" secondItem="0eJ-G1-KeO" secondAttribute="bottom" constant="10" id="RzR-ir-RDT"/>
                                                 <constraint firstItem="FKL-ju-KMv" firstAttribute="top" secondItem="XD9-3U-AO4" secondAttribute="bottom" constant="10" id="af5-GK-PC6"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="FKL-ju-KMv" secondAttribute="trailing" constant="10" id="c9f-9p-C5r"/>
                                                 <constraint firstItem="0eJ-G1-KeO" firstAttribute="top" secondItem="FKL-ju-KMv" secondAttribute="bottom" constant="10" id="i12-tO-QYF"/>
                                                 <constraint firstItem="FKL-ju-KMv" firstAttribute="leading" secondItem="XD9-3U-AO4" secondAttribute="leading" id="m2m-za-Jov"/>
                                             </constraints>

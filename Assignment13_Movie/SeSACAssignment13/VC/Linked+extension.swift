@@ -18,7 +18,6 @@ extension LinkedVC {
                 self.linkData.append(data)
             }
             self.linkedTableView.reloadData()
-            print(self.linkData)
         }
     }
    

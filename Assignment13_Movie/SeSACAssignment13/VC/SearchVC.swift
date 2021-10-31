@@ -44,6 +44,7 @@ class SearchVC: UIViewController, UITableViewDataSourcePrefetching {
         super.viewDidLoad()
         // NavigationBar
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closedClicked))
+        self.navigationItem.leftBarButtonItem?.tintColor = .black
         self.navigationItem.titleView = searchBar
         
         // TableView 입력

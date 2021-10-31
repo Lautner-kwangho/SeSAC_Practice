@@ -24,32 +24,37 @@ extension ViewController {
                     item["media_type"] == "movie" ? item["release_date"].stringValue : item["first_air_date"].stringValue
                 }
                 let voteAverage = item["vote_average"].stringValue
-                let genreIds = item["genre_ids"].rawValue
+                let genreIds = item["genre_ids"].arrayObject
                 let id = item["id"].stringValue
                 let mediaType = item["media_type"].stringValue
 
-                let data = MainModel(posterPath: posterImage, backDropPath: backDropImage, overView: overview, title: title(), releaseDate: relaseDate(), voteAverage: voteAverage, id: id, media_type: mediaType, genreIds: genreIds as! Array<Int>)
+                let data = MainModel(posterPath: posterImage, backDropPath: backDropImage, overView: overview, title: title(), releaseDate: relaseDate(), voteAverage: voteAverage, id: id, media_type: mediaType, genreIds: (genreIds as? Array<Int>)!)
                 self.mainData.append(data)
             }
             self.mainTableView.reloadData()
-//            print(self.mainData)
         }
     }
      
-    func callGenreData() {
-        let genre = ["tv", "movie"]
-        
-        for genre in genre {
-            MainAPIManager.shared.fetchMainApi(frontURL: "https://api.themoviedb.org/3/genre/\(genre)/list?api_key=\(APIKEY.tvDB)&language=ko", pageCount: 1) { movieGenre in
-                for i in movieGenre["genres"].arrayValue {
-                    let name = i["name"].stringValue
-                    let id = i["id"].intValue
-                    let data = GenreModel(id: id, name: name)
-                    self.genreData.append(data)
-                }
-                self.mainTableView.reloadData()
-//                print(self.genreData)
+    func callMovieGenreData() {
+        MainAPIManager.shared.fetchMainApi(frontURL: "https://api.themoviedb.org/3/genre/movie/list?api_key=\(APIKEY.tvDB)&language=en-US", pageCount: 1) { movieGenre in
+            for i in movieGenre["genres"].arrayValue {
+                let name = i["name"].stringValue
+                let id = i["id"].intValue
+                let data = GenreModel(id: id, name: name)
+                self.genreMovieData.append(data)
             }
+            self.mainTableView.reloadData()
+        }
+    }
+    func callTvGenreData() {
+        MainAPIManager.shared.fetchMainApi(frontURL: "https://api.themoviedb.org/3/genre/tv/list?api_key=\(APIKEY.tvDB)&language=en-US", pageCount: 1) { tvGenre in
+            for i in tvGenre["genres"].arrayValue {
+                let name = i["name"].stringValue
+                let id = i["id"].intValue
+                let data = GenreModel(id: id, name: name)
+                self.genreTvData.append(data)
+            }
+            self.mainTableView.reloadData()
         }
     }
 }

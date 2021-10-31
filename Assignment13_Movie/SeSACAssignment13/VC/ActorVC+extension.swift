@@ -24,7 +24,6 @@ extension ActorVC {
                 self.actorData.append(data)
             }
             self.ActorTableView.reloadData()
-            print(self.actorData)
         }
     }
 }

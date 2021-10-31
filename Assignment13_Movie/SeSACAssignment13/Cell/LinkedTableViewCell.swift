@@ -18,6 +18,10 @@ class LinkedTableViewCell: UITableViewCell {
     @IBOutlet weak var linkedWebView: WKWebView!
     override func awakeFromNib() {
         super.awakeFromNib()
+        backgroundColor = .black
+
+        linkedName.textColor = .white
+        linkedName.font = UIFont.boldSystemFont(ofSize: 20)
         linkedWebView.scrollView.isScrollEnabled = false
     }
 

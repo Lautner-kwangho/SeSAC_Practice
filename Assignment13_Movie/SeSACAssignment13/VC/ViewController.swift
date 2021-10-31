@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     var mainTotalCount = 1000
     var pageCount = 1
     var mainData: [MainModel] = []
-    var genreData: [GenreModel] = []
+    var genreMovieData: [GenreModel] = []
+    var genreTvData: [GenreModel] = []
     
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var headerView: UIView!
@@ -48,7 +49,8 @@ class ViewController: UIViewController {
         
         // TVDB - json
         callMainData()
-        callGenreData()
+        callMovieGenreData()
+        callTvGenreData()
     }
     
     func naviSetting() {
@@ -113,19 +115,21 @@ class ViewController: UIViewController {
         
         let md = mainData[indexPath.row]
         
-        
-//        for genreDatum in genreData {
-//            for genre in md.genreIds {
-//                print("\(genreDatum)")
-//            }
-//        }
-//        for genre in md.genreIds {
-//            for (datum) in genreData {
-//                print(datum.name)
-//            }
-//        }
-        // ㅏ아아 바보다 GenreModel dic형태인줄; 내일 다시 해야겠다..
-        cell.trendGenre.text = "\(md.genreIds)"
+        // 3 시간 ㅋㅋ쿠ㅜ..
+        if md.media_type == "movie" {
+            var a: [String] = []
+            for i in md.genreIds {
+                self.genreMovieData.forEach { if i == $0.id { a.append($0.name) } }
+            }
+            cell.trendGenre.text = a.reduce("") { $0 + " #" + $1 }
+        } else {
+            var a: [String] = []
+            for i in md.genreIds {
+                self.genreMovieData.forEach { if i == $0.id { a.append($0.name) } }
+            }
+            cell.trendGenre.text = a.reduce("") { $0 + " #" + $1 }
+        }
+
         cell.trendRelease.text = md.releaseDate
         cell.imgPoster.kingfisher("https://image.tmdb.org/t/p/w500/\(md.posterPath)")
         cell.trendRate.text = "\(round(Double(md.voteAverage)!))"
@@ -158,8 +162,8 @@ class ViewController: UIViewController {
         let sb = self.storyboard?.instantiateViewController(withIdentifier: LinkedVC.identifier) as! LinkedVC
         let navi = UINavigationController(rootViewController: sb)
         
-        let row = mainData[sender.tag].title
-        sb.title = "\(row)"
+//        let row = mainData[sender.tag].title
+//        sb.title = "\(row)"
         sb.linkDB = mainData[sender.tag]
         self.present(navi, animated: true, completion: nil)
     }

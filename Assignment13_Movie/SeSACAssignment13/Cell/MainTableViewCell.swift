@@ -32,7 +32,6 @@ class MainTableViewCell: UITableViewCell {
         imgPoster.contentMode = .scaleAspectFill
         
         trendRelease.grayFontSetting()
-        trendGenre.fontSetting(size: 20)
         trendName.fontSetting(size: 25)
         trendOverview.grayFontSetting()
         btnOtherContent.tintColor = .black
@@ -47,7 +46,6 @@ class MainTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
