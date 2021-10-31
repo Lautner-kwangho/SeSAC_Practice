@@ -13,7 +13,7 @@ import SwiftyJSON
 extension ActorVC {
     
     func callCreditData(genre: String ,ID: String) {
-        MainAPIManager.shared.fetchActorApi(genre: genre, genreID: ID) { json in
+        MainAPIManager.shared.fetchContentApi(genre: genre, genreID: ID, type: "credits") { json in
             
             for item in json["cast"].arrayValue {
                 let profile = item["profile_path"].stringValue

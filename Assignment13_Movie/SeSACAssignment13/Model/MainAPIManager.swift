@@ -26,8 +26,8 @@ class MainAPIManager {
         }
     }
     
-    func fetchActorApi(genre: String, genreID: String ,result: @escaping (JSON) -> ()) {
-        let url = "https://api.themoviedb.org/3/\(genre)/\(genreID)/credits?api_key=\(APIKEY.tvDB)&language=en-US"
+    func fetchContentApi(genre: String, genreID: String, type: String, result: @escaping (JSON) -> ()) {
+        let url = "https://api.themoviedb.org/3/\(genre)/\(genreID)/\(type)?api_key=\(APIKEY.tvDB)&language=en-US"
         
         AF.request(url, method: .get).validate().responseJSON { response in
             switch response.result {

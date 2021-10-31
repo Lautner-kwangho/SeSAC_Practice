@@ -10,6 +10,10 @@
 		E40D05D8272DBA6300229859 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E40D05D7272DBA6300229859 /* JGProgressHUD */; };
 		E40D05DA272DD25800229859 /* ActorVC+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D05D9272DD25800229859 /* ActorVC+extension.swift */; };
 		E40D05DC272DD82D00229859 /* ActorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D05DB272DD82D00229859 /* ActorModel.swift */; };
+		E40D05DE272E73A700229859 /* LinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D05DD272E73A700229859 /* LinkModel.swift */; };
+		E40D05E1272E78E100229859 /* LinkedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D05DF272E78E100229859 /* LinkedTableViewCell.swift */; };
+		E40D05E2272E78E100229859 /* LinkedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40D05E0272E78E100229859 /* LinkedTableViewCell.xib */; };
+		E40D05E4272E7BA200229859 /* Linked+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40D05E3272E7BA200229859 /* Linked+extension.swift */; };
 		E417B39B272AFCEE0013DE0D /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E417B39A272AFCEE0013DE0D /* GenreModel.swift */; };
 		E4382E3C272ABC16009ACDD6 /* MainAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382E3B272ABC16009ACDD6 /* MainAPIManager.swift */; };
 		E4382E3E272ABD2B009ACDD6 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4382E3D272ABD2B009ACDD6 /* MainModel.swift */; };
@@ -52,6 +56,10 @@
 /* Begin PBXFileReference section */
 		E40D05D9272DD25800229859 /* ActorVC+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActorVC+extension.swift"; sourceTree = "<group>"; };
 		E40D05DB272DD82D00229859 /* ActorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActorModel.swift; sourceTree = "<group>"; };
+		E40D05DD272E73A700229859 /* LinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkModel.swift; sourceTree = "<group>"; };
+		E40D05DF272E78E100229859 /* LinkedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedTableViewCell.swift; sourceTree = "<group>"; };
+		E40D05E0272E78E100229859 /* LinkedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LinkedTableViewCell.xib; sourceTree = "<group>"; };
+		E40D05E3272E7BA200229859 /* Linked+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Linked+extension.swift"; sourceTree = "<group>"; };
 		E417B39A272AFCEE0013DE0D /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		E4382E3B272ABC16009ACDD6 /* MainAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAPIManager.swift; sourceTree = "<group>"; };
 		E4382E3D272ABD2B009ACDD6 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
@@ -128,6 +136,7 @@
 				E4F75C43271A9F63005A10D9 /* Cell */,
 				E4F75C38271A9CB4005A10D9 /* Model */,
 				E47B1C17271A9A3F00C1EF8E /* Main.storyboard */,
+				E40D05E0272E78E100229859 /* LinkedTableViewCell.xib */,
 				E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */,
 				E43AF78627296EE800A4613C /* DailyOfficeTableViewCell.xib */,
 				E4B58FE7271F17CA00318958 /* BookCollectionViewCell.xib */,
@@ -147,6 +156,7 @@
 				E417B39A272AFCEE0013DE0D /* GenreModel.swift */,
 				E4382E3D272ABD2B009ACDD6 /* MainModel.swift */,
 				E40D05DB272DD82D00229859 /* ActorModel.swift */,
+				E40D05DD272E73A700229859 /* LinkModel.swift */,
 				E4382E3B272ABC16009ACDD6 /* MainAPIManager.swift */,
 				E4F75C36271A9B0D005A10D9 /* TvShow.swift */,
 				E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */,
@@ -164,6 +174,7 @@
 				E4F75C41271A9F5E005A10D9 /* MainTableViewCell.swift */,
 				E4F75C3F271A9F2F005A10D9 /* SearchTableViewCell.swift */,
 				E4F75C3D271A9F20005A10D9 /* ActorTableViewCell.swift */,
+				E40D05DF272E78E100229859 /* LinkedTableViewCell.swift */,
 				E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */,
 				E43AF78527296EE800A4613C /* DailyOfficeTableViewCell.swift */,
 				E4B58FE6271F17CA00318958 /* BookCollectionViewCell.swift */,
@@ -180,6 +191,7 @@
 				E4F75C48271AA1F4005A10D9 /* ActorVC.swift */,
 				E40D05D9272DD25800229859 /* ActorVC+extension.swift */,
 				E46B15E9271DBB5F0083D515 /* LinkedVC.swift */,
+				E40D05E3272E7BA200229859 /* Linked+extension.swift */,
 				E43AF78327296E3800A4613C /* DailyOfficeVC.swift */,
 				E4B58FE2271F171C00318958 /* BookCollectionVC.swift */,
 				E4B3B2BE272008BB0031143B /* MapVC.swift */,
@@ -265,6 +277,7 @@
 				E43AF78827296EE800A4613C /* DailyOfficeTableViewCell.xib in Resources */,
 				E4B58FE1271EDD7E00318958 /* SectionTableViewCell.xib in Resources */,
 				E47B1C1B271A9A4100C1EF8E /* Assets.xcassets in Resources */,
+				E40D05E2272E78E100229859 /* LinkedTableViewCell.xib in Resources */,
 				E47B1C19271A9A3F00C1EF8E /* Main.storyboard in Resources */,
 				E4B58FE9271F17CA00318958 /* BookCollectionViewCell.xib in Resources */,
 			);
@@ -293,7 +306,9 @@
 				E40D05DC272DD82D00229859 /* ActorModel.swift in Sources */,
 				E46B15EA271DBB5F0083D515 /* LinkedVC.swift in Sources */,
 				E4F75C42271A9F5E005A10D9 /* MainTableViewCell.swift in Sources */,
+				E40D05E1272E78E100229859 /* LinkedTableViewCell.swift in Sources */,
 				E4F75C49271AA1F4005A10D9 /* ActorVC.swift in Sources */,
+				E40D05E4272E7BA200229859 /* Linked+extension.swift in Sources */,
 				E4F75C37271A9B0D005A10D9 /* TvShow.swift in Sources */,
 				E417B39B272AFCEE0013DE0D /* GenreModel.swift in Sources */,
 				E43AF78727296EE800A4613C /* DailyOfficeTableViewCell.swift in Sources */,
@@ -302,6 +317,7 @@
 				E4B58FE8271F17CA00318958 /* BookCollectionViewCell.swift in Sources */,
 				E47B1C14271A9A3F00C1EF8E /* SceneDelegate.swift in Sources */,
 				E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */,
+				E40D05DE272E73A700229859 /* LinkModel.swift in Sources */,
 				E4F75C3E271A9F20005A10D9 /* ActorTableViewCell.swift in Sources */,
 				E43AF78C27297C5100A4613C /* DailyModel.swift in Sources */,
 				E486557A27200DE30052DBDB /* MapAnnotations.swift in Sources */,

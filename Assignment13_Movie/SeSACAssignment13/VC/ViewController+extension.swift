@@ -35,7 +35,7 @@ extension ViewController {
 //            print(self.mainData)
         }
     }
-    
+     
     func callGenreData() {
         let genre = ["tv", "movie"]
         

@@ -158,8 +158,9 @@ class ViewController: UIViewController {
         let sb = self.storyboard?.instantiateViewController(withIdentifier: LinkedVC.identifier) as! LinkedVC
         let navi = UINavigationController(rootViewController: sb)
         
-        let row = TvShowInfomation().tvShow[sender.tag].title
+        let row = mainData[sender.tag].title
         sb.title = "\(row)"
+        sb.linkDB = mainData[sender.tag]
         self.present(navi, animated: true, completion: nil)
     }
     
