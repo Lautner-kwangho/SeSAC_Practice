@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  Assignment24_Diary
+
+ 
+  Created by 최광호 on 2021/11/01.
+  
+*/
+
+"HomeVC_Title" = "HOME";
+"AddVC_Title" = "Write Diary";
+"AddVC_SaveButton_Title" = "Saving";
+"AddVC_SaveButton_DateFormat" = "MM/dd/yyyy";
+"AddVC_AddTitle_Placeholder" = "Input Title";
+"SearchVC_Title" = "Search";
+"SearchAC_TableView_Extension_Title" = "TitleTitleTitleTitleTitleTitleTitleTitleTitleTitle";
+"SearchAC_TableView_Extension_Content" = "ContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContentContent";

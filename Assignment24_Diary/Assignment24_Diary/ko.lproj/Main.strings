@@ -1,0 +1,30 @@
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "1nY-jE-zlv"; */
+"1nY-jE-zlv.text" = "여기에 내용을 입력하세요";
+
+/* Class = "UITabBarItem"; title = "설정"; ObjectID = "6PS-A5-gqp"; */
+"6PS-A5-gqp.title" = "설정";
+
+/* Class = "UITabBarItem"; title = "검색"; ObjectID = "7tJ-4P-CB9"; */
+"7tJ-4P-CB9.title" = "검색";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "LIh-Uu-uRA"; */
+"LIh-Uu-uRA.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "LIh-Uu-uRA"; */
+"LIh-Uu-uRA.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "다이어리 바로가기 (추후 로그인 버튼이 될 수도?)"; ObjectID = "NGY-cU-mVW"; */
+"NGY-cU-mVW.configuration.title" = "다이어리 바로가기 (추후 로그인 버튼이 될 수도?)";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NGY-cU-mVW"; */
+"NGY-cU-mVW.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "QNa-9b-je9"; */
+"QNa-9b-je9.title" = "Title";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "bD1-Xt-b3m"; */
+"bD1-Xt-b3m.title" = "홈";
+
+/* Class = "UITabBarItem"; title = "캘린더"; ObjectID = "vBh-Uw-ORR"; */
+"vBh-Uw-ORR.title" = "캘린더";
