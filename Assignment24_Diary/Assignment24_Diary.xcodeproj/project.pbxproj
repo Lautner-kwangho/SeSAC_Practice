@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41AC8A827302A86008705BD /* AddVC+ImagePicker+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41AC8A727302A86008705BD /* AddVC+ImagePicker+Extension.swift */; };
 		E464BD97272FF04D00194238 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464BD96272FF04D00194238 /* AppDelegate.swift */; };
 		E464BD99272FF04D00194238 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464BD98272FF04D00194238 /* SceneDelegate.swift */; };
 		E464BD9B272FF04D00194238 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464BD9A272FF04D00194238 /* MainVC.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E41AC8A727302A86008705BD /* AddVC+ImagePicker+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC+ImagePicker+Extension.swift"; sourceTree = "<group>"; };
 		E464BD93272FF04D00194238 /* Assignment24_Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment24_Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E464BD96272FF04D00194238 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E464BD98272FF04D00194238 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				E464BDAE272FF17200194238 /* UIFont+Extension.swift */,
 				E464BDD62730181200194238 /* String+Extension.swift */,
+				E41AC8A727302A86008705BD /* AddVC+ImagePicker+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41AC8A827302A86008705BD /* AddVC+ImagePicker+Extension.swift in Sources */,
 				E464BDBA273000FF00194238 /* AddVC.swift in Sources */,
 				E464BDD9273018C400194238 /* LocalizationString.swift in Sources */,
 				E464BDB4272FF9C500194238 /* SearchVC.swift in Sources */,

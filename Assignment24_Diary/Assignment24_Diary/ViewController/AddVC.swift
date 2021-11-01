@@ -16,9 +16,15 @@ class AddVC: UIViewController {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addTextField: UITextView!
     
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        
         navigationItemSetting()
         
         outletSetting()
@@ -47,21 +53,27 @@ class AddVC: UIViewController {
     
     func outletSetting() {
         addImage.backgroundColor = .systemGray3
-        addTitle.backgroundColor = .systemGray3
-        addButton.backgroundColor = .systemGray3
-        addTextField.backgroundColor = .systemGray3
-
         addImage.image = UIImage(systemName: "shareplay")
+        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(openPicture))
+        addImage.addGestureRecognizer(longGesture)
+        addImage.isUserInteractionEnabled = true
         
+        addTitle.backgroundColor = .systemGray3
         addTitle.placeholder = LocalizationString.AddVC_AddTitle_Placeholder.localized
         addTitle.textAlignment = .center
         
+        addButton.backgroundColor = .systemGray3
         let dateFomatter = DateFormatter()
         dateFomatter.locale = Locale(identifier: "ko_KR")
         dateFomatter.dateFormat = LocalizationString.AddVC_SaveButton_DateFormat.localized
         addButton.setTitle("\(dateFomatter.string(from: Date()))", for: .normal)
         
+        addTextField.backgroundColor = .systemGray3
         addTextField.font = UIFont().mainFont
+    }
+    
+    @objc func openPicture() {
+        self.present(imagePicker, animated: true, completion: nil)
     }
 
 }

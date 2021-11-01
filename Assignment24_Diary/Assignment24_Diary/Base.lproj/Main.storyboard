@@ -69,6 +69,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Wo-Mn-BuU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                                <gestureRecognizers/>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-uE-Nu8">
                                 <rect key="frame" x="20" y="512" width="374" height="50"/>
@@ -93,6 +94,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WZC-zo-6ZQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="WZC-zo-6ZQ" firstAttribute="trailing" secondItem="8Wo-Mn-BuU" secondAttribute="trailing" id="5il-2N-ix9"/>
                             <constraint firstItem="LIh-Uu-uRA" firstAttribute="height" secondItem="WsX-uE-Nu8" secondAttribute="height" id="7CN-27-dog"/>
@@ -191,13 +193,13 @@
         <!--Tab Bar Controller-->
         <scene sceneID="S8T-8Z-g7m">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-WN-mfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4WZ-co-7q8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="uSr-P7-7dD">
                         <barButtonItem key="leftBarButtonItem" id="8eP-tN-URA"/>
                     </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a1J-sb-PTD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -208,6 +210,7 @@
                         <segue destination="acn-vq-tDv" kind="relationship" relationship="viewControllers" id="vGI-JR-ZKe"/>
                     </connections>
                 </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-WN-mfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1493" y="70"/>
         </scene>
