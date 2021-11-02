@@ -139,17 +139,17 @@ class ViewController: UIViewController {
         
         // 3 시간 ㅋㅋ쿠ㅜ..
         if md.media_type == "movie" {
-            var a: [String] = []
+            var movieGenreSorting: [String] = []
             for i in md.genreIds {
-                self.genreMovieData.forEach { if i == $0.id { a.append($0.name) } }
+                self.genreMovieData.forEach { if i == $0.id { movieGenreSorting.append($0.name) } }
             }
-            cell.trendGenre.text = a.reduce("") { $0 + " #" + $1 }
+            cell.trendGenre.text = movieGenreSorting.reduce("") { $0 + " #" + $1 }
         } else {
-            var a: [String] = []
+            var tvGenreSorting: [String] = []
             for i in md.genreIds {
-                self.genreMovieData.forEach { if i == $0.id { a.append($0.name) } }
+                self.genreMovieData.forEach { if i == $0.id { tvGenreSorting.append($0.name) } }
             }
-            cell.trendGenre.text = a.reduce("") { $0 + " #" + $1 }
+            cell.trendGenre.text = tvGenreSorting.reduce("") { $0 + " #" + $1 }
         }
 
         cell.trendRelease.text = md.releaseDate

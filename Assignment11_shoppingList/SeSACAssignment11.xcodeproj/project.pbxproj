@@ -9,27 +9,29 @@
 /* Begin PBXBuildFile section */
 		E42883322716F14A00551C6C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42883312716F14A00551C6C /* AppDelegate.swift */; };
 		E42883342716F14A00551C6C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42883332716F14A00551C6C /* SceneDelegate.swift */; };
-		E42883362716F14A00551C6C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42883352716F14A00551C6C /* ViewController.swift */; };
 		E42883392716F14A00551C6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42883372716F14A00551C6C /* Main.storyboard */; };
 		E428833B2716F14C00551C6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E428833A2716F14C00551C6C /* Assets.xcassets */; };
 		E428833E2716F14C00551C6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E428833C2716F14C00551C6C /* LaunchScreen.storyboard */; };
 		E42883462716F19F00551C6C /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42883452716F19F00551C6C /* ShoppingTableViewCell.swift */; };
 		E428834B2716F21A00551C6C /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E428834A2716F21A00551C6C /* ShoppingTableViewController.swift */; };
-		E4CC7B42271832D400BA8B0E /* ShoppingBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7B41271832D400BA8B0E /* ShoppingBasket.swift */; };
+		E499AE1A273161DD001D6EC1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE19273161DD001D6EC1 /* Realm */; };
+		E499AE1C273161DD001D6EC1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE1B273161DD001D6EC1 /* RealmSwift */; };
+		E499AE1E273162C5001D6EC1 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499AE1D273162C5001D6EC1 /* RealmModel.swift */; };
+		E4CC7B42271832D400BA8B0E /* BasketModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC7B41271832D400BA8B0E /* BasketModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E428832E2716F14A00551C6C /* SeSACAssignment11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACAssignment11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42883312716F14A00551C6C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E42883332716F14A00551C6C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		E42883352716F14A00551C6C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E42883382716F14A00551C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E428833A2716F14C00551C6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E428833D2716F14C00551C6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E428833F2716F14C00551C6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E42883452716F19F00551C6C /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 		E428834A2716F21A00551C6C /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShoppingTableViewController.swift; path = SeSACAssignment11/Controller/ShoppingTableViewController.swift; sourceTree = SOURCE_ROOT; };
-		E4CC7B41271832D400BA8B0E /* ShoppingBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingBasket.swift; sourceTree = "<group>"; };
+		E499AE1D273162C5001D6EC1 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		E4CC7B41271832D400BA8B0E /* BasketModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E499AE1C273161DD001D6EC1 /* RealmSwift in Frameworks */,
+				E499AE1A273161DD001D6EC1 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,10 +66,10 @@
 		E42883302716F14A00551C6C /* SeSACAssignment11 */ = {
 			isa = PBXGroup;
 			children = (
-				E4CC7B40271832C200BA8B0E /* Struct */,
-				E42883492716F1D200551C6C /* Cell */,
 				E42883482716F1C400551C6C /* Storyboard */,
 				E42883472716F1A500551C6C /* Controller */,
+				E42883492716F1D200551C6C /* Cell */,
+				E4CC7B40271832C200BA8B0E /* Model */,
 				E42883312716F14A00551C6C /* AppDelegate.swift */,
 				E42883332716F14A00551C6C /* SceneDelegate.swift */,
 				E428833A2716F14C00551C6C /* Assets.xcassets */,
@@ -79,7 +83,6 @@
 			isa = PBXGroup;
 			children = (
 				E428834A2716F21A00551C6C /* ShoppingTableViewController.swift */,
-				E42883352716F14A00551C6C /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -100,12 +103,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		E4CC7B40271832C200BA8B0E /* Struct */ = {
+		E4CC7B40271832C200BA8B0E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E4CC7B41271832D400BA8B0E /* ShoppingBasket.swift */,
+				E4CC7B41271832D400BA8B0E /* BasketModel.swift */,
+				E499AE1D273162C5001D6EC1 /* RealmModel.swift */,
 			);
-			path = Struct;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,6 +128,10 @@
 			dependencies = (
 			);
 			name = SeSACAssignment11;
+			packageProductDependencies = (
+				E499AE19273161DD001D6EC1 /* Realm */,
+				E499AE1B273161DD001D6EC1 /* RealmSwift */,
+			);
 			productName = SeSACAssignment11;
 			productReference = E428832E2716F14A00551C6C /* SeSACAssignment11.app */;
 			productType = "com.apple.product-type.application";
@@ -152,6 +160,9 @@
 				Base,
 			);
 			mainGroup = E42883252716F14A00551C6C;
+			packageReferences = (
+				E499AE18273161DD001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = E428832F2716F14A00551C6C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -179,8 +190,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E42883362716F14A00551C6C /* ViewController.swift in Sources */,
-				E4CC7B42271832D400BA8B0E /* ShoppingBasket.swift in Sources */,
+				E4CC7B42271832D400BA8B0E /* BasketModel.swift in Sources */,
+				E499AE1E273162C5001D6EC1 /* RealmModel.swift in Sources */,
 				E42883462716F19F00551C6C /* ShoppingTableViewCell.swift in Sources */,
 				E42883322716F14A00551C6C /* AppDelegate.swift in Sources */,
 				E428834B2716F21A00551C6C /* ShoppingTableViewController.swift in Sources */,
@@ -408,6 +419,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E499AE18273161DD001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E499AE19273161DD001D6EC1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E499AE18273161DD001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		E499AE1B273161DD001D6EC1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E499AE18273161DD001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E42883262716F14A00551C6C /* Project object */;
 }
