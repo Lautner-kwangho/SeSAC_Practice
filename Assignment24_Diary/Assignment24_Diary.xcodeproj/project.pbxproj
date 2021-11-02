@@ -28,6 +28,11 @@
 		E464BDD02730161300194238 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E464BDD22730161300194238 /* InfoPlist.strings */; };
 		E464BDD72730181200194238 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464BDD62730181200194238 /* String+Extension.swift */; };
 		E464BDD9273018C400194238 /* LocalizationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464BDD8273018C400194238 /* LocalizationString.swift */; };
+		E499AE0E27314073001D6EC1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE0D27314073001D6EC1 /* Home.storyboard */; };
+		E499AE10273140C8001D6EC1 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE0F273140C8001D6EC1 /* Add.storyboard */; };
+		E499AE12273140D3001D6EC1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE11273140D3001D6EC1 /* Search.storyboard */; };
+		E499AE14273140DE001D6EC1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE13273140DE001D6EC1 /* Calendar.storyboard */; };
+		E499AE16273140EC001D6EC1 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE15273140EC001D6EC1 /* Setting.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +64,11 @@
 		E464BDD5273016FB00194238 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E464BDD62730181200194238 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E464BDD8273018C400194238 /* LocalizationString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationString.swift; sourceTree = "<group>"; };
+		E499AE0D27314073001D6EC1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		E499AE0F273140C8001D6EC1 /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
+		E499AE11273140D3001D6EC1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		E499AE13273140DE001D6EC1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		E499AE15273140EC001D6EC1 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,18 +102,18 @@
 			isa = PBXGroup;
 			children = (
 				E464BDC7273014CB00194238 /* Localization */,
+				E499AE1727314209001D6EC1 /* Storyboard */,
 				E464BDB0272FF97C00194238 /* ViewController */,
 				E464BDBF2730017C00194238 /* Cell */,
 				E464BDC2273001FF00194238 /* TableView + Extension */,
 				E464BDAD272FF15800194238 /* Extension */,
 				E464BDAA272FF08000194238 /* Font */,
-				E464BD9C272FF04D00194238 /* Main.storyboard */,
-				E464BDBC2730016D00194238 /* SearchTableViewCell.xib */,
-				E464BDA1272FF04E00194238 /* LaunchScreen.storyboard */,
 				E464BDA4272FF04E00194238 /* Info.plist */,
 				E464BD9F272FF04E00194238 /* Assets.xcassets */,
 				E464BD96272FF04D00194238 /* AppDelegate.swift */,
 				E464BD98272FF04D00194238 /* SceneDelegate.swift */,
+				E464BDA1272FF04E00194238 /* LaunchScreen.storyboard */,
+				E464BDBC2730016D00194238 /* SearchTableViewCell.xib */,
 			);
 			path = Assignment24_Diary;
 			sourceTree = "<group>";
@@ -163,6 +173,19 @@
 				E464BDD8273018C400194238 /* LocalizationString.swift */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		E499AE1727314209001D6EC1 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				E464BD9C272FF04D00194238 /* Main.storyboard */,
+				E499AE0D27314073001D6EC1 /* Home.storyboard */,
+				E499AE0F273140C8001D6EC1 /* Add.storyboard */,
+				E499AE11273140D3001D6EC1 /* Search.storyboard */,
+				E499AE13273140DE001D6EC1 /* Calendar.storyboard */,
+				E499AE15273140EC001D6EC1 /* Setting.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +251,14 @@
 				E464BDD02730161300194238 /* InfoPlist.strings in Resources */,
 				E464BDCA273014EE00194238 /* Localizable.strings in Resources */,
 				E464BDA0272FF04E00194238 /* Assets.xcassets in Resources */,
+				E499AE12273140D3001D6EC1 /* Search.storyboard in Resources */,
+				E499AE14273140DE001D6EC1 /* Calendar.storyboard in Resources */,
+				E499AE10273140C8001D6EC1 /* Add.storyboard in Resources */,
 				E464BDAC272FF08E00194238 /* GowunDodum-Regular.ttf in Resources */,
 				E464BD9E272FF04D00194238 /* Main.storyboard in Resources */,
 				E464BDBE2730016D00194238 /* SearchTableViewCell.xib in Resources */,
+				E499AE0E27314073001D6EC1 /* Home.storyboard in Resources */,
+				E499AE16273140EC001D6EC1 /* Setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

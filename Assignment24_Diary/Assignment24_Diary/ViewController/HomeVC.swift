@@ -24,7 +24,8 @@ class HomeVC: UIViewController {
     }
     
     @objc func goToAdd() {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: AddVC.identifier) as! AddVC
+        let sb = UIStoryboard(name: "Add", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: AddVC.identifier) as! AddVC
         let navi = UINavigationController(rootViewController: vc)
         
         navi.modalPresentationStyle = .fullScreen

@@ -36,6 +36,7 @@ class DailyOfficeVC: UIViewController {
         let component = Calendar.current.dateComponents([.year, .month, .day], from: yesterday!)
         
         dailyDate = "\(component.year!)" + "\(component.month!)"+"\(component.day!)"
+        dailyOfficeTableView.reloadData()
     }
     
     func dailyOfficeAPIManager() {

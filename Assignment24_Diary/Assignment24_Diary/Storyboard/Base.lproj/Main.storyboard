@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="Assignment24_Diary" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGY-cU-mVW">
+                                <rect key="frame" x="112" y="424" width="190" height="48"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="다이어리 바로가기 (추후 로그인 버튼이 될 수도?)"/>
+                                <connections>
+                                    <segue destination="4WZ-co-7q8" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="PzS-uG-WTI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NGY-cU-mVW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6hB-LV-34B"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NGY-cU-mVW" secondAttribute="trailing" constant="10" id="GrC-km-nfe"/>
+                            <constraint firstItem="NGY-cU-mVW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Qgr-jT-uwD"/>
+                            <constraint firstItem="NGY-cU-mVW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="SCl-G8-UrL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="DuB-Kp-2mF"/>
+                    <connections>
+                        <outlet property="goToMyDiary" destination="NGY-cU-mVW" id="evG-KM-s4Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="672.46376811594212" y="69.642857142857139"/>
+        </scene>
+        <!--Calendar-->
+        <scene sceneID="lH7-pf-AHV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calendar" id="R8k-e2-JKm" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="a8U-Fc-NZh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VaB-4b-42A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3638" y="430"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="S8T-8Z-g7m">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="4WZ-co-7q8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="uSr-P7-7dD">
+                        <barButtonItem key="leftBarButtonItem" id="8eP-tN-URA"/>
+                    </navigationItem>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="a1J-sb-PTD">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GPa-5e-jpe" kind="relationship" relationship="viewControllers" id="fC5-M4-e1f"/>
+                        <segue destination="80e-zn-aDn" kind="relationship" relationship="viewControllers" id="etT-3X-o5r"/>
+                        <segue destination="J6L-KU-7Bo" kind="relationship" relationship="viewControllers" id="gmg-mq-GqJ"/>
+                        <segue destination="acn-vq-tDv" kind="relationship" relationship="viewControllers" id="vGI-JR-ZKe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5wZ-WN-mfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1493" y="70"/>
+        </scene>
+        <!--홈-->
+        <scene sceneID="b43-mF-gM8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GPa-5e-jpe" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="홈" image="house" catalog="system" id="bD1-Xt-b3m"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dop-5G-f24">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2La-Cw-XWY" kind="relationship" relationship="rootViewController" id="sz5-iF-Hk1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LZc-aZ-xgf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.507246376812" y="-866.51785714285711"/>
+        </scene>
+        <!--검색-->
+        <scene sceneID="7tZ-Ze-ItL">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="80e-zn-aDn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="검색" image="magnifyingglass" catalog="system" id="7tJ-4P-CB9"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="O2u-XM-nuc">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="PDJ-sO-aZd" kind="relationship" relationship="rootViewController" id="GXC-NT-NtN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWp-o1-dXM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.507246376812" y="-220.3125"/>
+        </scene>
+        <!--캘린더-->
+        <scene sceneID="vmd-BW-dEf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="J6L-KU-7Bo" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="캘린더" image="calendar" catalog="system" id="vBh-Uw-ORR"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="49v-2h-Mtj">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="R8k-e2-JKm" kind="relationship" relationship="rootViewController" id="VpE-sG-b8w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iba-RO-vU7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.507246376812" y="429.91071428571428"/>
+        </scene>
+        <!--설정-->
+        <scene sceneID="enm-ZK-TRy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="acn-vq-tDv" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="설정" image="person.circle" catalog="system" id="6PS-A5-gqp"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b8V-gv-rzo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aVD-8l-tSi" kind="relationship" relationship="rootViewController" id="VI7-yr-uen"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="khS-js-ZIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.507246376812" y="1100.8928571428571"/>
+        </scene>
+        <!--Setting-->
+        <scene sceneID="ZlI-DA-BeQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Setting" id="aVD-8l-tSi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="7Dh-PF-Ces"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PEX-Oh-6Dc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3637" y="1101"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="bCz-w7-bmA">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="atS-fb-YpI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Home" id="2La-Cw-XWY" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Qup-2O-6YU"/>
+                </viewControllerPlaceholder>
+            </objects>
+            <point key="canvasLocation" x="3638" y="-867"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="0ER-CK-FBM">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="PDJ-sO-aZd" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hAt-DZ-aJo"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JIG-NJ-VN5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3638" y="-220"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="house" catalog="system" width="128" height="106"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
