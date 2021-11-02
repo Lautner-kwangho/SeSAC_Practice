@@ -20,6 +20,7 @@ class DailyOfficeVC: UIViewController {
     
     var dailyData: [DailyModel] = []
     var dailyDate: String = "20211024"
+    var dailyDateKey: [String] = []
     
     @IBOutlet weak var dailyOfficeTableView: UITableView!
     @IBOutlet weak var dailyTextField: UITextField!
@@ -27,8 +28,6 @@ class DailyOfficeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Realm is located at:", localRealm.configuration.fileURL!)
         
         dateUpdating()
         dailyOfficeAPIManager()
@@ -39,12 +38,16 @@ class DailyOfficeVC: UIViewController {
         dailyOfficeTableView.dataSource = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Realm is located at:", localRealm.configuration.fileURL!)
+        tasks = localRealm.objects(RealmModel.self)
+    }
+    
     func dateUpdating() {
         if let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) {
-            let component = Calendar.current.dateComponents([.year, .month, .day], from: yesterday)
-            
             let dateFomatter = DateFormatter()
-            dateFomatter.dateFormat = "yyyyMMdd"            
+            dateFomatter.dateFormat =  "yyyyMMdd"
             dailyDate = dateFomatter.string(for: yesterday)!
 
             dailyOfficeTableView.reloadData()
@@ -63,9 +66,17 @@ class DailyOfficeVC: UIViewController {
                     let movieNm = dailyDatum["movieNm"].stringValue
                     let openDt = dailyDatum["openDt"].stringValue
                     let data = DailyModel(rank: rank, movieNm: movieNm, openDt: openDt)
-                    
-                    self.dailyData.append(data)
+//                    let task = RealmModel(rank: rank, movieNm: movieNm, openDt: openDt)
+                    try! self.localRealm.write {
+//                        self.localRealm.add(task)
+                        let data = DailyModel(rank: rank, movieNm: movieNm, openDt: openDt)
+                        let json = try! JSONSerialization.jsonObject(with: data, options: [])
+                          localRealm.create(RealmModel.self, value: json, update: true)
+                    }
+//                    self.dailyData.append(data)
                 }
+//                let showRange = json["boxOfficeResult"]["showRange"].stringValue
+//                self.dailyDateKey.append(showRange)
                 self.dailyOfficeTableView.reloadData()
             case .failure(let error):
                 print(error)

@@ -8,7 +8,7 @@
 import Foundation
 
 struct DailyModel {
-    var rank : String
-    var movieNm : String
-    var openDt : String
+    var rank: String
+    var movieNm: String
+    var openDt: String
 }

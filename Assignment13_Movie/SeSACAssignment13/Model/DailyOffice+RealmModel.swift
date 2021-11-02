@@ -12,9 +12,10 @@ class RealmModel: Object {
     @Persisted var rank : String
     @Persisted var movieNm : String
     @Persisted var openDt : String
+    @Persisted var showRange: String
     @Persisted(primaryKey: true) var _id: ObjectId
-    
-    convenience init(rank: String, movieNm: String, openDt: String) {
+    // JSON 스키마 있던데..
+    convenience init(rank: String, movieNm: String, openDt: String, showRange: String) {
         self.init()
         self.rank = rank
         self.movieNm = movieNm
