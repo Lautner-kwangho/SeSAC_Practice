@@ -33,6 +33,9 @@
 		E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4818EB0271DAE7C00FA9CC5 /* Kingfisher */; };
 		E486557827200D400052DBDB /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557727200D400052DBDB /* TheaterLocation.swift */; };
 		E486557A27200DE30052DBDB /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557927200DE30052DBDB /* MapAnnotations.swift */; };
+		E499AE2127317661001D6EC1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE2027317661001D6EC1 /* Realm */; };
+		E499AE2327317661001D6EC1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE2227317661001D6EC1 /* RealmSwift */; };
+		E499AE2527317756001D6EC1 /* DailyOffice+RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499AE2427317756001D6EC1 /* DailyOffice+RealmModel.swift */; };
 		E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B2BE272008BB0031143B /* MapVC.swift */; };
 		E4B58FE0271EDD7E00318958 /* DimensionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */; };
 		E4B58FE1271EDD7E00318958 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */; };
@@ -79,6 +82,7 @@
 		E47B1C1F271A9A4100C1EF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E486557727200D400052DBDB /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
 		E486557927200DE30052DBDB /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
+		E499AE2427317756001D6EC1 /* DailyOffice+RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyOffice+RealmModel.swift"; sourceTree = "<group>"; };
 		E4B3B2BE272008BB0031143B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTableViewCell.swift; sourceTree = "<group>"; };
 		E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E499AE2327317661001D6EC1 /* RealmSwift in Frameworks */,
+				E499AE2127317661001D6EC1 /* Realm in Frameworks */,
 				E4BDED7627279D3800B1049A /* SwiftyJSON in Frameworks */,
 				E43AF78F27297D0200A4613C /* Alamofire in Frameworks */,
 				E4B58FEC271F279C00318958 /* Toast in Frameworks */,
@@ -162,6 +168,7 @@
 				E4F75C34271A9AC0005A10D9 /* TvShowInfomation.swift */,
 				E4BDED7A2727A7D900B1049A /* MovieModel.swift */,
 				E43AF78B27297C5100A4613C /* DailyModel.swift */,
+				E499AE2427317756001D6EC1 /* DailyOffice+RealmModel.swift */,
 				E486557727200D400052DBDB /* TheaterLocation.swift */,
 				E486557927200DE30052DBDB /* MapAnnotations.swift */,
 			);
@@ -222,6 +229,8 @@
 				E43AF78E27297D0200A4613C /* Alamofire */,
 				E4CE1C762729A302003ADF83 /* TextFieldEffects */,
 				E40D05D7272DBA6300229859 /* JGProgressHUD */,
+				E499AE2027317661001D6EC1 /* Realm */,
+				E499AE2227317661001D6EC1 /* RealmSwift */,
 			);
 			productName = SeSACAssignment13;
 			productReference = E47B1C0E271A9A3F00C1EF8E /* SeSACAssignment13.app */;
@@ -258,6 +267,7 @@
 				E43AF78D27297D0200A4613C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				E4CE1C752729A302003ADF83 /* XCRemoteSwiftPackageReference "TextFieldEffects" */,
 				E40D05D6272DBA6300229859 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				E499AE1F27317661001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = E47B1C0F271A9A3F00C1EF8E /* Products */;
 			projectDirPath = "";
@@ -303,6 +313,7 @@
 				E4382E3C272ABC16009ACDD6 /* MainAPIManager.swift in Sources */,
 				E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */,
 				E486557827200D400052DBDB /* TheaterLocation.swift in Sources */,
+				E499AE2527317756001D6EC1 /* DailyOffice+RealmModel.swift in Sources */,
 				E40D05DC272DD82D00229859 /* ActorModel.swift in Sources */,
 				E46B15EA271DBB5F0083D515 /* LinkedVC.swift in Sources */,
 				E4F75C42271A9F5E005A10D9 /* MainTableViewCell.swift in Sources */,
@@ -572,6 +583,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		E499AE1F27317661001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
 		E4B58FEA271F279B00318958 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -613,6 +632,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E4818EAF271DAE7C00FA9CC5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E499AE2027317661001D6EC1 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E499AE1F27317661001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		E499AE2227317661001D6EC1 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E499AE1F27317661001D6EC1 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
 		};
 		E4B58FEB271F279C00318958 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;

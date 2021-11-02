@@ -4,15 +4,20 @@
 //
 //  Created by 최광호 on 2021/10/27.
 //
-
+import RealmSwift
+import TextFieldEffects
 import UIKit
+
 import Alamofire
 import SwiftyJSON
-import TextFieldEffects
 
 class DailyOfficeVC: UIViewController {
 
     static let identifier = "DailyOfficeVC"
+    
+    let localRealm = try! Realm()
+    var tasks: Results<RealmModel>!
+    
     var dailyData: [DailyModel] = []
     var dailyDate: String = "20211024"
     
@@ -22,6 +27,9 @@ class DailyOfficeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Realm is located at:", localRealm.configuration.fileURL!)
+        
         dateUpdating()
         dailyOfficeAPIManager()
         
@@ -32,11 +40,15 @@ class DailyOfficeVC: UIViewController {
     }
     
     func dateUpdating() {
-        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-        let component = Calendar.current.dateComponents([.year, .month, .day], from: yesterday!)
-        
-        dailyDate = "\(component.year!)" + "\(component.month!)"+"\(component.day!)"
-        dailyOfficeTableView.reloadData()
+        if let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) {
+            let component = Calendar.current.dateComponents([.year, .month, .day], from: yesterday)
+            
+            let dateFomatter = DateFormatter()
+            dateFomatter.dateFormat = "yyyyMMdd"            
+            dailyDate = dateFomatter.string(for: yesterday)!
+
+            dailyOfficeTableView.reloadData()
+        }
     }
     
     func dailyOfficeAPIManager() {

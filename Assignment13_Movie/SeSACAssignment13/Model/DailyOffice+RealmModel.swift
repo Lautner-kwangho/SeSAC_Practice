@@ -1,0 +1,24 @@
+//
+//  RealmModel.swift
+//  SeSACAssignment13
+//
+//  Created by 최광호 on 2021/11/02.
+//
+
+import Foundation
+import RealmSwift
+
+class RealmModel: Object {
+    @Persisted var rank : String
+    @Persisted var movieNm : String
+    @Persisted var openDt : String
+    @Persisted(primaryKey: true) var _id: ObjectId
+    
+    convenience init(rank: String, movieNm: String, openDt: String) {
+        self.init()
+        self.rank = rank
+        self.movieNm = movieNm
+        self.openDt = openDt
+    }
+    
+}
