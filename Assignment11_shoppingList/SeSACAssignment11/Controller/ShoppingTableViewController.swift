@@ -36,8 +36,7 @@ class ShoppingTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tasks = realm.objects(RealmModel.self)
-        self.tableView.reloadData()
+        tasks = realm.objects(RealmModel.self).sorted(byKeyPath: "selectStar", ascending: false)
     }
     
 //    func saveData() {
@@ -122,8 +121,8 @@ class ShoppingTableViewController: UITableViewController {
 //            try! realm.write {
 //                tasksToUpdate.name = "완료되었습니다!"
 //            }
-            let alert = UIAlertController(title: "수고했어요", message: "오늘도 수고많으셨습니다!", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "감사해요ㅠㅠ", style: .default)
+            let alert = UIAlertController(title: "확인했어요", message: "오늘도 Flex한 하루!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "내 돈ㅠㅠ", style: .default)
             alert.addAction(ok)
             self.present(alert, animated: true, completion: nil)
         }
