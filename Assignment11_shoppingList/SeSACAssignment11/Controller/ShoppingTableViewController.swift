@@ -108,21 +108,38 @@ class ShoppingTableViewController: UITableViewController {
         cell.btnStar.tag = indexPath.row
         
         cell.lblList.text = row.name
-        
         return cell
     }
     
     // 이전 코드 누가 이렇게 짜래 ㅋㅋㅋㅋㅋ 웃기다 나 ㅋㅋㅋ쿠ㅜ 코드 네이밍의 중요성 깨닫..
     @objc func markClicked(_ sender: UIButton) {
+        let tasksToUpdate = tasks[sender.tag]
         try! realm.write {
-            tasks[sender.tag].selectMark = !tasks[sender.tag].selectMark
+            tasksToUpdate.selectMark = !tasksToUpdate.selectMark
         }
+        if tasksToUpdate.selectMark == true {
+//.        음 내용이 이렇게 바뀌는 거면 혼자 작성한게 모를거 같으니 alert을 활용해보겠습니다!
+//            try! realm.write {
+//                tasksToUpdate.name = "완료되었습니다!"
+//            }
+            let alert = UIAlertController(title: "수고했어요", message: "오늘도 수고많으셨습니다!", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "감사해요ㅠㅠ", style: .default)
+            alert.addAction(ok)
+            self.present(alert, animated: true, completion: nil)
+        }
+        
         self.tableView.reloadData()
     }
     
     @objc func starClicked(_ sender: UIButton) {
+        let tasksToUpdate = tasks[sender.tag]
         try! realm.write {
-            tasks[sender.tag].selectStar = !tasks[sender.tag].selectStar
+            tasksToUpdate.selectStar = !tasksToUpdate.selectStar
+        }
+        if tasksToUpdate.selectStar == true {
+            let sortedTask = tasks.sorted(byKeyPath: "selectStar", ascending: false)
+            // 왜 안되지 하면서 3시간은 본 듯... 댕청..ㅠ
+            tasks = sortedTask
         }
         self.tableView.reloadData()
     }
