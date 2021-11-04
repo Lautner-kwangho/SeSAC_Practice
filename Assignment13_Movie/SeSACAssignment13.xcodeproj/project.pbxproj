@@ -36,6 +36,7 @@
 		E499AE2127317661001D6EC1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE2027317661001D6EC1 /* Realm */; };
 		E499AE2327317661001D6EC1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE2227317661001D6EC1 /* RealmSwift */; };
 		E499AE2527317756001D6EC1 /* DailyOffice+RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499AE2427317756001D6EC1 /* DailyOffice+RealmModel.swift */; };
+		E4B2C4652732F0AE008D0070 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B2C4642732F0AE008D0070 /* String+extension.swift */; };
 		E4B3B2BF272008BC0031143B /* MapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B3B2BE272008BB0031143B /* MapVC.swift */; };
 		E4B58FE0271EDD7E00318958 /* DimensionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */; };
 		E4B58FE1271EDD7E00318958 /* SectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */; };
@@ -83,6 +84,7 @@
 		E486557727200D400052DBDB /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
 		E486557927200DE30052DBDB /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
 		E499AE2427317756001D6EC1 /* DailyOffice+RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyOffice+RealmModel.swift"; sourceTree = "<group>"; };
+		E4B2C4642732F0AE008D0070 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		E4B3B2BE272008BB0031143B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		E4B58FDE271EDD7E00318958 /* DimensionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionTableViewCell.swift; sourceTree = "<group>"; };
 		E4B58FDF271EDD7E00318958 /* SectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SectionTableViewCell.xib; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		E47B1C10271A9A3F00C1EF8E /* SeSACAssignment13 */ = {
 			isa = PBXGroup;
 			children = (
+				E4BFBF5B2734004B001EFF0A /* Extension */,
 				E4F75C45271A9F74005A10D9 /* VC */,
 				E4F75C43271A9F63005A10D9 /* Cell */,
 				E4F75C38271A9CB4005A10D9 /* Model */,
@@ -154,6 +157,17 @@
 				E4D47B182727EEA400914063 /* APIKEY.swift */,
 			);
 			path = SeSACAssignment13;
+			sourceTree = "<group>";
+		};
+		E4BFBF5B2734004B001EFF0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E4382E3F272AC78D009ACDD6 /* ViewController+extension.swift */,
+				E40D05D9272DD25800229859 /* ActorVC+extension.swift */,
+				E40D05E3272E7BA200229859 /* Linked+extension.swift */,
+				E4B2C4642732F0AE008D0070 /* String+extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E4F75C38271A9CB4005A10D9 /* Model */ = {
@@ -193,12 +207,9 @@
 			isa = PBXGroup;
 			children = (
 				E47B1C15271A9A3F00C1EF8E /* ViewController.swift */,
-				E4382E3F272AC78D009ACDD6 /* ViewController+extension.swift */,
 				E4F75C46271AA1E7005A10D9 /* SearchVC.swift */,
 				E4F75C48271AA1F4005A10D9 /* ActorVC.swift */,
-				E40D05D9272DD25800229859 /* ActorVC+extension.swift */,
 				E46B15E9271DBB5F0083D515 /* LinkedVC.swift */,
-				E40D05E3272E7BA200229859 /* Linked+extension.swift */,
 				E43AF78327296E3800A4613C /* DailyOfficeVC.swift */,
 				E4B58FE2271F171C00318958 /* BookCollectionVC.swift */,
 				E4B3B2BE272008BB0031143B /* MapVC.swift */,
@@ -305,6 +316,7 @@
 				E4F75C40271A9F2F005A10D9 /* SearchTableViewCell.swift in Sources */,
 				E4F75C47271AA1E7005A10D9 /* SearchVC.swift in Sources */,
 				E4B58FE3271F171C00318958 /* BookCollectionVC.swift in Sources */,
+				E4B2C4652732F0AE008D0070 /* String+extension.swift in Sources */,
 				E4D47B192727EEA400914063 /* APIKEY.swift in Sources */,
 				E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */,
 				E43AF78427296E3800A4613C /* DailyOfficeVC.swift in Sources */,

@@ -18,9 +18,7 @@ class DailyOfficeVC: UIViewController {
     let localRealm = try! Realm()
     var tasks: Results<RealmModel>!
     
-    var dailyData: [DailyModel] = []
-    var dailyDate: String = "20211024"
-    var dailyDateKey: [String] = []
+    var dailyDate: String = "00000000"
     
     @IBOutlet weak var dailyOfficeTableView: UITableView!
     @IBOutlet weak var dailyTextField: UITextField!
@@ -28,10 +26,7 @@ class DailyOfficeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         dateUpdating()
-        dailyOfficeAPIManager()
-        
         headerSet()
         
         dailyOfficeTableView.delegate = self
@@ -40,8 +35,9 @@ class DailyOfficeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("Realm is located at:", localRealm.configuration.fileURL!)
         tasks = localRealm.objects(RealmModel.self)
+        // 음 나중에 앱 구현할 때는 사람 생각해서 자동 어제 날짜 불러오는 건 삭제해야 되려나..
+        dailyOfficeAPIManager()
     }
     
     func dateUpdating() {
@@ -49,37 +45,35 @@ class DailyOfficeVC: UIViewController {
             let dateFomatter = DateFormatter()
             dateFomatter.dateFormat =  "yyyyMMdd"
             dailyDate = dateFomatter.string(for: yesterday)!
-
-            dailyOfficeTableView.reloadData()
         }
     }
     
     func dailyOfficeAPIManager() {
-        let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.OfficeAPI)&targetDt=\(dailyDate)"
+        let loadTasks = localRealm.objects(RealmModel.self).filter("showRange == '\(dailyDate)'")
         
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                for dailyDatum in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
-                    let rank = dailyDatum["rank"].stringValue
-                    let movieNm = dailyDatum["movieNm"].stringValue
-                    let openDt = dailyDatum["openDt"].stringValue
-                    let data = DailyModel(rank: rank, movieNm: movieNm, openDt: openDt)
-//                    let task = RealmModel(rank: rank, movieNm: movieNm, openDt: openDt)
-                    try! self.localRealm.write {
-//                        self.localRealm.add(task)
-                        let data = DailyModel(rank: rank, movieNm: movieNm, openDt: openDt)
-                        let json = try! JSONSerialization.jsonObject(with: data, options: [])
-                          localRealm.create(RealmModel.self, value: json, update: true)
+        if loadTasks.isEmpty {
+            let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.OfficeAPI)&targetDt=\(dailyDate)"
+            
+            AF.request(url, method: .get).validate().responseJSON { response in
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
+                    for dailyDatum in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
+                        let rank = dailyDatum["rank"].intValue
+                        let movieNm = dailyDatum["movieNm"].stringValue
+                        let openDt = dailyDatum["openDt"].stringValue
+                        //let data = DailyModel(rank: rank, movieNm: movieNm, openDt: openDt)
+                        let showRange = json["boxOfficeResult"]["showRange"].stringValue
+                        let subStringShowRange = showRange.subString(from: 0, to: 7)
+                        let task = RealmModel(rank: rank, movieNm: movieNm, openDt: openDt, showRange: subStringShowRange)
+                        try! self.localRealm.write {
+                            self.localRealm.add(task)
+                        }
                     }
-//                    self.dailyData.append(data)
+                    self.dailyOfficeTableView.reloadData()
+                case .failure(let error):
+                    print(error)
                 }
-//                let showRange = json["boxOfficeResult"]["showRange"].stringValue
-//                self.dailyDateKey.append(showRange)
-                self.dailyOfficeTableView.reloadData()
-            case .failure(let error):
-                print(error)
             }
         }
     }
@@ -91,9 +85,8 @@ class DailyOfficeVC: UIViewController {
         view.endEditing(true)
         dailyDate = dailyTextField.text ?? "00000000"
         dailyTextField.text = ""
-        print(dailyDate)
-        dailyData.removeAll()
         dailyOfficeAPIManager()
+        self.dailyOfficeTableView.reloadData()
     }
     
     func headerSet() {
@@ -113,22 +106,25 @@ class DailyOfficeVC: UIViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        dailyData.count
+        tasks.filter("showRange == '\(dailyDate)'").count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let nibName = UINib(nibName: DailyOfficeTableViewCell.identifier, bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: DailyOfficeTableViewCell.identifier)
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyOfficeTableViewCell.identifier) as? DailyOfficeTableViewCell else {return UITableViewCell()}
-        let row = dailyData[indexPath.row]
-        cell.rankLabel.text = row.rank
-        cell.movieName.text = row.movieNm
-        cell.movieRelease.text = row.openDt
+        
+        let rankTasks = tasks.filter("showRange == '\(dailyDate)'").sorted(byKeyPath: "rank", ascending: true)
+
+        let row = rankTasks[indexPath.row]
+            cell.rankLabel.text = "\(row.rank)"
+            cell.movieName.text = row.movieNm
+            cell.movieRelease.text = row.openDt
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        40
+        return UIScreen.main.bounds.height / 22
     }
 }
