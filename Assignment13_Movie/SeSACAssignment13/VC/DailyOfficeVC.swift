@@ -87,22 +87,23 @@ class DailyOfficeVC: UIViewController {
         let dateTest = predicate.evaluate(with: dailyTextField.text)
         
         if dateTest {
-            dailyDate = dailyTextField.text ?? "00000000"
+            dailyDate = dailyTextField.text!
 
             let today = DateFormatter.customFormatter.string(from: Date())
             if Int(dailyDate)! >= Int(today)! {
                 alert(title: "죄송하지만", message: "미래 예측은 불가능해요", actionTitle: "확인")
+            } else if Int(dailyDate)! < Int(20120301) {
+                alert(title: "여기도 죄송하지만", message: "과거 Data가 없어요", actionTitle: "확인")
             } else {
+                dailyDate = dailyTextField.text ?? "00000000"
                 dailyTextField.text = ""
                 dailyOfficeAPIManager()
-                self.dailyOfficeTableView.reloadData()
             }
-            
         } else {
             alert(title: "유효성 오류", message: "YYYYMMDD형식으로 입력해주세요", actionTitle: "확인")
         }
-
         
+        self.dailyOfficeTableView.reloadData()
     }
     
     func headerSet() {
