@@ -10,9 +10,11 @@ import RealmSwift
 
 class ShoppingTableViewController: UITableViewController {
     
+    @IBOutlet weak var goBackupButton: UIButton!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var txtField: UITextField!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var listFilterButton: UIButton!
     
     let realm = try! Realm()
     var tasks: Results<RealmModel>!
@@ -31,12 +33,20 @@ class ShoppingTableViewController: UITableViewController {
         btnSave.setTitle("추가", for: .normal)
         btnSave.setTitleColor(.white, for: .normal)
         btnSave.backgroundColor = #colorLiteral(red: 0.3123301864, green: 0.462901473, blue: 0.6003618836, alpha: 1)
-        
 //        loadData()
+        filterAlert()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tasks = realm.objects(RealmModel.self).sorted(byKeyPath: "selectStar", ascending: false)
+        print(tasks)
+    }
+    
+    @IBAction func goBackup(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: BackupViewController.identifier) as! BackupViewController
+        let navi = UINavigationController(rootViewController: vc)
+        navi.modalPresentationStyle = .fullScreen
+        self.present(navi, animated: true, completion: nil)
     }
     
 //    func saveData() {
@@ -110,7 +120,6 @@ class ShoppingTableViewController: UITableViewController {
         return cell
     }
     
-    // 이전 코드 누가 이렇게 짜래 ㅋㅋㅋㅋㅋ 웃기다 나 ㅋㅋㅋ쿠ㅜ 코드 네이밍의 중요성 깨닫..
     @objc func markClicked(_ sender: UIButton) {
         let tasksToUpdate = tasks[sender.tag]
         try! realm.write {
@@ -137,7 +146,6 @@ class ShoppingTableViewController: UITableViewController {
         }
         if tasksToUpdate.selectStar == true {
             let sortedTask = tasks.sorted(byKeyPath: "selectStar", ascending: false)
-            // 왜 안되지 하면서 3시간은 본 듯... 댕청..ㅠ
             tasks = sortedTask
         }
         self.tableView.reloadData()

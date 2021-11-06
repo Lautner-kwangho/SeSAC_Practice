@@ -37,6 +37,7 @@ class DailyOfficeVC: UIViewController {
         super.viewWillAppear(animated)
         tasks = localRealm.objects(RealmModel.self)
         // 음 나중에 앱 구현할 때는 사람 생각해서 자동 어제 날짜 불러오는 건 삭제해야 되려나..
+        // git이랑 시뮬레이터 오류나서 시간 좀 날렷...
         dailyOfficeAPIManager()
     }
     
