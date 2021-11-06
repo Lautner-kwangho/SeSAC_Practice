@@ -18,7 +18,7 @@ class DailyOfficeVC: UIViewController {
     let localRealm = try! Realm()
     var tasks: Results<RealmModel>!
     
-    var dailyDate: String = "00000000"
+    var dailyDate: String = "[0-9]"
     
     @IBOutlet weak var dailyOfficeTableView: UITableView!
     @IBOutlet weak var dailyTextField: UITextField!
@@ -35,9 +35,7 @@ class DailyOfficeVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tasks = localRealm.objects(RealmModel.self)
-        // 음 나중에 앱 구현할 때는 사람 생각해서 자동 어제 날짜 불러오는 건 삭제해야 되려나..
-        // git이랑 시뮬레이터 오류나서 시간 좀 날렷...
+        tasks = localRealm.objects(RealmModel.self).filter("showRange == '\(dailyDate)'")
         dailyOfficeAPIManager()
     }
     
@@ -51,7 +49,7 @@ class DailyOfficeVC: UIViewController {
     
     func dailyOfficeAPIManager() {
         let loadTasks = localRealm.objects(RealmModel.self).filter("showRange == '\(dailyDate)'")
-        
+        tasks = loadTasks
         if loadTasks.isEmpty {
             let url = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=\(APIKEY.OfficeAPI)&targetDt=\(dailyDate)"
             
@@ -71,7 +69,6 @@ class DailyOfficeVC: UIViewController {
                             self.localRealm.add(task)
                         }
                     }
-                    self.dailyOfficeTableView.reloadData()
                 case .failure(let error):
                     print(error)
                 }
@@ -82,12 +79,30 @@ class DailyOfficeVC: UIViewController {
     @IBAction func endEditing(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-    @IBAction func DailySearchButton(_ sender: UIButton) {
+    @IBAction func dailySearchButton(_ sender: UIButton) {
         view.endEditing(true)
-        dailyDate = dailyTextField.text ?? "00000000"
-        dailyTextField.text = ""
-        dailyOfficeAPIManager()
-        self.dailyOfficeTableView.reloadData()
+        
+        let range = "^(20[1-2][0-9])(0[1-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", range)
+        let dateTest = predicate.evaluate(with: dailyTextField.text)
+        
+        if dateTest {
+            dailyDate = dailyTextField.text ?? "00000000"
+
+            let today = DateFormatter.customFormatter.string(from: Date())
+            if Int(dailyDate)! >= Int(today)! {
+                alert(title: "죄송하지만", message: "미래 예측은 불가능해요", actionTitle: "확인")
+            } else {
+                dailyTextField.text = ""
+                dailyOfficeAPIManager()
+                self.dailyOfficeTableView.reloadData()
+            }
+            
+        } else {
+            alert(title: "유효성 오류", message: "YYYYMMDD형식으로 입력해주세요", actionTitle: "확인")
+        }
+
+        
     }
     
     func headerSet() {
@@ -107,7 +122,7 @@ class DailyOfficeVC: UIViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        tasks.filter("showRange == '\(dailyDate)'").count
+        return tasks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,8 +130,7 @@ class DailyOfficeVC: UIViewController {
         tableView.register(nibName, forCellReuseIdentifier: DailyOfficeTableViewCell.identifier)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DailyOfficeTableViewCell.identifier) as? DailyOfficeTableViewCell else {return UITableViewCell()}
         
-        let rankTasks = tasks.filter("showRange == '\(dailyDate)'").sorted(byKeyPath: "rank", ascending: true)
-
+        let rankTasks = tasks.sorted(byKeyPath: "rank", ascending: true)
         let row = rankTasks[indexPath.row]
             cell.rankLabel.text = "\(row.rank)"
             cell.movieName.text = row.movieNm

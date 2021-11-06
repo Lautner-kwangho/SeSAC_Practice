@@ -475,7 +475,7 @@
                                                 <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <action selector="DailySearchButton:" destination="bxV-VN-OeZ" eventType="touchUpInside" id="NWx-ds-vyi"/>
+                                                <action selector="dailySearchButton:" destination="bxV-VN-OeZ" eventType="touchUpInside" id="ZIX-sG-pIg"/>
                                             </connections>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ZB-f4-Fna" customClass="HoshiTextField" customModule="TextFieldEffects">

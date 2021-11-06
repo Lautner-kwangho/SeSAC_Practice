@@ -33,6 +33,8 @@
 		E4818EB1271DAE7C00FA9CC5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E4818EB0271DAE7C00FA9CC5 /* Kingfisher */; };
 		E486557827200D400052DBDB /* TheaterLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557727200D400052DBDB /* TheaterLocation.swift */; };
 		E486557A27200DE30052DBDB /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E486557927200DE30052DBDB /* MapAnnotations.swift */; };
+		E4879F002736E8B8009AFA74 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4879EFF2736E8B8009AFA74 /* Date+extension.swift */; };
+		E4879F022736EC14009AFA74 /* Alert+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4879F012736EC14009AFA74 /* Alert+extension.swift */; };
 		E499AE2127317661001D6EC1 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE2027317661001D6EC1 /* Realm */; };
 		E499AE2327317661001D6EC1 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E499AE2227317661001D6EC1 /* RealmSwift */; };
 		E499AE2527317756001D6EC1 /* DailyOffice+RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E499AE2427317756001D6EC1 /* DailyOffice+RealmModel.swift */; };
@@ -83,6 +85,8 @@
 		E47B1C1F271A9A4100C1EF8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E486557727200D400052DBDB /* TheaterLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterLocation.swift; sourceTree = "<group>"; };
 		E486557927200DE30052DBDB /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
+		E4879EFF2736E8B8009AFA74 /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		E4879F012736EC14009AFA74 /* Alert+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+extension.swift"; sourceTree = "<group>"; };
 		E499AE2427317756001D6EC1 /* DailyOffice+RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DailyOffice+RealmModel.swift"; sourceTree = "<group>"; };
 		E4B2C4642732F0AE008D0070 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
 		E4B3B2BE272008BB0031143B /* MapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 				E40D05D9272DD25800229859 /* ActorVC+extension.swift */,
 				E40D05E3272E7BA200229859 /* Linked+extension.swift */,
 				E4B2C4642732F0AE008D0070 /* String+extension.swift */,
+				E4879F012736EC14009AFA74 /* Alert+extension.swift */,
+				E4879EFF2736E8B8009AFA74 /* Date+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -320,8 +326,10 @@
 				E4D47B192727EEA400914063 /* APIKEY.swift in Sources */,
 				E47B1C16271A9A3F00C1EF8E /* ViewController.swift in Sources */,
 				E43AF78427296E3800A4613C /* DailyOfficeVC.swift in Sources */,
+				E4879F002736E8B8009AFA74 /* Date+extension.swift in Sources */,
 				E47B1C12271A9A3F00C1EF8E /* AppDelegate.swift in Sources */,
 				E4382E3E272ABD2B009ACDD6 /* MainModel.swift in Sources */,
+				E4879F022736EC14009AFA74 /* Alert+extension.swift in Sources */,
 				E4382E3C272ABC16009ACDD6 /* MainAPIManager.swift in Sources */,
 				E4F75C35271A9AC0005A10D9 /* TvShowInfomation.swift in Sources */,
 				E486557827200D400052DBDB /* TheaterLocation.swift in Sources */,
