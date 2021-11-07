@@ -95,8 +95,8 @@ class AddVC: UIViewController, ProtocolData {
     func outletSetting() {
         addImage.backgroundColor = .clear
         addImage.image = UIImage(systemName: "shareplay")
-        let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(openPicture))
-        addImage.addGestureRecognizer(longGesture)
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(openPicture))
+        addImage.addGestureRecognizer(tapGesture)
         addImage.isUserInteractionEnabled = true
         
         addTitle.backgroundColor = .systemGray3

@@ -15,7 +15,7 @@
 "LIh-Uu-uRA.normalTitle" = "Button";
 
 /* Class = "UIButton"; configuration.title = "다이어리 바로가기 (추후 로그인 버튼이 될 수도?)"; ObjectID = "NGY-cU-mVW"; */
-"NGY-cU-mVW.configuration.title" = "다이어리 바로가기 (추후 로그인 버튼이 될 수도?)";
+"NGY-cU-mVW.configuration.title" = "다이어리 바로가기";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "NGY-cU-mVW"; */
 "NGY-cU-mVW.normalTitle" = "Button";

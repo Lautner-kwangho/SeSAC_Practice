@@ -20,17 +20,33 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="448"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ak-Zr-koh">
+                                <rect key="frame" x="50" y="542" width="314" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="8Kf-S1-6B0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GP3-Nj-zOP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="GP3-Nj-zOP" firstAttribute="trailing" secondItem="3ak-Zr-koh" secondAttribute="trailing" constant="50" id="ACI-0P-nRX"/>
                             <constraint firstItem="GP3-Nj-zOP" firstAttribute="trailing" secondItem="L7r-LE-tNl" secondAttribute="trailing" id="Csj-eZ-yNN"/>
                             <constraint firstItem="L7r-LE-tNl" firstAttribute="height" secondItem="09G-xd-9Tk" secondAttribute="height" multiplier="0.5" id="DUy-nZ-nFS"/>
+                            <constraint firstItem="3ak-Zr-koh" firstAttribute="leading" secondItem="GP3-Nj-zOP" secondAttribute="leading" constant="50" id="HCV-jA-zld"/>
+                            <constraint firstItem="3ak-Zr-koh" firstAttribute="top" secondItem="L7r-LE-tNl" secondAttribute="bottom" constant="50" id="Z6l-Kq-ZWI"/>
                             <constraint firstItem="L7r-LE-tNl" firstAttribute="top" secondItem="GP3-Nj-zOP" secondAttribute="top" id="icl-xX-KEN"/>
                             <constraint firstItem="L7r-LE-tNl" firstAttribute="leading" secondItem="GP3-Nj-zOP" secondAttribute="leading" id="pMI-Cb-cXC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hiH-Xt-tjb"/>
+                    <connections>
+                        <outlet property="calendarContents" destination="3ak-Zr-koh" id="BTL-Kf-EEr"/>
+                        <outlet property="calendarView" destination="L7r-LE-tNl" id="kcP-g2-SBO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1E-xC-6zR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

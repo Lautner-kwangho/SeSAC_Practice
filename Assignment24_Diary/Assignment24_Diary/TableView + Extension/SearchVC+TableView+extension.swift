@@ -32,6 +32,12 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: EditVC.identifier) as? EditVC else {return}
+        vc.modalTransitionStyle = .coverVertical
+        vc.editTasks = tasks[indexPath.row]
+        present(vc, animated: true)
+    }
     // 이미지 로드
     func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
         let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)

@@ -43,6 +43,10 @@
 		E4A7EB7F2737D98B00AFE419 /* Alert+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB7E2737D98B00AFE419 /* Alert+extension.swift */; };
 		E4A7EB812737DF2E00AFE419 /* AddVC+textView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */; };
 		E4A7EB832737F97D00AFE419 /* Setting+DocumentPicker+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB822737F97D00AFE419 /* Setting+DocumentPicker+extension.swift */; };
+		E4A7EB86273818B400AFE419 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4A7EB85273818B400AFE419 /* IQKeyboardManagerSwift */; };
+		E4A7EB8827381AED00AFE419 /* CalendarVC+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB8727381AED00AFE419 /* CalendarVC+extension.swift */; };
+		E4A7EB8A27381C7400AFE419 /* RealmQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB8927381C7400AFE419 /* RealmQuery.swift */; };
+		E4A7EB8C27382A3100AFE419 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB8B27382A3000AFE419 /* EditVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +89,9 @@
 		E4A7EB7E2737D98B00AFE419 /* Alert+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+extension.swift"; sourceTree = "<group>"; };
 		E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC+textView+extension.swift"; sourceTree = "<group>"; };
 		E4A7EB822737F97D00AFE419 /* Setting+DocumentPicker+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting+DocumentPicker+extension.swift"; sourceTree = "<group>"; };
+		E4A7EB8727381AED00AFE419 /* CalendarVC+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CalendarVC+extension.swift"; sourceTree = "<group>"; };
+		E4A7EB8927381C7400AFE419 /* RealmQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmQuery.swift; sourceTree = "<group>"; };
+		E4A7EB8B27382A3000AFE419 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A7EB86273818B400AFE419 /* IQKeyboardManagerSwift in Frameworks */,
 				E4879F0D273789EE009AFA74 /* RealmSwift in Frameworks */,
 				E4879F0B273789EE009AFA74 /* Realm in Frameworks */,
 				E4879F08273789C2009AFA74 /* Zip in Frameworks */,
@@ -156,6 +164,7 @@
 				E4879F132737AF66009AFA74 /* DateFomatter+extension.swift */,
 				E41AC8A727302A86008705BD /* AddVC+ImagePicker+Extension.swift */,
 				E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */,
+				E4A7EB8727381AED00AFE419 /* CalendarVC+extension.swift */,
 				E4A7EB822737F97D00AFE419 /* Setting+DocumentPicker+extension.swift */,
 			);
 			path = Extension;
@@ -168,6 +177,7 @@
 				E464BDB1272FF9A600194238 /* HomeVC.swift */,
 				E464BDB9273000FF00194238 /* AddVC.swift */,
 				E4879F1127379E7C009AFA74 /* DatePickerVC.swift */,
+				E4A7EB8B27382A3000AFE419 /* EditVC.swift */,
 				E464BDB3272FF9C500194238 /* SearchVC.swift */,
 				E464BDB5272FFA3200194238 /* CalendarVC.swift */,
 				E464BDB7272FFA5000194238 /* SettingVC.swift */,
@@ -205,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				E4879F0F27378FCB009AFA74 /* DiaryRealm.swift */,
+				E4A7EB8927381C7400AFE419 /* RealmQuery.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -243,6 +254,7 @@
 				E4879F07273789C2009AFA74 /* Zip */,
 				E4879F0A273789EE009AFA74 /* Realm */,
 				E4879F0C273789EE009AFA74 /* RealmSwift */,
+				E4A7EB85273818B400AFE419 /* IQKeyboardManagerSwift */,
 			);
 			productName = Assignment24_Diary;
 			productReference = E464BD93272FF04D00194238 /* Assignment24_Diary.app */;
@@ -277,6 +289,7 @@
 				E4879F03273789B8009AFA74 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 				E4879F06273789C2009AFA74 /* XCRemoteSwiftPackageReference "Zip" */,
 				E4879F09273789EE009AFA74 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				E4A7EB84273818B400AFE419 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = E464BD94272FF04D00194238 /* Products */;
 			projectDirPath = "";
@@ -328,10 +341,13 @@
 				E4A7EB812737DF2E00AFE419 /* AddVC+textView+extension.swift in Sources */,
 				E464BD9B272FF04D00194238 /* MainVC.swift in Sources */,
 				E464BDC1273001E100194238 /* SearchVC+TableView+extension.swift in Sources */,
+				E4A7EB8A27381C7400AFE419 /* RealmQuery.swift in Sources */,
 				E464BD97272FF04D00194238 /* AppDelegate.swift in Sources */,
+				E4A7EB8C27382A3100AFE419 /* EditVC.swift in Sources */,
 				E464BDB6272FFA3200194238 /* CalendarVC.swift in Sources */,
 				E464BDAF272FF17200194238 /* UIFont+Extension.swift in Sources */,
 				E464BD99272FF04D00194238 /* SceneDelegate.swift in Sources */,
+				E4A7EB8827381AED00AFE419 /* CalendarVC+extension.swift in Sources */,
 				E4A7EB7F2737D98B00AFE419 /* Alert+extension.swift in Sources */,
 				E464BDBD2730016D00194238 /* SearchTableViewCell.swift in Sources */,
 			);
@@ -505,6 +521,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J3L38PYNZQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment24_Diary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "내다이어리";
@@ -535,6 +552,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J3L38PYNZQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment24_Diary/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "내다이어리";
@@ -606,6 +624,14 @@
 				minimumVersion = 10.18.0;
 			};
 		};
+		E4A7EB84273818B400AFE419 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -628,6 +654,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E4879F09273789EE009AFA74 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		E4A7EB85273818B400AFE419 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4A7EB84273818B400AFE419 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
