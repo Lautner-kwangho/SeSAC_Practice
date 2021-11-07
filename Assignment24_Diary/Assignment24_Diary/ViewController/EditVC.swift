@@ -14,6 +14,7 @@ class EditVC: UIViewController {
     let localRealm = try! Realm()
     var tasks: Results<DiaryRealm>!
     var editTasks: DiaryRealm?
+    var tableView: UITableView?
     
     @IBOutlet weak var editView: UIView!
     @IBOutlet weak var editTitle: UITextView!
@@ -35,6 +36,8 @@ class EditVC: UIViewController {
             editTasks?.diaryTitle = editTitle.text
             editTasks?.diaryContent = editContent.text
         }
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true) {
+            self.tableView?.reloadData()
+        }
     }
 }

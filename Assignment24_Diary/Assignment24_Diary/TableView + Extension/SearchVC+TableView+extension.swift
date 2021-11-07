@@ -36,6 +36,7 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: EditVC.identifier) as? EditVC else {return}
         vc.modalTransitionStyle = .coverVertical
         vc.editTasks = tasks[indexPath.row]
+        vc.tableView = tableView
         present(vc, animated: true)
     }
     // 이미지 로드
