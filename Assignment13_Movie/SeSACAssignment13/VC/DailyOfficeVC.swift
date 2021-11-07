@@ -68,12 +68,15 @@ class DailyOfficeVC: UIViewController {
                         try! self.localRealm.write {
                             self.localRealm.add(task)
                         }
+                        // 한번만 reload하려고 하니 Device에서 잘 안먹혀서 두번 쓰게 됩니다 ㅜ 
+                        self.dailyOfficeTableView.reloadData()
                     }
                 case .failure(let error):
                     print(error)
                 }
             }
         }
+        self.dailyOfficeTableView.reloadData()
     }
     
     @IBAction func endEditing(_ sender: UITapGestureRecognizer) {
@@ -103,7 +106,6 @@ class DailyOfficeVC: UIViewController {
             alert(title: "유효성 오류", message: "YYYYMMDD형식으로 입력해주세요", actionTitle: "확인")
         }
         
-        self.dailyOfficeTableView.reloadData()
     }
     
     func headerSet() {
