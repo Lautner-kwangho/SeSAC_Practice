@@ -9,7 +9,7 @@ import UIKit
 
 extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -22,13 +22,25 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = SearchTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return UITableViewCell() }
         
+        let row = tasks[indexPath.row]
+        
         cell.searchImage.backgroundColor = .blue
-        cell.searchTitle.text = LocalizationString.SearchAC_TableView_Extension_Title.localized
-        cell.SearchDate.text = "\(Date())"
-        cell.searchContent.text = LocalizationString.SearchAC_TableView_Extension_Content.localized
-        
-        
+        cell.searchTitle.text = row.diaryTitle
+        cell.SearchDate.text = "\(row.diaryDate)"
+        cell.searchContent.text = row.diaryContent
+    
         return cell
+    }
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let row = tasks[indexPath.row]
+        try! localRealm.write {
+            localRealm.delete(row)
+            tableView.reloadData()
+        }
     }
     
         

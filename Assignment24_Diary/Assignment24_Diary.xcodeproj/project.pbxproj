@@ -28,6 +28,13 @@
 		E464BDD02730161300194238 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E464BDD22730161300194238 /* InfoPlist.strings */; };
 		E464BDD72730181200194238 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464BDD62730181200194238 /* String+Extension.swift */; };
 		E464BDD9273018C400194238 /* LocalizationString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E464BDD8273018C400194238 /* LocalizationString.swift */; };
+		E4879F05273789B8009AFA74 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = E4879F04273789B8009AFA74 /* FSCalendar */; };
+		E4879F08273789C2009AFA74 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = E4879F07273789C2009AFA74 /* Zip */; };
+		E4879F0B273789EE009AFA74 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = E4879F0A273789EE009AFA74 /* Realm */; };
+		E4879F0D273789EE009AFA74 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4879F0C273789EE009AFA74 /* RealmSwift */; };
+		E4879F1027378FCB009AFA74 /* DiaryRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4879F0F27378FCB009AFA74 /* DiaryRealm.swift */; };
+		E4879F1227379E7C009AFA74 /* DatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4879F1127379E7C009AFA74 /* DatePickerVC.swift */; };
+		E4879F142737AF66009AFA74 /* DateFomatter+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4879F132737AF66009AFA74 /* DateFomatter+extension.swift */; };
 		E499AE0E27314073001D6EC1 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE0D27314073001D6EC1 /* Home.storyboard */; };
 		E499AE10273140C8001D6EC1 /* Add.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE0F273140C8001D6EC1 /* Add.storyboard */; };
 		E499AE12273140D3001D6EC1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE11273140D3001D6EC1 /* Search.storyboard */; };
@@ -64,6 +71,9 @@
 		E464BDD5273016FB00194238 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		E464BDD62730181200194238 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		E464BDD8273018C400194238 /* LocalizationString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationString.swift; sourceTree = "<group>"; };
+		E4879F0F27378FCB009AFA74 /* DiaryRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryRealm.swift; sourceTree = "<group>"; };
+		E4879F1127379E7C009AFA74 /* DatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerVC.swift; sourceTree = "<group>"; };
+		E4879F132737AF66009AFA74 /* DateFomatter+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "DateFomatter+extension.swift"; path = "../../../../../Library/Containers/C6C26D70-6BA3-4874-B94E-36B20EF7B830/Data/Documents/DateFomatter+extension.swift"; sourceTree = "<group>"; };
 		E499AE0D27314073001D6EC1 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		E499AE0F273140C8001D6EC1 /* Add.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Add.storyboard; sourceTree = "<group>"; };
 		E499AE11273140D3001D6EC1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -76,6 +86,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4879F0D273789EE009AFA74 /* RealmSwift in Frameworks */,
+				E4879F0B273789EE009AFA74 /* Realm in Frameworks */,
+				E4879F08273789C2009AFA74 /* Zip in Frameworks */,
+				E4879F05273789B8009AFA74 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				E464BDC7273014CB00194238 /* Localization */,
+				E4879F0E27378F87009AFA74 /* Realm */,
 				E499AE1727314209001D6EC1 /* Storyboard */,
 				E464BDB0272FF97C00194238 /* ViewController */,
 				E464BDBF2730017C00194238 /* Cell */,
@@ -131,6 +146,7 @@
 			children = (
 				E464BDAE272FF17200194238 /* UIFont+Extension.swift */,
 				E464BDD62730181200194238 /* String+Extension.swift */,
+				E4879F132737AF66009AFA74 /* DateFomatter+extension.swift */,
 				E41AC8A727302A86008705BD /* AddVC+ImagePicker+Extension.swift */,
 			);
 			path = Extension;
@@ -142,6 +158,7 @@
 				E464BD9A272FF04D00194238 /* MainVC.swift */,
 				E464BDB1272FF9A600194238 /* HomeVC.swift */,
 				E464BDB9273000FF00194238 /* AddVC.swift */,
+				E4879F1127379E7C009AFA74 /* DatePickerVC.swift */,
 				E464BDB3272FF9C500194238 /* SearchVC.swift */,
 				E464BDB5272FFA3200194238 /* CalendarVC.swift */,
 				E464BDB7272FFA5000194238 /* SettingVC.swift */,
@@ -175,6 +192,14 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		E4879F0E27378F87009AFA74 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				E4879F0F27378FCB009AFA74 /* DiaryRealm.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		E499AE1727314209001D6EC1 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +229,12 @@
 			dependencies = (
 			);
 			name = Assignment24_Diary;
+			packageProductDependencies = (
+				E4879F04273789B8009AFA74 /* FSCalendar */,
+				E4879F07273789C2009AFA74 /* Zip */,
+				E4879F0A273789EE009AFA74 /* Realm */,
+				E4879F0C273789EE009AFA74 /* RealmSwift */,
+			);
 			productName = Assignment24_Diary;
 			productReference = E464BD93272FF04D00194238 /* Assignment24_Diary.app */;
 			productType = "com.apple.product-type.application";
@@ -233,6 +264,11 @@
 				ko,
 			);
 			mainGroup = E464BD8A272FF04D00194238;
+			packageReferences = (
+				E4879F03273789B8009AFA74 /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				E4879F06273789C2009AFA74 /* XCRemoteSwiftPackageReference "Zip" */,
+				E4879F09273789EE009AFA74 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = E464BD94272FF04D00194238 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,11 +305,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4879F142737AF66009AFA74 /* DateFomatter+extension.swift in Sources */,
 				E41AC8A827302A86008705BD /* AddVC+ImagePicker+Extension.swift in Sources */,
 				E464BDBA273000FF00194238 /* AddVC.swift in Sources */,
+				E4879F1227379E7C009AFA74 /* DatePickerVC.swift in Sources */,
 				E464BDD9273018C400194238 /* LocalizationString.swift in Sources */,
 				E464BDB4272FF9C500194238 /* SearchVC.swift in Sources */,
 				E464BDB8272FFA5000194238 /* SettingVC.swift in Sources */,
+				E4879F1027378FCB009AFA74 /* DiaryRealm.swift in Sources */,
 				E464BDB2272FF9A600194238 /* HomeVC.swift in Sources */,
 				E464BDD72730181200194238 /* String+Extension.swift in Sources */,
 				E464BD9B272FF04D00194238 /* MainVC.swift in Sources */,
@@ -525,6 +564,56 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E4879F03273789B8009AFA74 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		E4879F06273789C2009AFA74 /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		E4879F09273789EE009AFA74 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E4879F04273789B8009AFA74 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4879F03273789B8009AFA74 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+		E4879F07273789C2009AFA74 /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4879F06273789C2009AFA74 /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
+		};
+		E4879F0A273789EE009AFA74 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4879F09273789EE009AFA74 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		E4879F0C273789EE009AFA74 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4879F09273789EE009AFA74 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E464BD8B272FF04D00194238 /* Project object */;
 }

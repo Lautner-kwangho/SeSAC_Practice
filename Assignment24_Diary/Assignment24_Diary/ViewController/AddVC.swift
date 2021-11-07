@@ -6,21 +6,25 @@
 //
 
 import UIKit
+import RealmSwift
 
-class AddVC: UIViewController {
+class AddVC: UIViewController, ProtocolData {
+    func protocolData(date: String) {
+        addDate.setTitle(date, for: .normal)
+    }
 
     static let identifier = "AddVC"
     
     @IBOutlet weak var addImage: UIImageView!
     @IBOutlet weak var addTitle: UITextField!
-    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var addDate: UIButton!
     @IBOutlet weak var addTextField: UITextView!
     
+    let localRealm = try! Realm()
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         imagePicker.sourceType = .photoLibrary
@@ -48,6 +52,10 @@ class AddVC: UIViewController {
     }
     
     @objc func dataSave() {
+        let task = DiaryRealm(diaryTitle: "\(addTitle.text!)", diaryContent: "\(addTextField.text!)", diaryDate: Date(), diaryRegister: Date())
+        try! localRealm.write {
+            localRealm.add(task)
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -62,15 +70,21 @@ class AddVC: UIViewController {
         addTitle.placeholder = LocalizationString.AddVC_AddTitle_Placeholder.localized
         addTitle.textAlignment = .center
         
-        addButton.backgroundColor = .systemGray3
-        let dateFomatter = DateFormatter()
-        dateFomatter.locale = Locale(identifier: "ko_KR")
-        dateFomatter.dateFormat = LocalizationString.AddVC_SaveButton_DateFormat.localized
-        addButton.setTitle("\(dateFomatter.string(from: Date()))", for: .normal)
+        addDate.backgroundColor = .systemGray3
+        addDate.addTarget(self, action: #selector(selectDatePicker), for: .touchUpInside)
+        addDate.setTitle("\(DateFormatter.customFormatter.string(from: Date()))", for: .normal)
         
         addTextField.backgroundColor = .systemGray3
         addTextField.font = UIFont().mainFont
     }
+    
+    @objc func selectDatePicker() {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: DatePickerVC.identifier) as? DatePickerVC else {return}
+        vc.modalTransitionStyle = .coverVertical
+        vc.delegate = self
+        self.present(vc, animated: true)
+    }
+    
     
     @objc func openPicture() {
         self.present(imagePicker, animated: true, completion: nil)

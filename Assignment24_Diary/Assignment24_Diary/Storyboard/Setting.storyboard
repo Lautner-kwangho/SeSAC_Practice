@@ -15,8 +15,40 @@
                     <view key="view" contentMode="scaleToFill" id="pP9-e9-orV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKG-2E-GKu">
+                                <rect key="frame" x="50" y="94" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="o2e-Mn-ZI0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="백업하기"/>
+                                <connections>
+                                    <action selector="backupButton:" destination="QDv-sc-uKh" eventType="touchUpInside" id="bq2-2U-OOy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-Le-VzN">
+                                <rect key="frame" x="50" y="194" width="314" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="y6V-71-sEp"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="백업하기"/>
+                                <connections>
+                                    <action selector="restoreButton:" destination="QDv-sc-uKh" eventType="touchUpInside" id="aCW-uK-QH7"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9Tv-fX-DQR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9Tv-fX-DQR" firstAttribute="trailing" secondItem="7rf-Le-VzN" secondAttribute="trailing" constant="50" id="3Xs-ad-8s0"/>
+                            <constraint firstItem="9Tv-fX-DQR" firstAttribute="trailing" secondItem="oKG-2E-GKu" secondAttribute="trailing" constant="50" id="Mzg-U4-2Z7"/>
+                            <constraint firstItem="oKG-2E-GKu" firstAttribute="top" secondItem="9Tv-fX-DQR" secondAttribute="top" constant="50" id="RPi-0e-AWg"/>
+                            <constraint firstItem="7rf-Le-VzN" firstAttribute="top" secondItem="oKG-2E-GKu" secondAttribute="bottom" constant="50" id="XOR-LX-l1W"/>
+                            <constraint firstItem="7rf-Le-VzN" firstAttribute="leading" secondItem="9Tv-fX-DQR" secondAttribute="leading" constant="50" id="gZL-o1-7YW"/>
+                            <constraint firstItem="oKG-2E-GKu" firstAttribute="leading" secondItem="9Tv-fX-DQR" secondAttribute="leading" constant="50" id="obb-6G-aa2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Wk-M5-cP0"/>
                 </viewController>
