@@ -58,13 +58,13 @@ class AddVC: UIViewController, ProtocolData {
     }
     
     @objc func dataSave() {
-        if addTitle.text == "" || addTextField.text == "" {
+        if addTitle.text == "" || addTextField.text == "" || addTextField.text == "내용을 입력해주세요" {
             alert(title: "입력해주세요", message: "내용을 입력해주세요", actionTitle: "확인")
         } else {
             let task = DiaryRealm(diaryTitle: "\(addTitle.text!)", diaryContent: "\(addTextField.text!)", diaryDate: addDate.currentTitle!, diaryRegister: Date())
             try! localRealm.write {
                 localRealm.add(task)
-                saveImageToDocumentDirectory(imageName: "\(task._id)", image: addImage.image!)
+                saveImageToDocumentDirectory(imageName: "\(task._id).jpg", image: addImage.image!)
             }
             self.dismiss(animated: true, completion: nil)
         }
@@ -85,7 +85,6 @@ class AddVC: UIViewController, ProtocolData {
                 alert(title: "에러", message: "사진을 삭제하지 못하였습니다", actionTitle: "확인")
             }
         }
-        
         do {
             try data.write(to: imageURL)
         } catch {

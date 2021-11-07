@@ -42,6 +42,7 @@
 		E499AE16273140EC001D6EC1 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE15273140EC001D6EC1 /* Setting.storyboard */; };
 		E4A7EB7F2737D98B00AFE419 /* Alert+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB7E2737D98B00AFE419 /* Alert+extension.swift */; };
 		E4A7EB812737DF2E00AFE419 /* AddVC+textView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */; };
+		E4A7EB832737F97D00AFE419 /* Setting+DocumentPicker+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB822737F97D00AFE419 /* Setting+DocumentPicker+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		E499AE15273140EC001D6EC1 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		E4A7EB7E2737D98B00AFE419 /* Alert+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+extension.swift"; sourceTree = "<group>"; };
 		E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC+textView+extension.swift"; sourceTree = "<group>"; };
+		E4A7EB822737F97D00AFE419 /* Setting+DocumentPicker+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting+DocumentPicker+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				E4879F132737AF66009AFA74 /* DateFomatter+extension.swift */,
 				E41AC8A727302A86008705BD /* AddVC+ImagePicker+Extension.swift */,
 				E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */,
+				E4A7EB822737F97D00AFE419 /* Setting+DocumentPicker+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				E464BDD9273018C400194238 /* LocalizationString.swift in Sources */,
 				E464BDB4272FF9C500194238 /* SearchVC.swift in Sources */,
 				E464BDB8272FFA5000194238 /* SettingVC.swift in Sources */,
+				E4A7EB832737F97D00AFE419 /* Setting+DocumentPicker+extension.swift in Sources */,
 				E4879F1027378FCB009AFA74 /* DiaryRealm.swift in Sources */,
 				E464BDB2272FF9A600194238 /* HomeVC.swift in Sources */,
 				E464BDD72730181200194238 /* String+Extension.swift in Sources */,
@@ -503,7 +507,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment24_Diary/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Diary;
+				INFOPLIST_KEY_CFBundleDisplayName = "내다이어리";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "일기장에 사진을 등록하기 위해서 사진 접근을 허용해주세요!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "일기장에 사진을 등록하기 위해서 사진 접근을 허용해주세요!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -531,7 +537,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Assignment24_Diary/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Diary;
+				INFOPLIST_KEY_CFBundleDisplayName = "내다이어리";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "일기장에 사진을 등록하기 위해서 사진 접근을 허용해주세요!";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "일기장에 사진을 등록하기 위해서 사진 접근을 허용해주세요!";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

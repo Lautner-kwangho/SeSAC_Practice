@@ -51,10 +51,24 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let row = tasks[indexPath.row]
         try! localRealm.write {
+            deleteImageFromDocumentDirectory(imageName: "\(row._id).jpg")
             localRealm.delete(row)
             tableView.reloadData()
         }
     }
     
+    // DocumentImageDelete
+    func deleteImageFromDocumentDirectory(imageName: String) {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+        let imageURL = documentDirectory.appendingPathComponent(imageName)
+        
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            do {
+                try FileManager.default.removeItem(at: imageURL)
+            } catch {
+                alert(title: "오류", message: "디바이스에서 사진을 삭제하지 못 했습니다", actionTitle: "확인")
+            }
+        }
+    }
         
 }
