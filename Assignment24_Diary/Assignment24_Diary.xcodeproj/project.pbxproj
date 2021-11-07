@@ -40,6 +40,8 @@
 		E499AE12273140D3001D6EC1 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE11273140D3001D6EC1 /* Search.storyboard */; };
 		E499AE14273140DE001D6EC1 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE13273140DE001D6EC1 /* Calendar.storyboard */; };
 		E499AE16273140EC001D6EC1 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E499AE15273140EC001D6EC1 /* Setting.storyboard */; };
+		E4A7EB7F2737D98B00AFE419 /* Alert+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB7E2737D98B00AFE419 /* Alert+extension.swift */; };
+		E4A7EB812737DF2E00AFE419 /* AddVC+textView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,8 @@
 		E499AE11273140D3001D6EC1 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		E499AE13273140DE001D6EC1 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
 		E499AE15273140EC001D6EC1 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		E4A7EB7E2737D98B00AFE419 /* Alert+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+extension.swift"; sourceTree = "<group>"; };
+		E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddVC+textView+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,9 +149,11 @@
 			isa = PBXGroup;
 			children = (
 				E464BDAE272FF17200194238 /* UIFont+Extension.swift */,
+				E4A7EB7E2737D98B00AFE419 /* Alert+extension.swift */,
 				E464BDD62730181200194238 /* String+Extension.swift */,
 				E4879F132737AF66009AFA74 /* DateFomatter+extension.swift */,
 				E41AC8A727302A86008705BD /* AddVC+ImagePicker+Extension.swift */,
+				E4A7EB802737DF2E00AFE419 /* AddVC+textView+extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -315,12 +321,14 @@
 				E4879F1027378FCB009AFA74 /* DiaryRealm.swift in Sources */,
 				E464BDB2272FF9A600194238 /* HomeVC.swift in Sources */,
 				E464BDD72730181200194238 /* String+Extension.swift in Sources */,
+				E4A7EB812737DF2E00AFE419 /* AddVC+textView+extension.swift in Sources */,
 				E464BD9B272FF04D00194238 /* MainVC.swift in Sources */,
 				E464BDC1273001E100194238 /* SearchVC+TableView+extension.swift in Sources */,
 				E464BD97272FF04D00194238 /* AppDelegate.swift in Sources */,
 				E464BDB6272FFA3200194238 /* CalendarVC.swift in Sources */,
 				E464BDAF272FF17200194238 /* UIFont+Extension.swift in Sources */,
 				E464BD99272FF04D00194238 /* SceneDelegate.swift in Sources */,
+				E4A7EB7F2737D98B00AFE419 /* Alert+extension.swift in Sources */,
 				E464BDBD2730016D00194238 /* SearchTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -24,13 +24,26 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         let row = tasks[indexPath.row]
         
-        cell.searchImage.backgroundColor = .blue
+        cell.searchImage.backgroundColor = .clear
         cell.searchTitle.text = row.diaryTitle
         cell.SearchDate.text = "\(row.diaryDate)"
         cell.searchContent.text = row.diaryContent
+        cell.searchImage.image = loadImageFromDocumentDirectory(imageName: "\(row._id).jpg")
     
         return cell
     }
+    // 이미지 로드
+    func loadImageFromDocumentDirectory(imageName: String) -> UIImage? {
+        let path = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        
+        if let directoryPath = path.first {
+            let imageURL = URL(fileURLWithPath: directoryPath).appendingPathComponent(imageName)
+            return UIImage(contentsOfFile: imageURL.path)
+        } else {
+            return nil
+        }
+    }
+    
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         true
     }

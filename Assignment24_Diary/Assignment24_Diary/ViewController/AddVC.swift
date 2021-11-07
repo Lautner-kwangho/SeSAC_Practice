@@ -30,8 +30,14 @@ class AddVC: UIViewController, ProtocolData {
         imagePicker.sourceType = .photoLibrary
         
         navigationItemSetting()
-        
         outletSetting()
+        
+        placeholder()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addTextField.delegate = self
+        print(localRealm.configuration.fileURL!)
     }
     
     func navigationItemSetting() {
@@ -52,15 +58,43 @@ class AddVC: UIViewController, ProtocolData {
     }
     
     @objc func dataSave() {
-        let task = DiaryRealm(diaryTitle: "\(addTitle.text!)", diaryContent: "\(addTextField.text!)", diaryDate: Date(), diaryRegister: Date())
-        try! localRealm.write {
-            localRealm.add(task)
+        if addTitle.text == "" || addTextField.text == "" {
+            alert(title: "입력해주세요", message: "내용을 입력해주세요", actionTitle: "확인")
+        } else {
+            let task = DiaryRealm(diaryTitle: "\(addTitle.text!)", diaryContent: "\(addTextField.text!)", diaryDate: addDate.currentTitle!, diaryRegister: Date())
+            try! localRealm.write {
+                localRealm.add(task)
+                saveImageToDocumentDirectory(imageName: "\(task._id)", image: addImage.image!)
+            }
+            self.dismiss(animated: true, completion: nil)
         }
-        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // 이미지 저장
+    func saveImageToDocumentDirectory(imageName: String, image: UIImage) {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {return}
+        let imageURL = documentDirectory.appendingPathComponent(imageName)
+        
+        guard let data = image.jpegData(compressionQuality: 0.5) else {return}
+        
+        if FileManager.default.fileExists(atPath: imageURL.path) {
+            do {
+                try FileManager.default.removeItem(at: imageURL)
+                alert(title: "중복 제거", message: "삭제되었습니다", actionTitle: "확인")
+            } catch {
+                alert(title: "에러", message: "사진을 삭제하지 못하였습니다", actionTitle: "확인")
+            }
+        }
+        
+        do {
+            try data.write(to: imageURL)
+        } catch {
+            alert(title: "에러", message: "사진을 저장하지 못하였습니다", actionTitle: "확인")
+        }
     }
     
     func outletSetting() {
-        addImage.backgroundColor = .systemGray3
+        addImage.backgroundColor = .clear
         addImage.image = UIImage(systemName: "shareplay")
         let longGesture = UILongPressGestureRecognizer(target: self, action: #selector(openPicture))
         addImage.addGestureRecognizer(longGesture)

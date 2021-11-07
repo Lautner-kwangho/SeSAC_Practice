@@ -11,12 +11,12 @@ import RealmSwift
 class DiaryRealm: Object {
     @Persisted var diaryTitle: String
     @Persisted var diaryContent: String?
-    @Persisted var diaryDate = Date()
+    @Persisted var diaryDate: String
     @Persisted var diaryRegister = Date()
     
     @Persisted(primaryKey: true) var _id: ObjectId
     
-    convenience init(diaryTitle: String, diaryContent: String?, diaryDate: Date, diaryRegister: Date) {
+    convenience init(diaryTitle: String, diaryContent: String?, diaryDate: String, diaryRegister: Date) {
         self.init()
         self.diaryTitle = diaryTitle
         self.diaryContent = diaryContent
