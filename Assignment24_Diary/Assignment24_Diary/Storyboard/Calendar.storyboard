@@ -15,14 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="09G-xd-9Tk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L7r-LE-tNl" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="GP3-Nj-zOP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GP3-Nj-zOP" firstAttribute="trailing" secondItem="L7r-LE-tNl" secondAttribute="trailing" id="Csj-eZ-yNN"/>
+                            <constraint firstItem="L7r-LE-tNl" firstAttribute="height" secondItem="09G-xd-9Tk" secondAttribute="height" multiplier="0.5" id="DUy-nZ-nFS"/>
+                            <constraint firstItem="L7r-LE-tNl" firstAttribute="top" secondItem="GP3-Nj-zOP" secondAttribute="top" id="icl-xX-KEN"/>
+                            <constraint firstItem="L7r-LE-tNl" firstAttribute="leading" secondItem="GP3-Nj-zOP" secondAttribute="leading" id="pMI-Cb-cXC"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hiH-Xt-tjb"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1E-xC-6zR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3795.652173913044" y="429.91071428571428"/>
+            <point key="canvasLocation" x="2181" y="408"/>
         </scene>
     </scenes>
     <resources>
