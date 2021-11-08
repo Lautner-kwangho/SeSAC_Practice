@@ -22,12 +22,14 @@ extension SearchVC: UITableViewDelegate, UITableViewDataSource {
         
         guard let cell = SearchTableView.dequeueReusableCell(withIdentifier: SearchTableViewCell.identifier) as? SearchTableViewCell else { return UITableViewCell() }
         
+        cell.configureCell(row: tasks[indexPath.row])
+        
         let row = tasks[indexPath.row]
         
-        cell.searchImage.backgroundColor = .clear
-        cell.searchTitle.text = row.diaryTitle
-        cell.SearchDate.text = "\(row.diaryDate)"
-        cell.searchContent.text = row.diaryContent
+//        cell.searchImage.backgroundColor = .clear
+//        cell.searchTitle.text = row.diaryTitle
+//        cell.SearchDate.text = "\(row.diaryDate)"
+//        cell.searchContent.text = row.diaryContent
         cell.searchImage.image = loadImageFromDocumentDirectory(imageName: "\(row._id).jpg")
     
         return cell
