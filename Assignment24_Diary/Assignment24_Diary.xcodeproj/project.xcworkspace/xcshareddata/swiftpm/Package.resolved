@@ -1,0 +1,52 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "FSCalendar",
+        "repositoryURL": "https://github.com/WenchaoD/FSCalendar.git",
+        "state": {
+          "branch": null,
+          "revision": "4e79a201fad268408a4fd9e2ef429497def9594f",
+          "version": "2.8.2"
+        }
+      },
+      {
+        "package": "IQKeyboardManagerSwift",
+        "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
+        "state": {
+          "branch": null,
+          "revision": "b6bac3571ac50c9218a0bb5147ec04399ff66b44",
+          "version": "6.5.8"
+        }
+      },
+      {
+        "package": "Realm",
+        "repositoryURL": "https://github.com/realm/realm-cocoa.git",
+        "state": {
+          "branch": null,
+          "revision": "328425bfc372ce77ec1f4f2701f61ececbb97d84",
+          "version": "10.19.0"
+        }
+      },
+      {
+        "package": "RealmDatabase",
+        "repositoryURL": "https://github.com/realm/realm-core",
+        "state": {
+          "branch": null,
+          "revision": "b170db6a47789ff5f2fbc3eeed0220b4b0a3f6b7",
+          "version": "11.6.0"
+        }
+      },
+      {
+        "package": "Zip",
+        "repositoryURL": "https://github.com/marmelroy/Zip.git",
+        "state": {
+          "branch": null,
+          "revision": "bd19d974e8a38cc8d3a88c90c8a107386c3b8ccf",
+          "version": "2.1.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

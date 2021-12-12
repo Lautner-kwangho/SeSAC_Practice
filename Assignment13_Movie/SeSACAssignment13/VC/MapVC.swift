@@ -10,8 +10,6 @@ import MapKit
 import CoreLocation
 import CoreLocationUI
 import SwiftUI
-import CarPlay
-import Accelerate
 
 class MapVC: UIViewController {
     static let identifier = "MapVC"
