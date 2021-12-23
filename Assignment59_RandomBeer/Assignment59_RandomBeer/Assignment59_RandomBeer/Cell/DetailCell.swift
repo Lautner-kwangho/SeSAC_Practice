@@ -12,13 +12,18 @@ class DetailCell: UITableViewCell {
     static let identifier = "DetailCell"
     
     let title = UILabel().then {
-        $0.font = .systemFont(ofSize: 20)
+        $0.font = .boldSystemFont(ofSize: 30)
+        $0.adjustsFontSizeToFitWidth = true
+        $0.sizeToFit()
     }
     let subTitle = UILabel().then {
         $0.font = .systemFont(ofSize: 20)
+        $0.textAlignment = .center
     }
     let content = UILabel().then {
         $0.font = .systemFont(ofSize: 20)
+        $0.numberOfLines = 0
+        $0.sizeToFit()
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,13 +34,14 @@ class DetailCell: UITableViewCell {
             $0.snp.makeConstraints {
                 $0.centerX.equalToSuperview()
             }
-            $0.sizeToFit()
         }
         subTitle.snp.makeConstraints {
             $0.top.equalTo(title.snp.bottom).offset(20)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         content.snp.makeConstraints {
             $0.top.equalTo(subTitle.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().inset(20)
         }
         
     }

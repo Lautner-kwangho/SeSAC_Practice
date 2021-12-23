@@ -20,12 +20,19 @@ extension ViewController: UIScrollViewDelegate {
 //        .multipliedBy(0.5).offset(-scrollView.contentOffset.y)
         let y = -scrollView.contentOffset.y
         
-        if y > 0 {
+        var newRect = CGRect(x: 0, y: 0, width: view.frame.size.width, height: y)
+
+        if y > 50 {
             headerView.snp.makeConstraints { make in
                 make.top.equalTo(view)
-                make.width.equalTo(view).multipliedBy(y)
-                make.height.equalTo(y).multipliedBy(y)
+//                make.width.equalTo(view).multipliedBy(y)
+//                make.height.equalTo(y).multipliedBy(y)
 //                make.bottom.equalTo(detailTableView.snp.top)
+            }
+            headerView.frame = newRect
+        } else if y < 0 {
+            headerView.snp.makeConstraints { make in
+                make.height.equalTo(50).offset(-y)
             }
         }
         print(y)
