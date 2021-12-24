@@ -19,9 +19,9 @@ extension ViewController: UIScrollViewDelegate {
         
 //        .multipliedBy(0.5).offset(-scrollView.contentOffset.y)
         let y = -scrollView.contentOffset.y
+        let top = scrollView.contentInset.top
         
         var newRect = CGRect(x: 0, y: 0, width: view.frame.size.width, height: y)
-
         if y > 50 {
             headerView.snp.makeConstraints { make in
                 make.top.equalTo(view)
@@ -30,12 +30,13 @@ extension ViewController: UIScrollViewDelegate {
 //                make.bottom.equalTo(detailTableView.snp.top)
             }
             headerView.frame = newRect
-        } else if y < 0 {
+        } else if y < 50 {
             headerView.snp.makeConstraints { make in
                 make.height.equalTo(50).offset(-y)
             }
         }
         print(y)
+        print(top)
     }
 
 }

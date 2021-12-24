@@ -11,7 +11,7 @@ import SwiftUI
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if tableView == detailTableView {
-            return 200
+            return UITableView.automaticDimension
         } else {
             return 50
         }
@@ -86,7 +86,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             cell.title.text = row?.name
             cell.subTitle.text = row?.tagline
             cell.content.text = row?.beerDescription
-            
+    
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoCell.identifier, for: indexPath) as? InfoCell else {

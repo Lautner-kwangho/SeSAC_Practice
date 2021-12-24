@@ -11,39 +11,50 @@ class DetailCell: UITableViewCell {
 
     static let identifier = "DetailCell"
     
+    let autoView = UIView().then {
+        $0.backgroundColor = .brown
+    }
+    
     let title = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 30)
-        $0.adjustsFontSizeToFitWidth = true
         $0.sizeToFit()
+        $0.adjustsFontSizeToFitWidth = true
+        $0.textAlignment = .center
     }
     let subTitle = UILabel().then {
         $0.font = .systemFont(ofSize: 20)
+        $0.adjustsFontSizeToFitWidth = true
         $0.textAlignment = .center
     }
     let content = UILabel().then {
         $0.font = .systemFont(ofSize: 20)
-        $0.numberOfLines = 0
-        $0.sizeToFit()
+        $0.numberOfLines = 3
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
+        addSubview(autoView)
+        autoView.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+        }
+        
         [title, subTitle, content].forEach {
-            addSubview($0)
+            autoView.addSubview($0)
             $0.snp.makeConstraints {
                 $0.centerX.equalToSuperview()
             }
         }
+        title.snp.makeConstraints {
+            $0.leading.trailing.equalTo(self).inset(20)
+        }
         subTitle.snp.makeConstraints {
             $0.top.equalTo(title.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.leading.trailing.equalTo(self).inset(20)
         }
         content.snp.makeConstraints {
             $0.top.equalTo(subTitle.snp.bottom).offset(10)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.leading.trailing.equalTo(self).inset(20)
         }
-        
     }
     
     required init?(coder: NSCoder) {

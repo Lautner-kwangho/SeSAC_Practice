@@ -10,7 +10,7 @@ import UIKit
 // 음 유튜브는 이상한 듯 ... ㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ 따라적었는데 아까워서 냅둔다 ㅡㅡ
 
 
-class StretchyTableHeaderView: UIView {
+class Youtube: UIView {
     
     let containerView = UIView()
     
