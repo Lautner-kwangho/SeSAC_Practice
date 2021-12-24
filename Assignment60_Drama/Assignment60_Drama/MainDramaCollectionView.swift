@@ -8,10 +8,25 @@
 import UIKit
 
 class MainDramaCollectionView: BaseCollectionView {
-
+    
+    var tvData: TV?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        apiRequest()
+        configure()
+        setupConstraints()
+    }
+    
+    func apiRequest() {
+        APIManager.shared.tvPopularAPI { tv in
+            self.tvData = tv
+            
+            DispatchQueue.main.async {
+//                dump(self.tvData)
+            }
+        }
     }
 
     override func configure() {
