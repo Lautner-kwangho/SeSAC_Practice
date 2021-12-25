@@ -17,7 +17,13 @@ extension UITableViewCell: ReusableView {
     }
 }
 
-extension UICollectionViewCell: ReusableView {
+extension UICollectionView: ReusableView {
+    static var reuseIdentifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UICollectionReusableView: ReusableView {
     static var reuseIdentifier: String {
         return String(describing: self)
     }

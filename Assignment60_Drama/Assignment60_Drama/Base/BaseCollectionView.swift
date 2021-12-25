@@ -17,11 +17,11 @@ class BaseCollectionView: UIViewController {
     }
     
     func configure() {
-        // 배경 색
+        // 구성
     }
 
     func setupConstraints() {
-        // 구성
+        // 레이아웃
     }
 }
 
