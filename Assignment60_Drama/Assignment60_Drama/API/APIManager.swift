@@ -42,15 +42,13 @@ class APIManager {
     static let shared = APIManager()
     
     func tvPopularAPI(completion: @escaping(TV?) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/tv/popular?api_key=\(APIKEY.tvPopular)&language=ko&page=1")!
+        let url = URL(string: "https://api.themoviedb.org/3/tv/popular?api_key=\(APIKEY.tvKey)&language=ko&page=1")!
         //https://image.tmdb.org/t/p/w500/ 이미지 추가 하는 url
-        //https://image.tmdb.org/t/p/original/
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            
-            print(data)
-            print(error)
-            print(response)
+//            print(data)
+//            print(error)
+//            print(response)
             
             if let error = error {
                 print(error)
@@ -67,5 +65,16 @@ class APIManager {
 
         }.resume()
         
+    }
+    
+    func searchAPI(completion: @escaping(Search?) -> Void) {
+        let url = URL(string: "https://api.themoviedb.org/3/search/tv?api_key=\(APIKEY.tvKey)&language=ko_KR&page=1&query=%EB%B9%85%EB%B1%85&include_adult=false")!
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let searchData = try? JSONDecoder().decode(Search.self, from: data) {
+                completion(searchData)
+                return
+            }
+            completion(nil)
+        }.resume()
     }
 }

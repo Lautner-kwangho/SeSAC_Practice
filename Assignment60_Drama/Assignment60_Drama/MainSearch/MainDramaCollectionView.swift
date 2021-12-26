@@ -9,7 +9,20 @@ import UIKit
 
 class MainDramaCollectionView: BaseCollectionView {
     
-    let dramaSearchBar = UISearchBar()
+//    let dramaSearchBar = UISearchBar().then {
+//        $0.placeholder = "검색하기"
+//        $0.barTintColor = .white
+//        $0.searchTextField.backgroundColor = .gray
+//        $0.searchTextField.textColor = .white
+//    }
+    
+    let searchBarController = UISearchController(searchResultsController: nil).then {
+        $0.automaticallyShowsCancelButton = true
+        $0.obscuresBackgroundDuringPresentation = true
+        $0.searchBar.placeholder = "검색"
+        $0.searchBar.barTintColor = .white
+        $0.searchBar.tintColor = .white
+    }
     
     let dramaCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout()).then {
         let layer = UICollectionViewFlowLayout()
@@ -45,15 +58,28 @@ class MainDramaCollectionView: BaseCollectionView {
     override func configure() {
         view.backgroundColor = .black
         
+        // 네비
+        navigationItem.title = "검색하기"
+        navigationController?.navigationBar.tintColor = .white
+        let appearance = UINavigationBarAppearance().then {
+            $0.titleTextAttributes = [.foregroundColor: UIColor.white]
+        }
+        navigationItem.standardAppearance = appearance
         
-        navigationItem.titleView = dramaSearchBar
-        
+        // 서치
+        navigationItem.searchController = searchBarController
+        searchBarController.searchResultsUpdater = self
+        if let textfield = searchBarController.searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.textColor = .white
+            textfield.delegate = self
+        }
+        // 콜렉션
         [dramaCollectionView].forEach {
             view.addSubview($0)
         }
-
         dramaCollectionView.delegate = self
         dramaCollectionView.dataSource = self
+        
     }
 
     override func setupConstraints() {
@@ -77,7 +103,11 @@ class MainDramaCollectionView: BaseCollectionView {
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 90
+        if let number = self.tvData?.results.count {
+            return number
+        } else {
+            return 0
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -88,15 +118,13 @@ class MainDramaCollectionView: BaseCollectionView {
         cell.clipsToBounds = true
         cell.layer.cornerRadius = 5
         
-        let item = self.tvData?.results.[indexPath.item]
-        
         do {
-            if let poster = item?.posterPath {
-                let data = try Data(contentsOf: URL(string: "https://image.tmdb.org/t/p/original/" + poster)!)
+            if let poster = self.tvData?.results[indexPath.item].posterPath {
+                let data = try! Data(contentsOf: URL(string: "https://image.tmdb.org/t/p/w500" + poster)!)
                 cell.imageView.image = UIImage(data: data)
-            }~
+            }
         } catch {
-            print("ERROR")
+            cell.imageView.backgroundColor = .systemGray4
         }
         
         return cell
@@ -124,4 +152,3 @@ class MainDramaCollectionView: BaseCollectionView {
     }
 
 }
-
