@@ -67,14 +67,18 @@ class APIManager {
         
     }
     
-    func searchAPI(completion: @escaping(Search?) -> Void) {
-        let url = URL(string: "https://api.themoviedb.org/3/search/tv?api_key=\(APIKEY.tvKey)&language=ko_KR&page=1&query=%EB%B9%85%EB%B1%85&include_adult=false")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data, let searchData = try? JSONDecoder().decode(Search.self, from: data) {
-                completion(searchData)
-                return
-            }
-            completion(nil)
-        }.resume()
+    func searchAPI(searchKeyword: String, completion: @escaping(Search?) -> Void) {
+        let url = "https://api.themoviedb.org/3/search/tv?api_key=\(APIKEY.tvKey)&language=ko_KR&page=1&query=\(searchKeyword)&include_adult=false"
+        
+        if let encoded = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let myURL = URL(string: encoded) {
+            URLSession.shared.dataTask(with: myURL) { data, response, error in
+                if let data = data, let searchData = try? JSONDecoder().decode(Search.self, from: data) {
+                    completion(searchData)
+                    return
+                }
+                completion(nil)
+            }.resume()
+        }
+        
     }
 }

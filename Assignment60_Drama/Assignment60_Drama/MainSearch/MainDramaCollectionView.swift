@@ -44,6 +44,12 @@ class MainDramaCollectionView: BaseCollectionView {
         setupConstraints()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.searchBarController.searchBar.text = ""
+        self.searchBarController.isActive = false
+    }
+    
     func apiRequest() {
         APIManager.shared.tvPopularAPI { tv in
             self.tvData = tv

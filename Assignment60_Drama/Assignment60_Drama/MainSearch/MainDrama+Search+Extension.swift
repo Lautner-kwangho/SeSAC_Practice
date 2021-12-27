@@ -20,7 +20,12 @@ extension MainDramaCollectionView: UISearchResultsUpdating {
 extension MainDramaCollectionView: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if let text = textField.text {
-            text.count == 0 ? print(1) : self.navigationController?.pushViewController(DetailDramaTableView(), animated: true)
+            if text.count != 0 {
+                let pushView = DetailDramaTableView()
+                pushView.searchKeyword = text
+                print(text)
+                self.navigationController?.pushViewController(pushView, animated: true)
+            }
         }
     }
 }

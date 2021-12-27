@@ -14,7 +14,9 @@ class DetailDramaTableView: BaseTableView {
         $0.register(DetailDramaCell.self, forCellReuseIdentifier: DetailDramaCell.reuseIdentifier)
     }
     
+    var searchKeyword: String = ""
     var searchData: Search?
+    var startPage = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,7 @@ class DetailDramaTableView: BaseTableView {
     }
     
     func setSearchAPI() {
-        APIManager.shared.searchAPI { searchData in
+        APIManager.shared.searchAPI(searchKeyword: searchKeyword) { searchData in
             self.searchData = searchData
             DispatchQueue.main.async {
                 dump(self.searchData)
@@ -36,6 +38,7 @@ class DetailDramaTableView: BaseTableView {
         view.addSubview(tableView)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
     }
     
     override func setupConstraints() {
@@ -73,4 +76,12 @@ class DetailDramaTableView: BaseTableView {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
+}
+
+extension DetailDramaTableView: UITableViewDataSourcePrefetching {
+    
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+        print(1)
+    }
+    
 }
