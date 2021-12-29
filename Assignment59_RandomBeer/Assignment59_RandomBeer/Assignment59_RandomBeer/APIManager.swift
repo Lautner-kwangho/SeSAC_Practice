@@ -11,7 +11,7 @@ import Alamofire
 struct APIManager: Decodable {
     
     static let shared = APIManager()
-    
+    //static func 을 쓰면
     func beerAPI(completion: @escaping ([Beer]) -> Void) {
         let url = "https://api.punkapi.com/v2/beers/random"
         let decoder = JSONDecoder()

@@ -28,14 +28,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if tableView == detailTableView {
             let view = UIView()
-            let image = UIImageView().then {
-                do {
-                    if let beerData = self.beerData.first?.imageURL {
-                        let data = try Data(contentsOf: URL(string: beerData)!)
-                        $0.image = UIImage(data: data)
-                    }
-                } catch {
-                    print("아직 이미지 없지만")
+            let image = UIImageView().then { imageView in
+                self.viewModel.image.sendValue {
+                    imageView.image = UIImage(data: $0)
                 }
             }
             view.addSubview(image)
@@ -68,32 +63,37 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if tableView == detailTableView {
             return 1
-        } else if let number = self.beerData.first?.foodPairing {
-            return number.count
+        } else if tableView == tableView {
+            return self.viewModel.foodPairing.value.count
         } else {
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = self.beerData.first
         
         if tableView == detailTableView {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DetailCell.identifier, for: indexPath) as? DetailCell else {
                 return UITableViewCell()
             }
-            
-            cell.title.text = row?.name
-            cell.subTitle.text = row?.tagline
-            cell.content.text = row?.beerDescription
+            self.viewModel.title.sendValue {
+                cell.title.text = $0
+            }
+            self.viewModel.subtitle.sendValue {
+                cell.subTitle.text = $0
+            }
+            self.viewModel.content.sendValue {
+                cell.content.text = $0
+            }
     
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InfoCell.identifier, for: indexPath) as? InfoCell else {
                 return UITableViewCell()
             }
-            
-            cell.paringLabel.text = row?.foodPairing[indexPath.row]
+            self.viewModel.foodPairing.sendValue {
+                cell.paringLabel.text = $0[indexPath.row]
+            }
             
             return cell
         }
