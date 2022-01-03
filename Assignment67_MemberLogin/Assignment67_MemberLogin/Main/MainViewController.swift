@@ -34,7 +34,7 @@ class MainViewController: BaseView {
         $0.setTitleColor(.systemGreen, for: .normal)
     }
     
-    var viewModel = MainViewModel()
+    let viewModel = MainViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class MainViewController: BaseView {
     }
     
     @objc func startButtonClicked() {
-        self.navigationController?.pushViewController(RegisterViewController(), animated: true)
+        viewModel.startButtonClicked(self)
     }
     
     @objc func loginButtonClicked() {

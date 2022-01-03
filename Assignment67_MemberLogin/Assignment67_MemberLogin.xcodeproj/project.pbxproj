@@ -19,6 +19,15 @@
 		E44E20A5277DE09C0068D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44E20A4277DE09C0068D77E /* Assets.xcassets */; };
 		E44E20A8277DE09C0068D77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44E20A6277DE09C0068D77E /* LaunchScreen.storyboard */; };
 		E44E20B0277DE2EA0068D77E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E20AF277DE2EA0068D77E /* MainViewController.swift */; };
+		E4F5AB1B278325B2002645BF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB1A278325B2002645BF /* RegisterViewModel.swift */; };
+		E4F5AB1E27832686002645BF /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB1D27832686002645BF /* TextField+Extension.swift */; };
+		E4F5AB2127832D66002645BF /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB2027832D66002645BF /* URLSession+Extension.swift */; };
+		E4F5AB232783303B002645BF /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB222783303B002645BF /* APIManager.swift */; };
+		E4F5AB2527834BBD002645BF /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB2427834BBD002645BF /* SignUp.swift */; };
+		E4F5AB27278352F9002645BF /* Alert+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB26278352F9002645BF /* Alert+Extension.swift */; };
+		E4F5AB2A278355AE002645BF /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = E4F5AB29278355AE002645BF /* Toast */; };
+		E4F5AB2E27836110002645BF /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = E4F5AB2D27836110002645BF /* RxCocoa */; };
+		E4F5AB3027836110002645BF /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E4F5AB2F27836110002645BF /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +43,12 @@
 		E44E20A7277DE09C0068D77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E44E20A9277DE09C0068D77E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44E20AF277DE2EA0068D77E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E4F5AB1A278325B2002645BF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		E4F5AB1D27832686002645BF /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
+		E4F5AB2027832D66002645BF /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		E4F5AB222783303B002645BF /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E4F5AB2427834BBD002645BF /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		E4F5AB26278352F9002645BF /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +56,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F5AB2A278355AE002645BF /* Toast in Frameworks */,
 				E42634772782FBC400963B88 /* SnapKit in Frameworks */,
+				E4F5AB3027836110002645BF /* RxSwift in Frameworks */,
+				E4F5AB2E27836110002645BF /* RxCocoa in Frameworks */,
 				E426347A2782FBCD00963B88 /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,8 +71,10 @@
 			isa = PBXGroup;
 			children = (
 				E426346E2782FA9400963B88 /* BaseView.swift */,
-				E426347F2783066800963B88 /* Reusable+Extension.swift */,
 				E42634812783069500963B88 /* Observable.swift */,
+				E4F5AB26278352F9002645BF /* Alert+Extension.swift */,
+				E426347F2783066800963B88 /* Reusable+Extension.swift */,
+				E4F5AB1D27832686002645BF /* TextField+Extension.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -72,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				E42634852783144900963B88 /* RegisterViewController.swift */,
+				E4F5AB1A278325B2002645BF /* RegisterViewModel.swift */,
+				E4F5AB2427834BBD002645BF /* SignUp.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -97,6 +119,7 @@
 			children = (
 				E42634832783140400963B88 /* Main */,
 				E42634842783142D00963B88 /* Register */,
+				E4F5AB1F27832D46002645BF /* API */,
 				E42634742782FB6A00963B88 /* Base */,
 				E44E20A4277DE09C0068D77E /* Assets.xcassets */,
 				E44E20A6277DE09C0068D77E /* LaunchScreen.storyboard */,
@@ -105,6 +128,15 @@
 				E44E209D277DE09A0068D77E /* SceneDelegate.swift */,
 			);
 			path = Assignment67_MemberLogin;
+			sourceTree = "<group>";
+		};
+		E4F5AB1F27832D46002645BF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				E4F5AB2027832D66002645BF /* URLSession+Extension.swift */,
+				E4F5AB222783303B002645BF /* APIManager.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +158,9 @@
 			packageProductDependencies = (
 				E42634762782FBC400963B88 /* SnapKit */,
 				E42634792782FBCD00963B88 /* Then */,
+				E4F5AB29278355AE002645BF /* Toast */,
+				E4F5AB2D27836110002645BF /* RxCocoa */,
+				E4F5AB2F27836110002645BF /* RxSwift */,
 			);
 			productName = Assignment67_MemberLogin;
 			productReference = E44E2098277DE09A0068D77E /* Assignment67_MemberLogin.app */;
@@ -158,6 +193,8 @@
 			packageReferences = (
 				E42634752782FBC400963B88 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E42634782782FBCD00963B88 /* XCRemoteSwiftPackageReference "Then" */,
+				E4F5AB28278355AE002645BF /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				E4F5AB2C27836110002645BF /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = E44E2099277DE09A0068D77E /* Products */;
 			projectDirPath = "";
@@ -185,14 +222,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4F5AB232783303B002645BF /* APIManager.swift in Sources */,
 				E42634802783066800963B88 /* Reusable+Extension.swift in Sources */,
 				E426347D278305B500963B88 /* MainViewModel.swift in Sources */,
 				E44E209C277DE09A0068D77E /* AppDelegate.swift in Sources */,
+				E4F5AB27278352F9002645BF /* Alert+Extension.swift in Sources */,
 				E42634862783144900963B88 /* RegisterViewController.swift in Sources */,
 				E42634822783069500963B88 /* Observable.swift in Sources */,
 				E44E209E277DE09A0068D77E /* SceneDelegate.swift in Sources */,
 				E44E20B0277DE2EA0068D77E /* MainViewController.swift in Sources */,
+				E4F5AB1B278325B2002645BF /* RegisterViewModel.swift in Sources */,
 				E426346F2782FA9400963B88 /* BaseView.swift in Sources */,
+				E4F5AB1E27832686002645BF /* TextField+Extension.swift in Sources */,
+				E4F5AB2527834BBD002645BF /* SignUp.swift in Sources */,
+				E4F5AB2127832D66002645BF /* URLSession+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +465,22 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		E4F5AB28278355AE002645BF /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		E4F5AB2C27836110002645BF /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -434,6 +493,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E42634782782FBCD00963B88 /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		E4F5AB29278355AE002645BF /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F5AB28278355AE002645BF /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		E4F5AB2D27836110002645BF /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F5AB2C27836110002645BF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		E4F5AB2F27836110002645BF /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E4F5AB2C27836110002645BF /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

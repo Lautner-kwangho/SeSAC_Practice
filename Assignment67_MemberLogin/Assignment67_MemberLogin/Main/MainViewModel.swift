@@ -17,4 +17,12 @@ class MainViewModel {
     let already = "이미 계정이 있나요?"
     let login = "로그인"
     
+    func startButtonClicked(_ viewController: UIViewController) {
+        viewController.navigationController?.pushViewController(RegisterViewController(), animated: true)
+    }
+    
+    func loginButtonClicked() {
+        print("아직 구현 중!")
+    }
+    
 }
