@@ -42,13 +42,14 @@ struct User: Codable {
     let blocked: String?
     let role: Role
     let createdAt, updatedAt: String
-    let boards: [String]
+    let posts: [String]
+    let comments: [String]
 
     enum CodingKeys: String, CodingKey {
         case id, username, email, provider, confirmed, blocked, role
         case createdAt = "created_at"
         case updatedAt = "updated_at"
-        case boards
+        case posts, comments
     }
 }
 

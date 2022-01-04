@@ -18,6 +18,8 @@ enum point {
     case signUp
     case login
     case changePassword
+    case posts // 작성 및 조회
+    case postEdit // 수정 및 삭제
     
     var url: URL {
         switch self {
@@ -26,13 +28,17 @@ enum point {
         case .login:
             return .makeURL("auth/local")
         case .changePassword:
-            return .makeURL("/custom/change-password")
+            return .makeURL("custom/change-password")
+        case .posts:
+            return .makeURL("posts")
+        case .postEdit:
+            return .makeURL("posts/")
         }
     }
 }
 
 extension URL {
-    static let baseURL = "http://test.monocoding.com/"
+    static let baseURL = "http://test.monocoding.com:1231/"
     
     static func makeURL(_ point: String) -> URL {
         URL(string: baseURL + point)!

@@ -12,7 +12,7 @@ protocol ReusableName {
 }
 
 
-extension UITableView: ReusableName {
+extension UITableViewCell: ReusableName {
     
     static var reuseIdentifier: String {
         return String(describing: self)

@@ -45,19 +45,14 @@ class LoginViewModel {
             }
             
             let userDefaults = UserDefaults.standard
-            let token = userDefaults.string(forKey: "token")
-            
-            if token == nil {
-                userDefaults.set(userData.jwt, forKey: "token")
-            } else {
-                userDefaults.removeObject(forKey: "token")
-                userDefaults.set(userData.jwt, forKey: "token")
-            }
+            userDefaults.removeObject(forKey: "token")
+            userDefaults.set(userData.jwt, forKey: "token")
+            userDefaults.removeObject(forKey: "id")
+            userDefaults.set(self.username.valueData, forKey: "id")
+            userDefaults.removeObject(forKey: "pw")
+            userDefaults.set(self.pw.valueData, forKey: "pw")
             
             vc.view.makeToast("로그인되었습니다")
-            
-            print(token)
-            dump(userData)
             
             completion()
         }

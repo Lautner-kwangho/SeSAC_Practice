@@ -42,7 +42,18 @@ class APIManager {
                   allowLossyConversion: false)
         
         URLSession.request(point: request, completion: completion)
+    }
+    
+    static func getPost(completion: @escaping (GetPost?, APIError?) -> Void) {
+        let userToken = UserDefaults.standard.object(forKey: "token")!
+        var request = URLRequest(url: point.posts.url)
+    
+        request.httpMethod = Method.GET.rawValue
+        request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         
+        print(userToken)
+        
+        URLSession.request(point: request, completion: completion)
     }
     
 }

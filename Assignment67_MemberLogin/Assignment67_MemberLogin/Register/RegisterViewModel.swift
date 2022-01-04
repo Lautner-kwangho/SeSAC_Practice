@@ -49,14 +49,6 @@ class RegisterViewModel {
                 vc.view.makeToast("", duration: 1, position: .center, title: "\(error!.errorDescription)", image: nil, style: style, completion: nil)
                 return
             }
-            
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(userData.jwt, forKey: "token")
-            userDefaults.set(userData.user.id, forKey: "id")
-            userDefaults.set(userData.user.username, forKey: "username")
-            userDefaults.set(userData.user.email, forKey: "email")
-
-            dump(userData)
                     
             completion()
         }
