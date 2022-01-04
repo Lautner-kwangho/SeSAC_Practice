@@ -33,6 +33,7 @@ class RegisterViewController: BaseView {
     let registerButton = UIButton().then {
         // 버튼 반복도 customView로 만들어도...
         $0.backgroundColor = .systemGray4
+        $0.isEnabled = false
     }
     
     let viewModel = RegisterViewModel()
@@ -64,12 +65,16 @@ class RegisterViewController: BaseView {
     }
     
     @objc func sendData() {
-        viewModel.sendData(self.emailTextField, self.nicknameTextField, self.passwordTextField, self.confirmTextField)
+        viewModel.sendData(self.emailTextField, self.nicknameTextField, self.passwordTextField, self.confirmTextField, self.registerButton)
     }
     
     @objc func registerButtonClicked() {
         viewModel.registerMember(self) {
-            print(1)
+            DispatchQueue.main.async {
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: LoginViewController())
+                windowScene.windows.first?.makeKeyAndVisible()
+            }
         }
     }
     

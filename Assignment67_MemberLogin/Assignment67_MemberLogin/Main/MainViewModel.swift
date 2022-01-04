@@ -21,8 +21,8 @@ class MainViewModel {
         viewController.navigationController?.pushViewController(RegisterViewController(), animated: true)
     }
     
-    func loginButtonClicked() {
-        print("아직 구현 중!")
+    func loginButtonClicked(_ viewController: UIViewController) {
+        viewController.navigationController?.pushViewController(LoginViewController(), animated: true)
     }
     
 }

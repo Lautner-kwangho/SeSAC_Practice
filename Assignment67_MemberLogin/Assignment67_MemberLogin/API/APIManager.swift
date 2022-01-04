@@ -23,16 +23,26 @@ enum APIError: String, Error, LocalizedError {
 
 class APIManager {
     
-    static func login(username: String, email: String, password: String, completion: @escaping (SignUp?, APIError?)-> Void) {
+    static func register(username: String, email: String, password: String, completion: @escaping (SignUp?, APIError?) -> Void) {
         
         var request = URLRequest(url: point.signUp.url)
         
         request.httpMethod = Method.POST.rawValue
         request.httpBody = "username=\(username)&email=\(email)&password=\(password)".data(using: .utf8, allowLossyConversion: false)
         
-        print(request)
         URLSession.request(.shared, point: request, completion: completion)
     }
     
+    static func login(identifier: String, pw: String, completion: @escaping (SignUp?, APIError?) -> Void) {
+        var request = URLRequest(url: point.login.url)
+        
+        request.httpMethod = Method.POST.rawValue
+        request.httpBody = "identifier=\(identifier)&password=\(pw)"
+            .data(using: .utf8,
+                  allowLossyConversion: false)
+        
+        URLSession.request(point: request, completion: completion)
+        
+    }
     
 }

@@ -59,7 +59,7 @@ class MainViewController: BaseView {
     }
     
     @objc func loginButtonClicked() {
-        print("아직 구현 중!")
+        viewModel.loginButtonClicked(self)
     }
     
     override func setupConstraints() {

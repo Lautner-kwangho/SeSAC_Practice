@@ -22,7 +22,7 @@ class RegisterViewModel {
     
     var registerName: Observable<String> = Observable("가입하기")
     
-    func sendData(_ emailText: UITextField, _ nicknameText: UITextField, _ passwordText: UITextField, _ comfirmText: UITextField) {
+    func sendData(_ emailText: UITextField, _ nicknameText: UITextField, _ passwordText: UITextField, _ comfirmText: UITextField, _ button: UIButton) {
         if emailText.text != nil, nicknameText.text != nil, passwordText.text != nil, comfirmText.text != nil {
             email.valueData = emailText.text!
             nickname.valueData = nicknameText.text!
@@ -30,19 +30,19 @@ class RegisterViewModel {
             confirm.valueData = comfirmText.text!
             
             if password.valueData.count > 0, password.valueData == confirm.valueData {
-                print("맞음")
+                registerName.valueData = "시작하기"
+                button.backgroundColor = .systemGreen
+                button.isEnabled = true
             } else {
-                print("다름")
+                registerName.valueData = "가입하기"
+                button.backgroundColor = .systemGray4
+                button.isEnabled = true
             }
         }
-        print(email.valueData)
-        print(nickname.valueData)
-        print(password.valueData)
-        print(confirm.valueData)
     }
     
     func registerMember(_ vc: UIViewController, completion: @escaping () -> Void) {
-        APIManager.login(username: nickname.valueData, email: email.valueData, password: password.valueData) { userData, error in
+        APIManager.register(username: nickname.valueData, email: email.valueData, password: password.valueData) { userData, error in
             guard let userData = userData else {
                 var style = ToastStyle()
                 style.titleAlignment = .center
@@ -50,10 +50,15 @@ class RegisterViewModel {
                 return
             }
             
-            print(userData)
-            
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(userData.jwt, forKey: "token")
+            userDefaults.set(userData.user.id, forKey: "id")
+            userDefaults.set(userData.user.username, forKey: "username")
+            userDefaults.set(userData.user.email, forKey: "email")
+
+            dump(userData)
+                    
             completion()
-            print(completion())
         }
     }
 }
