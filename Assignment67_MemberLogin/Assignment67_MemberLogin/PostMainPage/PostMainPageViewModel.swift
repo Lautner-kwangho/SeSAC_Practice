@@ -26,6 +26,10 @@ class PostMainPageViewModel {
         return date
     }
     
+    func writePost(_ vc: UIViewController) {
+        vc.navigationController?.pushViewController(WritePostViewController(), animated: true)
+    }
+    
     func getPost(_ vc: UIViewController, completion: @escaping () -> Void) {
         APIManager.getPost { userData, error in
             guard let userData = userData else {

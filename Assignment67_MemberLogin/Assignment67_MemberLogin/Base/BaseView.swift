@@ -36,3 +36,6 @@ class BaseView: UIViewController, BaseRepresentable {
     
 }
 
+extension BaseView: UITextViewDelegate {
+    
+}

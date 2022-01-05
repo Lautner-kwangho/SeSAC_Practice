@@ -59,4 +59,35 @@ class APIManager {
         URLSession.request(point: request, completion: completion)
     }
     
+    static func writePost(_ text: String, completion: @escaping (WritePost?, APIError?) -> Void) {
+        let userToken = UserDefaults.standard.object(forKey: "token")
+        var request = URLRequest(url: point.posts.url)
+    
+        request.httpMethod = Method.POST.rawValue
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        }
+        
+        request.httpBody = "text=\(text)".data(using: .utf8, allowLossyConversion: false)
+        
+        URLSession.request(point: request, completion: completion)
+    }
+    
+    static func editPost(_ text: String,_ id: Int, completion: @escaping (WritePost?, APIError?) -> Void) {
+        let userToken = UserDefaults.standard.object(forKey: "token")
+        
+        let addURL = point.postEdit.url.description + "\(id)"
+        var request = URLRequest(url: URL(string: addURL)!)
+    
+        request.httpMethod = Method.PUT.rawValue
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        }
+        
+        request.httpBody = "text=\(text)".data(using: .utf8, allowLossyConversion: false)
+        
+        URLSession.request(point: request, completion: completion)
+    }
 }

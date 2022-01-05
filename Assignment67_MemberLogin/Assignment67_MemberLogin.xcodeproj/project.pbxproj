@@ -23,6 +23,9 @@
 		E49C780F2785962B0084E39E /* PostDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C780E2785962B0084E39E /* PostDetailTableCell.swift */; };
 		E49C78112785972C0084E39E /* PostDetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */; };
 		E49C78132785B0AB0084E39E /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C78122785B0AB0084E39E /* PostDetailViewModel.swift */; };
+		E49C78162785B26D0084E39E /* WritePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C78152785B26D0084E39E /* WritePostViewController.swift */; };
+		E49C78182785B4F10084E39E /* WritePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C78172785B4F10084E39E /* WritePostViewModel.swift */; };
+		E49C781C2785BE470084E39E /* WritePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C781B2785BE470084E39E /* WritePost.swift */; };
 		E4F5AB1B278325B2002645BF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB1A278325B2002645BF /* RegisterViewModel.swift */; };
 		E4F5AB1E27832686002645BF /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB1D27832686002645BF /* TextField+Extension.swift */; };
 		E4F5AB2127832D66002645BF /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB2027832D66002645BF /* URLSession+Extension.swift */; };
@@ -59,6 +62,9 @@
 		E49C780E2785962B0084E39E /* PostDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableCell.swift; sourceTree = "<group>"; };
 		E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableHeaderView.swift; sourceTree = "<group>"; };
 		E49C78122785B0AB0084E39E /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
+		E49C78152785B26D0084E39E /* WritePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostViewController.swift; sourceTree = "<group>"; };
+		E49C78172785B4F10084E39E /* WritePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePostViewModel.swift; sourceTree = "<group>"; };
+		E49C781B2785BE470084E39E /* WritePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePost.swift; sourceTree = "<group>"; };
 		E4F5AB1A278325B2002645BF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E4F5AB1D27832686002645BF /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		E4F5AB2027832D66002645BF /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 				E42634842783142D00963B88 /* Register */,
 				E4FD407C278450A5001A1DD8 /* Login */,
 				E4FD408127845FB7001A1DD8 /* PostMainPage */,
+				E49C78142785B2410084E39E /* WritePostPage */,
 				E49C7809278594DF0084E39E /* PostDetailPage */,
 				E4F5AB1F27832D46002645BF /* API */,
 				E42634742782FB6A00963B88 /* Base */,
@@ -167,6 +174,16 @@
 				E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */,
 			);
 			path = PostDetailPage;
+			sourceTree = "<group>";
+		};
+		E49C78142785B2410084E39E /* WritePostPage */ = {
+			isa = PBXGroup;
+			children = (
+				E49C78152785B26D0084E39E /* WritePostViewController.swift */,
+				E49C78172785B4F10084E39E /* WritePostViewModel.swift */,
+				E49C781B2785BE470084E39E /* WritePost.swift */,
+			);
+			path = WritePostPage;
 			sourceTree = "<group>";
 		};
 		E4F5AB1F27832D46002645BF /* API */ = {
@@ -287,6 +304,7 @@
 				E4F899392784C759000714E9 /* String+Extension.swift in Sources */,
 				E42634802783066800963B88 /* Reusable+Extension.swift in Sources */,
 				E49C780B278594FE0084E39E /* PostDetailViewController.swift in Sources */,
+				E49C78162785B26D0084E39E /* WritePostViewController.swift in Sources */,
 				E426347D278305B500963B88 /* MainViewModel.swift in Sources */,
 				E49C780F2785962B0084E39E /* PostDetailTableCell.swift in Sources */,
 				E4FD407E278450B6001A1DD8 /* LoginViewController.swift in Sources */,
@@ -295,11 +313,13 @@
 				E49C78132785B0AB0084E39E /* PostDetailViewModel.swift in Sources */,
 				E44E209C277DE09A0068D77E /* AppDelegate.swift in Sources */,
 				E4F5AB27278352F9002645BF /* Alert+Extension.swift in Sources */,
+				E49C78182785B4F10084E39E /* WritePostViewModel.swift in Sources */,
 				E42634862783144900963B88 /* RegisterViewController.swift in Sources */,
 				E49C78112785972C0084E39E /* PostDetailTableHeaderView.swift in Sources */,
 				E42634822783069500963B88 /* Observable.swift in Sources */,
 				E4FD40832784623E001A1DD8 /* PostMainPageViewController.swift in Sources */,
 				E44E209E277DE09A0068D77E /* SceneDelegate.swift in Sources */,
+				E49C781C2785BE470084E39E /* WritePost.swift in Sources */,
 				E44E20B0277DE2EA0068D77E /* MainViewController.swift in Sources */,
 				E4F5AB1B278325B2002645BF /* RegisterViewModel.swift in Sources */,
 				E4F8993727849B73000714E9 /* GetPost.swift in Sources */,

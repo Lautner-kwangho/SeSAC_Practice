@@ -12,6 +12,12 @@ class PostMainPageViewController: BaseView {
     let tableView = UITableView().then {
         $0.backgroundColor = .systemGray4
     }
+    let postAddButton = UIButton().then {
+        $0.backgroundColor = .systemGreen
+        $0.tintColor = .white
+        $0.layer.cornerRadius = 25
+    }
+    
     let viewModel = PostMainPageViewModel()
     
     override func viewDidLoad() {
@@ -31,12 +37,25 @@ class PostMainPageViewController: BaseView {
                 self.tableView.reloadData()
             }
         }
+        
+        postAddButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        postAddButton.addTarget(self, action: #selector(postAddButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func postAddButtonClicked() {
+        viewModel.writePost(self)
     }
     
     override func setupConstraints() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        view.addSubview(postAddButton)
+        postAddButton.snp.makeConstraints {
+            $0.trailing.bottom.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.width.height.equalTo(50)
         }
     }
 
