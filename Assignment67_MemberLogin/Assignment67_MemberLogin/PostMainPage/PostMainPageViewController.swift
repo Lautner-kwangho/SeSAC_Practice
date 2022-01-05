@@ -68,5 +68,13 @@ extension PostMainPageViewController: UITableViewDelegate, UITableViewDataSource
         return UIScreen.main.bounds.height / 4
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = PostDetailViewController()
+        viewModel.tableData.receiveData { data in
+            let data = data[indexPath.row]
+            vc.viewModel = data
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 }

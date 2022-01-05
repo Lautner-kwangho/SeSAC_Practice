@@ -19,6 +19,9 @@
 		E44E20A5277DE09C0068D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44E20A4277DE09C0068D77E /* Assets.xcassets */; };
 		E44E20A8277DE09C0068D77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44E20A6277DE09C0068D77E /* LaunchScreen.storyboard */; };
 		E44E20B0277DE2EA0068D77E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E20AF277DE2EA0068D77E /* MainViewController.swift */; };
+		E49C780B278594FE0084E39E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C780A278594FE0084E39E /* PostDetailViewController.swift */; };
+		E49C780F2785962B0084E39E /* PostDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C780E2785962B0084E39E /* PostDetailTableCell.swift */; };
+		E49C78112785972C0084E39E /* PostDetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */; };
 		E4F5AB1B278325B2002645BF /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB1A278325B2002645BF /* RegisterViewModel.swift */; };
 		E4F5AB1E27832686002645BF /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB1D27832686002645BF /* TextField+Extension.swift */; };
 		E4F5AB2127832D66002645BF /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4F5AB2027832D66002645BF /* URLSession+Extension.swift */; };
@@ -51,6 +54,9 @@
 		E44E20A7277DE09C0068D77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E44E20A9277DE09C0068D77E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44E20AF277DE2EA0068D77E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E49C780A278594FE0084E39E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		E49C780E2785962B0084E39E /* PostDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableCell.swift; sourceTree = "<group>"; };
+		E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableHeaderView.swift; sourceTree = "<group>"; };
 		E4F5AB1A278325B2002645BF /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		E4F5AB1D27832686002645BF /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		E4F5AB2027832D66002645BF /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
@@ -138,6 +144,7 @@
 				E42634842783142D00963B88 /* Register */,
 				E4FD407C278450A5001A1DD8 /* Login */,
 				E4FD408127845FB7001A1DD8 /* PostMainPage */,
+				E49C7809278594DF0084E39E /* PostDetailPage */,
 				E4F5AB1F27832D46002645BF /* API */,
 				E42634742782FB6A00963B88 /* Base */,
 				E44E20A4277DE09C0068D77E /* Assets.xcassets */,
@@ -147,6 +154,16 @@
 				E44E209D277DE09A0068D77E /* SceneDelegate.swift */,
 			);
 			path = Assignment67_MemberLogin;
+			sourceTree = "<group>";
+		};
+		E49C7809278594DF0084E39E /* PostDetailPage */ = {
+			isa = PBXGroup;
+			children = (
+				E49C780A278594FE0084E39E /* PostDetailViewController.swift */,
+				E49C780E2785962B0084E39E /* PostDetailTableCell.swift */,
+				E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */,
+			);
+			path = PostDetailPage;
 			sourceTree = "<group>";
 		};
 		E4F5AB1F27832D46002645BF /* API */ = {
@@ -266,13 +283,16 @@
 				E4F5AB232783303B002645BF /* APIManager.swift in Sources */,
 				E4F899392784C759000714E9 /* String+Extension.swift in Sources */,
 				E42634802783066800963B88 /* Reusable+Extension.swift in Sources */,
+				E49C780B278594FE0084E39E /* PostDetailViewController.swift in Sources */,
 				E426347D278305B500963B88 /* MainViewModel.swift in Sources */,
+				E49C780F2785962B0084E39E /* PostDetailTableCell.swift in Sources */,
 				E4FD407E278450B6001A1DD8 /* LoginViewController.swift in Sources */,
 				E4FD408027845280001A1DD8 /* LoginViewModel.swift in Sources */,
 				E4F8993427848E63000714E9 /* PostTableViewCell.swift in Sources */,
 				E44E209C277DE09A0068D77E /* AppDelegate.swift in Sources */,
 				E4F5AB27278352F9002645BF /* Alert+Extension.swift in Sources */,
 				E42634862783144900963B88 /* RegisterViewController.swift in Sources */,
+				E49C78112785972C0084E39E /* PostDetailTableHeaderView.swift in Sources */,
 				E42634822783069500963B88 /* Observable.swift in Sources */,
 				E4FD40832784623E001A1DD8 /* PostMainPageViewController.swift in Sources */,
 				E44E209E277DE09A0068D77E /* SceneDelegate.swift in Sources */,

@@ -5,10 +5,8 @@
 //  Created by 최광호 on 2022/01/04.
 //
 
-import Foundation
 import UIKit
 import Toast
-import RxSwift
 
 class PostMainPageViewModel {
     let title = "새싹농장"
