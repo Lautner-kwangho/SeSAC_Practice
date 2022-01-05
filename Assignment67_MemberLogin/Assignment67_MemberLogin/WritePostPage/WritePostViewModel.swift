@@ -23,8 +23,6 @@ class WritePostViewModel {
         if let data = data, editText.valueData.count > 0 {
             
             APIManager.editPost(MethodTye: .PUT, editText.valueData, data.id) { userEditData, error in
-                print("서브",data.id)
-                print("서브",self.editText.valueData)
                 let userDefaults = UserDefaults.standard
                 let id = userDefaults.string(forKey: "LoginID")!
                 let pw = userDefaults.string(forKey: "LoginPW")!
@@ -43,14 +41,8 @@ class WritePostViewModel {
                     }
                     return
                 }
-                print("서브",self.editText.valueData)
-                print("서브",userEditData)
-                print("서브",Method.PUT.rawValue)
-                print("서브",data.id)
-                print("서브")
-                completion()
-                
             }
+            completion()
         } else {
             vc.customAlert("없음", "내용이 없습니다", "확인", style: .default, handler: nil)
         }
@@ -77,10 +69,7 @@ class WritePostViewModel {
                     }
                     return
                 }
-                
-                print(userData)
                 completion()
-
                 DispatchQueue.main.async {
                     APIManager.login(identifier: id, pw: pw) { userData, error in
                         userDefaults.removeObject(forKey: "token")

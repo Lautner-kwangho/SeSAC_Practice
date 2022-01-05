@@ -74,28 +74,25 @@ class APIManager {
         URLSession.request(point: request, completion: completion)
     }
     
-    static func editPost(MethodTye: Method, _ editText: String?, _ id: Int, completion: @escaping (EditPost?, APIError?) -> Void) {
+    static func editPost(MethodTye: Method, _ editText: String?, _ id: Int, completion: @escaping (WritePost?, APIError?) -> Void) {
         let userToken = UserDefaults.standard.object(forKey: "token")
         
         let addURL = point.postEdit.url.description + "\(id)"
         var request = URLRequest(url: URL(string: addURL)!)
     
-//        request.httpMethod = Method.PUT.rawValue
         request.httpMethod = MethodTye.rawValue
         
         if let userToken = userToken {
-            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+            request.allHTTPHeaderFields = ["Authorization": "bearer \(userToken)"]
+            request.allHTTPHeaderFields = ["Content-Type": "application/x-www-form-urlencoded"]
         }
-        if let text = editText {
-            request.httpBody = "text=\(text)".data(using: .utf8, allowLossyConversion: true)
+
+        if MethodTye == .PUT {
+            request.httpBody = "text=\(editText!)".data(using: .utf8, allowLossyConversion: false)
         }
-        print("메인",request)
-        print("메인",editText)
-        print("메인",userToken!)
-        print("메인",MethodTye.rawValue)
-        
+        //any
         
         URLSession.request(point: request, completion: completion)
-        print("얘는 왜 위에처럼 안바뀌냐고!!!ㅜㅉㄲ라ㅓㅣ몬유허ㅔㅏㅠ노;라ㅣㅓ")
+    
     }
 }

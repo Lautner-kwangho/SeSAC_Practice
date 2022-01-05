@@ -100,3 +100,10 @@ extension PostMainPageViewController: UITableViewDelegate, UITableViewDataSource
     }
     
 }
+
+extension PostMainPageViewController: UITableViewDataSourcePrefetching {
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+         
+    }
+    
+}

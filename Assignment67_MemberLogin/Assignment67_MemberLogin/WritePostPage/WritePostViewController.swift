@@ -54,7 +54,6 @@ class WritePostViewController: BaseView {
                 windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostMainPageViewController())
                 windowScene.windows.first?.makeKeyAndVisible()
             }
-            print("수정")
         }
     }
     
@@ -68,8 +67,6 @@ class WritePostViewController: BaseView {
     
     func textViewDidChange(_ textView: UITextView) {
         viewModel.editText.valueData = textView.text
-        print(textView.text)
-        print(viewModel.editText.valueData)
         if flag {
             let editButton = UIBarButtonItem(title: viewModel.buttonEditTitle.valueData, style: .done, target: self, action: #selector(saveEditButtonClicked))
             self.navigationItem.rightBarButtonItem = editButton
