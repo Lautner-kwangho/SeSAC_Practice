@@ -30,7 +30,7 @@ enum point {
         case .changePassword:
             return .makeURL("custom/change-password")
         case .posts:
-            return .makeURL("posts")
+            return .makeURL("posts?_sort=created_at:desc")
         case .postEdit:
             return .makeURL("posts/")
         }

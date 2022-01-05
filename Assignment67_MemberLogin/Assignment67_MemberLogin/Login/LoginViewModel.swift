@@ -45,12 +45,15 @@ class LoginViewModel {
             }
             
             let userDefaults = UserDefaults.standard
-            userDefaults.removeObject(forKey: "token")
+            // 어차피 지울 꺼 한번에 지워도 되지 않을까
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+//            userDefaults.removeObject(forKey: "token")
             userDefaults.set(userData.jwt, forKey: "token")
-            userDefaults.removeObject(forKey: "id")
-            userDefaults.set(self.username.valueData, forKey: "id")
-            userDefaults.removeObject(forKey: "pw")
-            userDefaults.set(self.pw.valueData, forKey: "pw")
+            userDefaults.set(self.username.valueData, forKey: "LoginID")
+            userDefaults.set(self.pw.valueData, forKey: "LoginPW")
+            userDefaults.set(userData.user.id, forKey: "id")
             
             vc.view.makeToast("로그인되었습니다")
             

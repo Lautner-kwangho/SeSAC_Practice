@@ -15,12 +15,25 @@ class WritePostViewController: BaseView {
     }
     
     let viewModel = WritePostViewModel()
+    var editData: GetPostElement?
+    var flag = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(editData)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        flag = false
     }
     
     override func configure() {
+        viewModel.data = self.editData
+        if let editData = editData {
+            textView.text = editData.text
+        }
+        
+        viewModel.flag.valueData = self.flag
         title = viewModel.title
         
         textView.delegate = self
@@ -34,17 +47,40 @@ class WritePostViewController: BaseView {
         }
     }
     
+    @objc func saveEditButtonClicked() {
+        viewModel.editButtonClicked(self) {
+            DispatchQueue.main.async {
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostMainPageViewController())
+                windowScene.windows.first?.makeKeyAndVisible()
+            }
+            print("수정")
+        }
+    }
+    
     override func setupConstraints() {
         view.addSubview(textView)
         textView.snp.makeConstraints {
             $0.edges.equalTo(view.safeAreaLayoutGuide).inset(20)
         }
-        let saveButton = UIBarButtonItem(title: "저장해!", style: .done, target: self, action: #selector(saveButtonClicked))
-        self.navigationItem.rightBarButtonItem = saveButton
+        
     }
     
     func textViewDidChange(_ textView: UITextView) {
-        viewModel.text.valueData = textView.text
+        viewModel.editText.valueData = textView.text
+        print(textView.text)
+        print(viewModel.editText.valueData)
+        if flag {
+            let editButton = UIBarButtonItem(title: viewModel.buttonEditTitle.valueData, style: .done, target: self, action: #selector(saveEditButtonClicked))
+            self.navigationItem.rightBarButtonItem = editButton
+        } else {
+            let saveButton = UIBarButtonItem(title: viewModel.buttonTitle.valueData, style: .done, target: self, action: #selector(saveButtonClicked))
+            self.navigationItem.rightBarButtonItem = saveButton
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        viewModel.editText.valueData = textView.text
     }
 }
 

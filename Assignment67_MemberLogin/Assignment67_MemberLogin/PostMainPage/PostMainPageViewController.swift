@@ -32,9 +32,12 @@ class PostMainPageViewController: BaseView {
         tableView.delegate = self
         tableView.dataSource = self
         
-        viewModel.getPost(self) {
+        viewModel.getPost(self, tableView) {
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+                // 아 받아오는데 시간이 걸려서 그런거네;;
+                // 프리패칭 해주면 해결 될 듯
+//                print(self.viewModel.tableData.valueData)
+                print(2)
             }
         }
         

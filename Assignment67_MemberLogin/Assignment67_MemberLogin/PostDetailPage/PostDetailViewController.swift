@@ -62,6 +62,13 @@ class PostDetailViewController: BaseView {
             $0.centerX.equalToSuperview()
             $0.width.height.equalTo(44)
         }
+        
+        let editButton = UIBarButtonItem(image: UIImage(systemName: "ellipsis"), style: .done, target: self, action: #selector(editButtonClicked))
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    @objc func editButtonClicked() {
+        postViewModel.editAction(self, self.viewModel)
     }
 }
 
@@ -83,7 +90,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PostDetailTableHeaderView.reuseIdentifier, for: indexPath) as? PostDetailTableHeaderView else {
                 return UITableViewCell()
             }
-            
+            cell.cellConfigure(cell, indexPath)
             if let data = self.viewModel {
                 cell.name.text = data.user.username
                 cell.comment.text = data.text
@@ -93,6 +100,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PostDetailTableCell.reuseIdentifier, for: indexPath) as? PostDetailTableCell else { return UITableViewCell() }
             
+            cell.cellConfigure(cell, indexPath)
             if let data = self.viewModel?.comments[indexPath.row] {
                 cell.name.text = "\(data.user)"
                 cell.comment.text = data.comment

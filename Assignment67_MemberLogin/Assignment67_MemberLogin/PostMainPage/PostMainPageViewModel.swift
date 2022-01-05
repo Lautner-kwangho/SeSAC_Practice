@@ -30,18 +30,20 @@ class PostMainPageViewModel {
         vc.navigationController?.pushViewController(WritePostViewController(), animated: true)
     }
     
-    func getPost(_ vc: UIViewController, completion: @escaping () -> Void) {
+    func getPost(_ vc: UIViewController, _ tableView: UITableView, completion: @escaping () -> Void) {
         APIManager.getPost { userData, error in
             guard let userData = userData else {
                 
                 let userDefaults = UserDefaults.standard
-                let id = userDefaults.string(forKey: "id")!
-                let pw = userDefaults.string(forKey: "pw")!
+                let id = userDefaults.string(forKey: "LoginID")!
+                let pw = userDefaults.string(forKey: "LoginPW")!
                 
                 if error == .badRequest {
-                    APIManager.login(identifier: id, pw: pw) { userData, error in
-                        userDefaults.removeObject(forKey: "token")
-                        userDefaults.set(userData?.jwt, forKey: "token")
+                    DispatchQueue.main.async {
+                        APIManager.login(identifier: id, pw: pw) { userData, error in
+                            userDefaults.removeObject(forKey: "token")
+                            userDefaults.set(userData?.jwt, forKey: "token")
+                        }
                     }
                 } else {
                     var style = ToastStyle()
@@ -51,8 +53,10 @@ class PostMainPageViewModel {
                 }
                 return
             }
-            
-            self.tableData.valueData = userData
+            DispatchQueue.main.async {
+                self.tableData.valueData = userData
+                tableView.reloadData()
+            }
             
             completion()
         }

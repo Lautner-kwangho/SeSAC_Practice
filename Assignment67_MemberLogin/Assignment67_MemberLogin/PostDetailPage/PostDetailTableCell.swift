@@ -21,6 +21,10 @@ class PostDetailTableCell: UITableViewCell {
         $0.setImage(UIImage(systemName: "ellipsis"), for: .normal)
     }
     
+    func cellConfigure(_ cell: UITableViewCell, _ indexPath: IndexPath) {
+        cell.selectionStyle = .none
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
