@@ -16,7 +16,10 @@ class PostDetailTableCell: UITableViewCell {
         $0.sizeToFit()
         $0.numberOfLines = 0
     }
-    let button = UIButton()
+    let button = UIButton().then {
+        $0.tintColor = .black
+        $0.setImage(UIImage(systemName: "ellipsis"), for: .normal)
+    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,6 +42,13 @@ class PostDetailTableCell: UITableViewCell {
             $0.leading.trailing.equalTo(name)
             $0.top.equalTo(name.snp.bottom).offset(10)
             $0.bottom.equalTo(self.safeAreaLayoutGuide).inset(20)
+        }
+        
+        addSubview(button)
+        button.snp.makeConstraints {
+            $0.top.equalTo(name)
+            $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(10)
+            $0.width.height.equalTo(20)
         }
     }
     

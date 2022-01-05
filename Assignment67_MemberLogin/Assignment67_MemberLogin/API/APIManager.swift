@@ -45,11 +45,14 @@ class APIManager {
     }
     
     static func getPost(completion: @escaping (GetPost?, APIError?) -> Void) {
-        let userToken = UserDefaults.standard.object(forKey: "token")!
+        let userToken = UserDefaults.standard.object(forKey: "token")
         var request = URLRequest(url: point.posts.url)
     
         request.httpMethod = Method.GET.rawValue
-        request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        }
         
         print(userToken)
         
