@@ -23,6 +23,8 @@ enum APIError: String, Error, LocalizedError {
 
 class APIManager {
     
+    static let userToken = UserDefaults.standard.object(forKey: "token")
+    
     static func register(username: String, email: String, password: String, completion: @escaping (SignUp?, APIError?) -> Void) {
         
         var request = URLRequest(url: point.signUp.url)
@@ -44,18 +46,28 @@ class APIManager {
         URLSession.request(point: request, completion: completion)
     }
     
-    static func getPost(completion: @escaping (GetPost?, APIError?) -> Void) {
-        let userToken = UserDefaults.standard.object(forKey: "token")
-        var request = URLRequest(url: point.posts.url)
-    
+    static func getPost(_ startPage: Int, _ limtePage: Int, completion: @escaping (GetPost?, APIError?) -> Void) {
+        
+        let addURL = point.posts.url.description + "&_start=\(startPage)&_limit=\(limtePage)"
+        var request = URLRequest(url: URL(string: addURL)!)
+ 
         request.httpMethod = Method.GET.rawValue
         
         if let userToken = userToken {
             request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         }
-        
         print(userToken)
         
+        URLSession.request(point: request, completion: completion)
+    }
+    
+    static func getPostCount(completion: @escaping (Int?, APIError?) -> Void) {
+        var request = URLRequest(url: point.allPostCount.url)
+        request.httpMethod = Method.GET.rawValue
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        }
         URLSession.request(point: request, completion: completion)
     }
     

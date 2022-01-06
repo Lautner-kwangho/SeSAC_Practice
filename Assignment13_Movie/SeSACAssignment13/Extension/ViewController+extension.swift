@@ -66,6 +66,7 @@ extension ViewController: UITableViewDataSourcePrefetching {
                 pageCount += 1
                 callMainData()
                 // 이건 끝 페이지가 1000이라서 누가...하루 종일 내릴까..
+                print(indexPath)
             }
         }
     }

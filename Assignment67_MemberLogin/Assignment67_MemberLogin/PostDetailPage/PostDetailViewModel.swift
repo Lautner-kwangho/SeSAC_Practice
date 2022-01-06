@@ -61,9 +61,9 @@ class PostDetailViewModel {
     }
 
     func commentEdit(_ vc: UIViewController, _ postID: GetPostElement?, _ tag: Int, completion: @escaping () -> Void) {
-        print(postID?.id) // 게시물 아이디
-        print(postID?.comments[tag].id) // 내 댓글 아이디
-        print(postID?.comments[tag].user) // 내꺼
+        //print(postID?.id) // 게시물 아이디
+        //print(postID?.comments[tag].id) // 내 댓글 아이디
+        //print(postID?.comments[tag].user) // 내꺼
 
         if let checkID = UserDefaults.standard.string(forKey: "id"), let myID = postID?.comments[tag], checkID == String(myID.user) {
             let alert = UIAlertController(title: "알림", message: "아래에서 선택해주세요", preferredStyle: .alert)

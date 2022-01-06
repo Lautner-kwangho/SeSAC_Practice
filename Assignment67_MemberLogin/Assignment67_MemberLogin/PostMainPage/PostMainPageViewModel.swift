@@ -10,6 +10,9 @@ import Toast
 
 class PostMainPageViewModel {
     let title = "새싹농장"
+    var test = Observable(Int())
+    var startPage = Observable(0)
+    var limitPage = Observable(10)
     var tableData = Observable(GetPost())
 
     var tableViewNumberOfRows: Int {
@@ -30,8 +33,8 @@ class PostMainPageViewModel {
         vc.navigationController?.pushViewController(WritePostViewController(), animated: true)
     }
     
-    func getPost(_ vc: UIViewController, _ tableView: UITableView, completion: @escaping () -> Void) {
-        APIManager.getPost { userData, error in
+    func getPost(_ vc: UIViewController, _ tableView: UITableView, _ start: Int, _ limit: Int, completion: @escaping () -> Void) {
+        APIManager.getPost(start, limit) { userData, error in
             guard let userData = userData else {
                 
                 let userDefaults = UserDefaults.standard
@@ -53,15 +56,31 @@ class PostMainPageViewModel {
                 }
                 return
             }
-            DispatchQueue.main.async {
-                self.tableData.valueData = userData
-//                tableView.reloadData()
+            // sync : 동기!! 이거 끝나야 다른 거 할 수 있음 이 개념은 알고 있는데 왜 적용이 어려울까요
+            // async: 비동기 !! 다른 일도 동시에 할 수 있다 ㅜㅜ
+            // 좀만 뭐 고치면 될 듯한데
+            DispatchQueue.global().async {
+                self.tableData.valueData.append(contentsOf: userData)
+                print("모델에서 개수", self.tableData.valueData.count) // 10개 가져오면 다 나와야지 왜 안나옴 ㅡㅡ
+                DispatchQueue.main.async {
+                    tableView.reloadData()
+                    print("여기 나오긴 하니?")
+                }
+//                tableView.reloadData() //여기에 이렇게 넣으면 막 3개 4개만 나와요,,
+//                print(self.startPage)
+//                print(self.limitPage)
+//                print(self.test)
+                
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
-                tableView.reloadData()
-            })
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                tableView.reloadData()
+//                print(self.startPage)
+//                print(self.limitPage)
+//                print(self.test)
+//            }
             
             completion()
         }
     }
+
 }

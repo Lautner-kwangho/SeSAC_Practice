@@ -66,9 +66,11 @@ class MainViewController: BaseView {
         // snp
         view.addSubview(mainImage)
         mainImage.snp.makeConstraints {
-            $0.center.equalToSuperview().offset(-100)
-            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(view.frame.width / 3)
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview().offset(-100)
+            $0.width.equalTo(100)
             $0.height.equalTo(mainImage.snp.width)
+            //            $0.leading.trailing.lessThanOrEqualTo(view.safeAreaLayoutGuide).inset(view.frame.width / 3)
         }
         
         view.addSubview(mainTitle)

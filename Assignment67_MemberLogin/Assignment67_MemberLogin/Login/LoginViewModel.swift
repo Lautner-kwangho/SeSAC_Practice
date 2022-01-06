@@ -55,6 +55,11 @@ class LoginViewModel {
             userDefaults.set(self.pw.valueData, forKey: "LoginPW")
             userDefaults.set(userData.user.id, forKey: "id")
             
+            APIManager.getPostCount { allCount, error in
+                UserDefaults.standard.removeObject(forKey: "postCount")
+                UserDefaults.standard.set(allCount!, forKey: "postCount")
+            }
+            
             vc.view.makeToast("로그인되었습니다")
             
             completion()

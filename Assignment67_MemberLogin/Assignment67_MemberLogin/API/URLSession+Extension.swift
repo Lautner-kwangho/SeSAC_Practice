@@ -19,6 +19,7 @@ enum point {
     case login
     case changePassword
     case posts // 작성 및 조회
+    case allPostCount
     case postEdit // 수정 및 삭제
     case comments
     
@@ -32,6 +33,8 @@ enum point {
             return .makeURL("custom/change-password")
         case .posts:
             return .makeURL("posts?_sort=created_at:desc")
+        case .allPostCount:
+            return .makeURL("posts/count")
         case .postEdit:
             return .makeURL("posts/")
         case .comments:
