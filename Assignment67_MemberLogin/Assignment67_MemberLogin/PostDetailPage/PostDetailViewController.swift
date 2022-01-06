@@ -81,6 +81,13 @@ class PostDetailViewController: BaseView {
         postViewModel.commentInput(self, self.viewModel, self.textField) {
             // 아 테이블 받아와서 온거라...다시 통신해야 볼 수 있지..
             self.tableView.reloadSections(IndexSet(1...1), with: .automatic)
+            self.commentInputButton.isHidden = true
+        }
+    }
+    
+    @objc func commentEditButtonClicked(_ sender: UIButton) {
+        postViewModel.commentEdit(self, self.viewModel, sender.tag) {
+            print(sender.tag)
         }
     }
 }
@@ -118,6 +125,8 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.name.text = "\(data.user)"
                 cell.comment.text = data.comment
             }
+            cell.button.addTarget(self, action: #selector(self.commentEditButtonClicked(_:)), for: .touchUpInside)
+            cell.button.tag = indexPath.row
             return cell
         }
     }

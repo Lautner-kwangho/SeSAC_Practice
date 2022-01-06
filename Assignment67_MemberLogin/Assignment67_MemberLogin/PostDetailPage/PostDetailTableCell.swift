@@ -54,6 +54,7 @@ class PostDetailTableCell: UITableViewCell {
             $0.trailing.equalTo(self.safeAreaLayoutGuide).inset(10)
             $0.width.height.equalTo(20)
         }
+        contentView.removeFromSuperview()
     }
     
 }

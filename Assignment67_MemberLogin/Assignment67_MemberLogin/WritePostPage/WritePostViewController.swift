@@ -76,9 +76,9 @@ class WritePostViewController: BaseView {
         }
     }
     
-    func textViewDidEndEditing(_ textView: UITextView) {
-        viewModel.editText.valueData = textView.text
-    }
+//    func textViewDidEndEditing(_ textView: UITextView) {
+//        viewModel.editText.valueData = textView.text
+//    }
 }
 
 

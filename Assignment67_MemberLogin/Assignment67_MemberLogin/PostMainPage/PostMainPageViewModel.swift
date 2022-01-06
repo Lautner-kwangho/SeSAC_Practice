@@ -55,8 +55,11 @@ class PostMainPageViewModel {
             }
             DispatchQueue.main.async {
                 self.tableData.valueData = userData
-                tableView.reloadData()
+//                tableView.reloadData()
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                tableView.reloadData()
+            })
             
             completion()
         }
