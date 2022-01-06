@@ -17,10 +17,11 @@ class PostDetailViewController: BaseView {
     }
     let commentInputButton = UIButton().then {
         $0.setImage(UIImage(systemName: "arrow.up"), for: .normal)
+        $0.isHidden = true
     }
     
     var viewModel: GetPostElement?
-    let postViewModel = PostDetailViewModel()
+    var postViewModel = PostDetailViewModel()
     
     
     override func viewDidLoad() {
@@ -40,7 +41,8 @@ class PostDetailViewController: BaseView {
         }
         
         textField.placeholder = postViewModel.textPlaceholder
-        
+        textField.addTarget(self, action: #selector(sendData), for: .editingChanged)
+        commentInputButton.addTarget(self, action: #selector(commentInputButtonClicked), for: .touchUpInside)
     }
     
     override func setupConstraints() {
@@ -69,6 +71,17 @@ class PostDetailViewController: BaseView {
     
     @objc func editButtonClicked() {
         postViewModel.editAction(self, self.viewModel)
+    }
+    
+    @objc func sendData() {
+        postViewModel.sendData(self.textField, self.commentInputButton)
+    }
+    
+    @objc func commentInputButtonClicked() {
+        postViewModel.commentInput(self, self.viewModel, self.textField) {
+            // 아 테이블 받아와서 온거라...다시 통신해야 볼 수 있지..
+            self.tableView.reloadSections(IndexSet(1...1), with: .automatic)
+        }
     }
 }
 

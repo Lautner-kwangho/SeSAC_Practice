@@ -38,4 +38,25 @@ class PostDetailViewModel {
             vc.customAlert("권한", "권한이 없습니다", "🥲", style: .default, handler: nil)
         }
     }
+
+    func sendData(_ textField: UITextField, _ button: UIButton) {
+        if textField.text != nil {
+            // djswpwkdigkfRK..
+            if let text = textField.text, text.count > 0 {
+                button.isHidden = false
+            } else {
+                button.isHidden = true
+            }
+        }
+    }
+    
+    func commentInput(_ vc: UIViewController, _ postID: GetPostElement?, _ textField: UITextField, completion: @escaping () -> Void) {
+        if let comment = textField.text, let postID = postID?.id {
+            APIManager.commentWrite(comment, postID) { userData, error in
+                
+            }
+        }
+        completion()
+    }
+
 }

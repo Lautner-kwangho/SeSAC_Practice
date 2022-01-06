@@ -93,6 +93,42 @@ class APIManager {
         //any
         
         URLSession.request(point: request, completion: completion)
+    }
     
+    static func commentWrite(_ comment: String,_ post: Int, completion: @escaping (WritePost?, APIError?) -> Void) {
+        //post: post ID (게시물 id)
+        let userToken = UserDefaults.standard.object(forKey: "token")
+
+        var request = URLRequest(url: point.comments.url)
+    
+        request.httpMethod = Method.POST.rawValue
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+            request.allHTTPHeaderFields = ["Content-Type": "application/x-www-form-urlencoded"]
+        }
+        
+        request.httpBody = "comment=\(comment)&post=\(post)".data(using: .utf8, allowLossyConversion: false)
+        
+        URLSession.request(point: request, completion: completion)
+    }
+    
+    static func commentEdit(MethodTye: Method, _ comment: String, _ id: Int, _ post: Int, completion: @escaping (WritePost?, APIError?) -> Void) {
+        let userToken = UserDefaults.standard.object(forKey: "token")
+
+        let addURL = point.comments.url.description + "/\(id)"
+        var request = URLRequest(url: URL(string: addURL)!)
+    
+        request.httpMethod = MethodTye.rawValue
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization": "bearer \(userToken)"]
+            request.allHTTPHeaderFields = ["Content-Type": "application/x-www-form-urlencoded"]
+        }
+        
+        if MethodTye == .PUT {
+            request.httpBody = "comment=\(comment)&post=\(post)".data(using: .utf8, allowLossyConversion: false)
+        }
+        URLSession.request(point: request, completion: completion)
     }
 }

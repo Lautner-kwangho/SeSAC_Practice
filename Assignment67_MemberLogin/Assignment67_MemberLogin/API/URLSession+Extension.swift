@@ -20,6 +20,7 @@ enum point {
     case changePassword
     case posts // 작성 및 조회
     case postEdit // 수정 및 삭제
+    case comments
     
     var url: URL {
         switch self {
@@ -33,6 +34,8 @@ enum point {
             return .makeURL("posts?_sort=created_at:desc")
         case .postEdit:
             return .makeURL("posts/")
+        case .comments:
+            return .makeURL("comments")
         }
     }
 }

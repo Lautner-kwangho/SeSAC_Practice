@@ -31,6 +31,7 @@ class PostMainPageViewController: BaseView {
         tableView.register(nibName, forCellReuseIdentifier: PostTableViewCell.reuseIdentifier)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.prefetchDataSource = self
         
         viewModel.getPost(self, tableView) {
             DispatchQueue.main.async {
@@ -75,7 +76,7 @@ extension PostMainPageViewController: UITableViewDelegate, UITableViewDataSource
         
         cell.cellConfigure(cell, indexPath)
         
-        viewModel.tableData.receiveData { data in
+        viewModel.tableData.receiveData { [self] data in
             let data = data[indexPath.row]
             cell.name.text = data.user.username
             cell.content.text = data.text
@@ -103,7 +104,13 @@ extension PostMainPageViewController: UITableViewDelegate, UITableViewDataSource
 
 extension PostMainPageViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-         
+        for indexPath in indexPaths {
+            if self.viewModel.tableData.valueData.count - 1 == indexPath.row {
+                tableView.reloadData()
+                print(indexPath.row)
+                print(indexPath)
+            }
+        }
     }
     
 }

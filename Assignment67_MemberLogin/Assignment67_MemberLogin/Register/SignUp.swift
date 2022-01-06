@@ -39,7 +39,7 @@ struct User: Codable {
     let id: Int
     let username, email, provider: String
     let confirmed: Bool
-    let blocked: String?
+    let blocked: Bool?
     let role: Role
     let createdAt, updatedAt: String
     let posts: [Post]
@@ -57,7 +57,8 @@ struct User: Codable {
 struct LoginComment: Codable {
     let id: Int
     let comment: String
-    let user, post: Int
+    let user: Int
+    let post: Int?
     let createdAt, updatedAt: String
 
     enum CodingKeys: String, CodingKey {
@@ -92,4 +93,3 @@ struct Role: Codable {
         case type
     }
 }
-
