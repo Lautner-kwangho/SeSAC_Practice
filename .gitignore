@@ -5,6 +5,8 @@
 # APIKEY
 APIKEY.swift
 Constants.swift
+# SeSac Data
+SeSacURLManager.swift
 
 # DS_Store
 .DS_Store
