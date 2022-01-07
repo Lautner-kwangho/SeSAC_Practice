@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E402F4742786BC20005DB58E /* CommentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402F4732786BC20005DB58E /* CommentEditViewController.swift */; };
 		E402F4762786BC7A005DB58E /* CommentEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402F4752786BC7A005DB58E /* CommentEditViewModel.swift */; };
+		E402F47B27886A72005DB58E /* SeSacURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402F47A27886A72005DB58E /* SeSacURLManager.swift */; };
 		E426346F2782FA9400963B88 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E426346E2782FA9400963B88 /* BaseView.swift */; };
 		E42634772782FBC400963B88 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E42634762782FBC400963B88 /* SnapKit */; };
 		E426347A2782FBCD00963B88 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E42634792782FBCD00963B88 /* Then */; };
@@ -50,6 +51,7 @@
 /* Begin PBXFileReference section */
 		E402F4732786BC20005DB58E /* CommentEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewController.swift; sourceTree = "<group>"; };
 		E402F4752786BC7A005DB58E /* CommentEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEditViewModel.swift; sourceTree = "<group>"; };
+		E402F47A27886A72005DB58E /* SeSacURLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacURLManager.swift; sourceTree = "<group>"; };
 		E426346E2782FA9400963B88 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		E426347C278305B500963B88 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		E426347F2783066800963B88 /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				E426347F2783066800963B88 /* Reusable+Extension.swift */,
 				E4F5AB1D27832686002645BF /* TextField+Extension.swift */,
 				E4F899382784C759000714E9 /* String+Extension.swift */,
+				E402F47A27886A72005DB58E /* SeSacURLManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				E42634822783069500963B88 /* Observable.swift in Sources */,
 				E4FD40832784623E001A1DD8 /* PostMainPageViewController.swift in Sources */,
 				E44E209E277DE09A0068D77E /* SceneDelegate.swift in Sources */,
+				E402F47B27886A72005DB58E /* SeSacURLManager.swift in Sources */,
 				E49C781C2785BE470084E39E /* WritePost.swift in Sources */,
 				E44E20B0277DE2EA0068D77E /* MainViewController.swift in Sources */,
 				E4F5AB1B278325B2002645BF /* RegisterViewModel.swift in Sources */,

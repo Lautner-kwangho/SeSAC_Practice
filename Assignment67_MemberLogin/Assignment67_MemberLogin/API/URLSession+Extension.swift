@@ -44,7 +44,7 @@ enum point {
 }
 
 extension URL {
-    static let baseURL = "http://test.monocoding.com:1231/"
+    static let baseURL = SeSacURLManager.SeSacURL
     
     static func makeURL(_ point: String) -> URL {
         URL(string: baseURL + point)!
