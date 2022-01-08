@@ -32,7 +32,7 @@ enum point {
         case .changePassword:
             return .makeURL("custom/change-password")
         case .posts:
-            return .makeURL("posts?_sort=created_at:desc")
+            return .makeURL("posts/?_sort=created_at:desc")
         case .allPostCount:
             return .makeURL("posts/count")
         case .postEdit:

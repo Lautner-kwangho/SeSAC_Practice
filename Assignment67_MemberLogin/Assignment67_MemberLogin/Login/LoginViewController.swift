@@ -38,6 +38,15 @@ class LoginViewController: BaseView {
         super.viewDidLoad()
     }
     
+    // test 용으로 적은거라 나중에 삭제할 부분
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.identifierField.text = "any"
+        self.passwordField.text = "any "
+        self.loginButton.isEnabled = true
+    }
+    
+    
     override func configure() {
         
         title = viewModel.title

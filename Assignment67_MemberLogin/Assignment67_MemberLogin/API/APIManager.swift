@@ -46,11 +46,13 @@ class APIManager {
         URLSession.request(point: request, completion: completion)
     }
     
-    static func getPost(_ startPage: Int, _ limtePage: Int, completion: @escaping (GetPost?, APIError?) -> Void) {
-        
-        let addURL = point.posts.url.description + "&_start=\(startPage)&_limit=\(limtePage)"
+    static func getPost(_ startPage: Int, completion: @escaping (GetPost?, APIError?) -> Void) {
+        //print("APIManager 받아오는 곳: ", startPage)
+        //print("APIManager 받아오는 곳: ", limtePage)
+        // 아 그 리미트가 그 리미트가 아니였네;;; 핵 바보 인증..
+        let addURL = point.posts.url.description + "&_start=\(startPage)&_limit=10"
         var request = URLRequest(url: URL(string: addURL)!)
- 
+        
         request.httpMethod = Method.GET.rawValue
         
         if let userToken = userToken {
@@ -89,7 +91,7 @@ class APIManager {
     static func editPost(MethodTye: Method, _ editText: String?, _ id: Int, completion: @escaping (WritePost?, APIError?) -> Void) {
         let userToken = UserDefaults.standard.object(forKey: "token")
         
-        let addURL = point.postEdit.url.description + "\(id)"
+        let addURL = point.postEdit.url.description + "/\(id)"
         var request = URLRequest(url: URL(string: addURL)!)
     
         request.httpMethod = MethodTye.rawValue
