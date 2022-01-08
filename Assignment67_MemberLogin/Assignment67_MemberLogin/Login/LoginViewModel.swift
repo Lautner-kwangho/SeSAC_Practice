@@ -54,6 +54,7 @@ class LoginViewModel {
             userDefaults.set(self.username.valueData, forKey: "LoginID")
             userDefaults.set(self.pw.valueData, forKey: "LoginPW")
             userDefaults.set(userData.user.id, forKey: "id")
+            userDefaults.set(userData.user.username, forKey: "userName")
             
             APIManager.getPostCount { allCount, error in
                 UserDefaults.standard.removeObject(forKey: "postCount")

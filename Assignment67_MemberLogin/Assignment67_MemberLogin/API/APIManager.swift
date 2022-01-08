@@ -34,6 +34,20 @@ class APIManager {
         
         URLSession.request(.shared, point: request, completion: completion)
     }
+    static func changePassword(currentPassword: String, newPassword: String , confirmNewPassword: String, completion: @escaping(User?, APIError?) -> Void) {
+        var request = URLRequest(url: point.changePassword.url)
+        
+        request.httpMethod = Method.POST.rawValue
+        request.httpBody = "currentPassword=\(currentPassword)&newPassword=\(newPassword)&confirmNewPassword=\(confirmNewPassword)"
+            .data(using: .utf8,
+                  allowLossyConversion: false)
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        }
+        
+        URLSession.request(point: request, completion: completion)
+    }
     
     static func login(identifier: String, pw: String, completion: @escaping (SignUp?, APIError?) -> Void) {
         var request = URLRequest(url: point.login.url)
@@ -47,9 +61,6 @@ class APIManager {
     }
     
     static func getPost(_ startPage: Int, completion: @escaping (GetPost?, APIError?) -> Void) {
-        //print("APIManager 받아오는 곳: ", startPage)
-        //print("APIManager 받아오는 곳: ", limtePage)
-        // 아 그 리미트가 그 리미트가 아니였네;;; 핵 바보 인증..
         let addURL = point.posts.url.description + "&_start=\(startPage)&_limit=10"
         var request = URLRequest(url: URL(string: addURL)!)
         

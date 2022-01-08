@@ -84,7 +84,6 @@ class PostDetailViewController: BaseView {
     @objc func commentInputButtonClicked() {
         postViewModel.commentInput(self, self.viewModel, self.textField) {
             self.postViewModel.getComment(self.viewModel, self.tableView)
-            // 여기
             self.commentInputButton.isHidden = true
         }
     }

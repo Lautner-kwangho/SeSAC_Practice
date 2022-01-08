@@ -16,6 +16,8 @@
 		E42634802783066800963B88 /* Reusable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E426347F2783066800963B88 /* Reusable+Extension.swift */; };
 		E42634822783069500963B88 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42634812783069500963B88 /* Observable.swift */; };
 		E42634862783144900963B88 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42634852783144900963B88 /* RegisterViewController.swift */; };
+		E435C2002789D7070099224D /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C1FF2789D7070099224D /* MyPageViewController.swift */; };
+		E435C2022789DA9E0099224D /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C2012789DA9E0099224D /* MyPageViewModel.swift */; };
 		E44E209C277DE09A0068D77E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E209B277DE09A0068D77E /* AppDelegate.swift */; };
 		E44E209E277DE09A0068D77E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E209D277DE09A0068D77E /* SceneDelegate.swift */; };
 		E44E20A5277DE09C0068D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44E20A4277DE09C0068D77E /* Assets.xcassets */; };
@@ -58,6 +60,8 @@
 		E426347F2783066800963B88 /* Reusable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reusable+Extension.swift"; sourceTree = "<group>"; };
 		E42634812783069500963B88 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		E42634852783144900963B88 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		E435C1FF2789D7070099224D /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		E435C2012789DA9E0099224D /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
 		E44E2098277DE09A0068D77E /* Assignment67_MemberLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment67_MemberLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44E209B277DE09A0068D77E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E44E209D277DE09A0068D77E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,6 +153,15 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		E435C1FE2789D6F20099224D /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				E435C1FF2789D7070099224D /* MyPageViewController.swift */,
+				E435C2012789DA9E0099224D /* MyPageViewModel.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		E44E208F277DE09A0068D77E = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +184,7 @@
 				E42634832783140400963B88 /* Main */,
 				E42634842783142D00963B88 /* Register */,
 				E4FD407C278450A5001A1DD8 /* Login */,
+				E435C1FE2789D6F20099224D /* MyPage */,
 				E4FD408127845FB7001A1DD8 /* PostMainPage */,
 				E49C78142785B2410084E39E /* WritePostPage */,
 				E49C7809278594DF0084E39E /* PostDetailPage */,
@@ -347,11 +361,13 @@
 				E4FD40832784623E001A1DD8 /* PostMainPageViewController.swift in Sources */,
 				E44E209E277DE09A0068D77E /* SceneDelegate.swift in Sources */,
 				E49C781C2785BE470084E39E /* WritePost.swift in Sources */,
+				E435C2022789DA9E0099224D /* MyPageViewModel.swift in Sources */,
 				E44E20B0277DE2EA0068D77E /* MainViewController.swift in Sources */,
 				E4F5AB1B278325B2002645BF /* RegisterViewModel.swift in Sources */,
 				E4F8993727849B73000714E9 /* GetPost.swift in Sources */,
 				E426346F2782FA9400963B88 /* BaseView.swift in Sources */,
 				E4FD408527846273001A1DD8 /* PostMainPageViewModel.swift in Sources */,
+				E435C2002789D7070099224D /* MyPageViewController.swift in Sources */,
 				E4F5AB1E27832686002645BF /* TextField+Extension.swift in Sources */,
 				E4F5AB2527834BBD002645BF /* SignUp.swift in Sources */,
 				E466F8E42789BD56006D656A /* GetComment.swift in Sources */,

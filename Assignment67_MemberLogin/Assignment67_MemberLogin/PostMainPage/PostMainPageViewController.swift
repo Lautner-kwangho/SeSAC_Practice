@@ -40,6 +40,14 @@ class PostMainPageViewController: BaseView {
         
         postAddButton.setImage(UIImage(systemName: "plus"), for: .normal)
         postAddButton.addTarget(self, action: #selector(postAddButtonClicked), for: .touchUpInside)
+        
+        let goPageButton = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(myPageButtonClicked))
+        navigationController?.navigationBar.tintColor = .systemGreen
+        navigationItem.rightBarButtonItem = goPageButton
+    }
+    
+    @objc func myPageButtonClicked() {
+        self.navigationController?.pushViewController(MyPageViewController(), animated: true)
     }
     
     @objc func postAddButtonClicked() {
@@ -110,18 +118,13 @@ extension PostMainPageViewController: UITableViewDataSourcePrefetching {
                     
                     self.viewModel.limitPage.receiveData { value in
                         if allCount > value {
-                            print("이부분 되긴 함? 조건문 다시 작성")
                             self.viewModel.startPage.valueData += 10
                             self.viewModel.getPost(self, PostMainPageViewController.tableView, self.viewModel.startPage.valueData)
-                            
                         }
                     }
                 }
             }
         }
     }
-    
-    func tableView(_ tableView: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
-        print("여기 부분 취소되고 넘어감")
-    }
+
 }
