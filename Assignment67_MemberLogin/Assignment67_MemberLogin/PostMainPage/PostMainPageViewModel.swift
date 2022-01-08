@@ -39,6 +39,15 @@ class PostMainPageViewModel {
         vc.navigationController?.pushViewController(WritePostViewController(), animated: true)
     }
     
+    func viewDidApperAction() {
+        DispatchQueue.main.async {
+            self.startPage.valueData = 0
+            self.tableData.valueData = GetPost()
+            let mainView = PostMainPageViewController()
+            self.getPost(mainView, PostMainPageViewController.tableView, self.startPage.valueData)
+        }
+    }
+    
     func getPost(_ vc: UIViewController, _ tableView: UITableView, _ start: Int) {
         APIManager.getPost(start) { userData, error in
             guard let userData = userData else {
@@ -67,10 +76,8 @@ class PostMainPageViewModel {
             DispatchQueue.global().sync {
                 // 이거 두개를 잘 조합해야 됨..
                 self.tableData.valueData.append(contentsOf: userData)
-                print("모델에서 개수", self.tableData.valueData.count) // 내가 바보 ㅋㅋ..
                 DispatchQueue.main.async {
                     tableView.reloadData()
-                    print("여기 나오긴 하니?")
                 }
             }
         }

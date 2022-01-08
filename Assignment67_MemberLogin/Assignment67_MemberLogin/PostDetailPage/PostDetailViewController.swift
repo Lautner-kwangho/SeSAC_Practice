@@ -23,9 +23,13 @@ class PostDetailViewController: BaseView {
     var viewModel: GetPostElement?
     var postViewModel = PostDetailViewModel()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        postViewModel.getComment(viewModel, tableView)
     }
     
     override func configure() {
@@ -79,15 +83,15 @@ class PostDetailViewController: BaseView {
     
     @objc func commentInputButtonClicked() {
         postViewModel.commentInput(self, self.viewModel, self.textField) {
-            // 아 테이블 받아와서 온거라...다시 통신해야 볼 수 있지..
-            self.tableView.reloadSections(IndexSet(1...1), with: .automatic)
+            self.postViewModel.getComment(self.viewModel, self.tableView)
+            // 여기
             self.commentInputButton.isHidden = true
         }
     }
     
     @objc func commentEditButtonClicked(_ sender: UIButton) {
-        postViewModel.commentEdit(self, self.viewModel, sender.tag) {
-            print(sender.tag)
+        postViewModel.commentEdit(self, self.viewModel, sender.tag, tableView) {
+            self.postViewModel.getComment(self.viewModel, self.tableView)
         }
     }
 }
@@ -101,7 +105,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
-            return viewModel?.comments.count ?? 0
+            return postViewModel.tableViewNumberOfRows
         }
     }
     
@@ -119,12 +123,11 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: PostDetailTableCell.reuseIdentifier, for: indexPath) as? PostDetailTableCell else { return UITableViewCell() }
+            let data = postViewModel.commentTableData.valueData[indexPath.row]
             
-            cell.cellConfigure(cell, indexPath)
-            if let data = self.viewModel?.comments[indexPath.row] {
-                cell.name.text = "\(data.user)"
-                cell.comment.text = data.comment
-            }
+            cell.cellConfigure(cell, indexPath)            
+            cell.name.text = "\(data.user.username)"
+            cell.comment.text = data.comment
             cell.button.addTarget(self, action: #selector(self.commentEditButtonClicked(_:)), for: .touchUpInside)
             cell.button.tag = indexPath.row
             return cell

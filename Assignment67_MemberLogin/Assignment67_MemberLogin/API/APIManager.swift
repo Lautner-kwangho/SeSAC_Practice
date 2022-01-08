@@ -91,7 +91,7 @@ class APIManager {
     static func editPost(MethodTye: Method, _ editText: String?, _ id: Int, completion: @escaping (WritePost?, APIError?) -> Void) {
         let userToken = UserDefaults.standard.object(forKey: "token")
         
-        let addURL = point.postEdit.url.description + "/\(id)"
+        let addURL = point.postEdit.url.description + "\(id)"
         var request = URLRequest(url: URL(string: addURL)!)
     
         request.httpMethod = MethodTye.rawValue
@@ -106,6 +106,16 @@ class APIManager {
         }
         //any
         
+        URLSession.request(point: request, completion: completion)
+    }
+    static func commentGet(_ postNumber: Int, completion: @escaping (GetComment?, APIError?) -> Void) {
+        let addURL = point.comments.url.description + "?post=\(postNumber)"
+        var request = URLRequest(url: URL(string: addURL)!)
+        request.httpMethod = Method.GET.rawValue
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        }
         URLSession.request(point: request, completion: completion)
     }
     

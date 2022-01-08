@@ -11,9 +11,37 @@ import Toast
 class PostDetailViewModel {
     
     let textPlaceholder = "댓글을 입력해주세요"
+    var commentTableData = Observable(GetComment())
+    
+    func getComment(_ post: GetPostElement?, _ tableView: UITableView) {
+        if let post = post {
+            APIManager.commentGet(post.id) { userData, error in
+                if let userData = userData {
+                    DispatchQueue.global().sync {
+                        self.commentTableData.valueData = userData
+                        DispatchQueue.main.async {
+                            tableView.reloadData()
+                        }
+                    }
+                } else {
+                    print("데이터 없음")
+                }
+            }
+        }
+    }
+    
+    var tableViewNumberOfRows: Int {
+        var count = 0
+        
+        commentTableData.receiveData { value in
+            count = value.count
+        }
+        
+        return count
+    }
+    
     
     func editAction(_ vc: UIViewController, _ element: GetPostElement?) {
-        
         
         let myID = UserDefaults.standard.string(forKey: "id")
         
@@ -26,7 +54,7 @@ class PostDetailViewModel {
                 vc.navigationController?.pushViewController(view, animated: true)
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .default) { _ in
-                APIManager.editPost(MethodTye: Method.DELETE, nil, element.id) { userData, error in
+                APIManager.editPost(MethodTye: .DELETE, nil, element.id) { userData, error in
                 }
                 vc.navigationController?.popViewController(animated: true)
             }
@@ -60,12 +88,14 @@ class PostDetailViewModel {
         completion()
     }
 
-    func commentEdit(_ vc: UIViewController, _ postID: GetPostElement?, _ tag: Int, completion: @escaping () -> Void) {
+    func commentEdit(_ vc: UIViewController, _ postID: GetPostElement?, _ tag: Int, _ tableView: UITableView, completion: @escaping() -> Void) {
         //print(postID?.id) // 게시물 아이디
         //print(postID?.comments[tag].id) // 내 댓글 아이디
         //print(postID?.comments[tag].user) // 내꺼
-
-        if let checkID = UserDefaults.standard.string(forKey: "id"), let myID = postID?.comments[tag], checkID == String(myID.user) {
+        let myID = self.commentTableData.valueData[tag]
+        
+        if let checkID = UserDefaults.standard.string(forKey: "id"), checkID == String(myID.user.id) {
+            
             let alert = UIAlertController(title: "알림", message: "아래에서 선택해주세요", preferredStyle: .alert)
             let edietAction = UIAlertAction(title: "수정", style: .default) { _ in
                 let view = CommentEditViewController()
@@ -73,7 +103,10 @@ class PostDetailViewModel {
                 vc.navigationController?.pushViewController(view, animated: true)
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .default) { _ in
-                APIManager.commentEdit(MethodTye: .DELETE, "", myID.id, myID.post) { data, error in
+                APIManager.commentEdit(MethodTye: .DELETE, "", myID.id, myID.post.id) { data, error in
+                    DispatchQueue.global().sync {
+                        completion()
+                    }
                 }
                 let style = ToastStyle()
                 vc.view.makeToast("", duration: 0.5, position: .bottom, title: "삭제되었습니다", image: nil, style: style, completion: nil)
@@ -86,7 +119,5 @@ class PostDetailViewModel {
         } else {
             vc.customAlert("권한", "권한이 없습니다", "🥲", style: .default, handler: nil)
         }
-        
-        completion()
     }
 }

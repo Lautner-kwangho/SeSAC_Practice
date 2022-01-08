@@ -12,9 +12,9 @@ class CommentEditViewModel {
     let buttonEditTitle = "저장"
     var editText = Observable(String())
     
-    func editComment(_ post: Comment?, completion: @escaping () -> Void) {
+    func editComment(_ post: GetCommentElement?, completion: @escaping () -> Void) {
         if let post = post {
-            APIManager.commentEdit(MethodTye: .PUT, editText.valueData, post.id, post.post) { data, error in
+            APIManager.commentEdit(MethodTye: .PUT, editText.valueData, post.id, post.post.id) { data, error in
                  
             }
             completion()

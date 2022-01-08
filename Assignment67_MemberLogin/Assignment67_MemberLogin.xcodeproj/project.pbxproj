@@ -22,6 +22,7 @@
 		E44E20A8277DE09C0068D77E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E44E20A6277DE09C0068D77E /* LaunchScreen.storyboard */; };
 		E44E20B0277DE2EA0068D77E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E20AF277DE2EA0068D77E /* MainViewController.swift */; };
 		E466F8E22789A237006D656A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E466F8E12789A237006D656A /* IQKeyboardManagerSwift */; };
+		E466F8E42789BD56006D656A /* GetComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E466F8E32789BD56006D656A /* GetComment.swift */; };
 		E49C780B278594FE0084E39E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C780A278594FE0084E39E /* PostDetailViewController.swift */; };
 		E49C780F2785962B0084E39E /* PostDetailTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C780E2785962B0084E39E /* PostDetailTableCell.swift */; };
 		E49C78112785972C0084E39E /* PostDetailTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */; };
@@ -64,6 +65,7 @@
 		E44E20A7277DE09C0068D77E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E44E20A9277DE09C0068D77E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E44E20AF277DE2EA0068D77E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		E466F8E32789BD56006D656A /* GetComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetComment.swift; sourceTree = "<group>"; };
 		E49C780A278594FE0084E39E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 		E49C780E2785962B0084E39E /* PostDetailTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableCell.swift; sourceTree = "<group>"; };
 		E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailTableHeaderView.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				E49C780A278594FE0084E39E /* PostDetailViewController.swift */,
 				E49C78122785B0AB0084E39E /* PostDetailViewModel.swift */,
+				E466F8E32789BD56006D656A /* GetComment.swift */,
 				E49C780E2785962B0084E39E /* PostDetailTableCell.swift */,
 				E49C78102785972C0084E39E /* PostDetailTableHeaderView.swift */,
 			);
@@ -351,6 +354,7 @@
 				E4FD408527846273001A1DD8 /* PostMainPageViewModel.swift in Sources */,
 				E4F5AB1E27832686002645BF /* TextField+Extension.swift in Sources */,
 				E4F5AB2527834BBD002645BF /* SignUp.swift in Sources */,
+				E466F8E42789BD56006D656A /* GetComment.swift in Sources */,
 				E4F5AB2127832D66002645BF /* URLSession+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

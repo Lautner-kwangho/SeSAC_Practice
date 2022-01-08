@@ -18,7 +18,7 @@ class CommentEditViewController: BaseView {
         $0.isScrollEnabled = false
     }
     
-    var editModel: Comment?
+    var editModel: GetCommentElement?
     var viewModel = CommentEditViewModel()
     
     override func viewDidLoad() {
