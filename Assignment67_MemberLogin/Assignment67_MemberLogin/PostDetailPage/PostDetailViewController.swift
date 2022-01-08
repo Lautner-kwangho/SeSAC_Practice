@@ -30,6 +30,7 @@ class PostDetailViewController: BaseView {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         postViewModel.getComment(viewModel, tableView)
+        postViewModel.getDetailPost(viewModel, tableView)
     }
     
     override func configure() {
@@ -116,7 +117,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             cell.cellConfigure(cell, indexPath)
             if let data = self.viewModel {
                 cell.name.text = data.user.username
-                cell.comment.text = data.text
+                cell.comment.text = self.postViewModel.detailText.valueData
                 cell.commentCount.text = "\(postViewModel.commentTableData.valueData.count)개 댓글"
             }
             return cell

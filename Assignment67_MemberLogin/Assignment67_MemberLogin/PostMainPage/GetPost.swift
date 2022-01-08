@@ -41,7 +41,7 @@ struct Comment: Codable {
 struct Users: Codable {
     let id: Int
     let username, email: String
-    let provider: Provider
+    let provider: String//Provider
     let confirmed: Bool
     let blocked: Bool?
     let role: Int

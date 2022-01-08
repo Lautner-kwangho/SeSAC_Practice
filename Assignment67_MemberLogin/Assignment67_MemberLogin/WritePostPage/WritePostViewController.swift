@@ -49,9 +49,10 @@ class WritePostViewController: BaseView {
     @objc func saveEditButtonClicked() {
         viewModel.editButtonClicked(self) {
             DispatchQueue.main.async {
-                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostMainPageViewController())
-                windowScene.windows.first?.makeKeyAndVisible()
+                self.navigationController?.popViewController(animated: true)
+//                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+//                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostMainPageViewController())
+//                windowScene.windows.first?.makeKeyAndVisible()
             }
         }
     }

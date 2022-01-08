@@ -11,7 +11,24 @@ import Toast
 class PostDetailViewModel {
     
     let textPlaceholder = "댓글을 입력해주세요"
+    var detailText = Observable(String())
+    
     var commentTableData = Observable(GetComment())
+    
+    func getDetailPost(_ post: GetPostElement?, _ tableView: UITableView) {
+        if let post = post {
+            APIManager.detailGetPost(post.id) { data, error in
+                if let data = data {
+                    DispatchQueue.global().sync {
+                        self.detailText.valueData = data.text
+                        DispatchQueue.main.async {
+                            tableView.reloadSections(IndexSet(0...0), with: .automatic)
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     func getComment(_ post: GetPostElement?, _ tableView: UITableView) {
         if let post = post {

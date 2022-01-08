@@ -61,7 +61,7 @@ class APIManager {
     }
     
     static func getPost(_ startPage: Int, completion: @escaping (GetPost?, APIError?) -> Void) {
-        let addURL = point.posts.url.description + "&_start=\(startPage)&_limit=10"
+        let addURL = point.posts.url.description + "?_sort=created_at:desc&_start=\(startPage)&_limit=10"
         var request = URLRequest(url: URL(string: addURL)!)
         
         request.httpMethod = Method.GET.rawValue
@@ -69,7 +69,19 @@ class APIManager {
         if let userToken = userToken {
             request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         }
-        print(userToken)
+        
+        URLSession.request(point: request, completion: completion)
+    }
+    
+    static func detailGetPost(_ post: Int, completion: @escaping (GetPostElement?, APIError?) -> Void) {
+        let addURL = point.posts.url.description + "\(post)"
+        var request = URLRequest(url: URL(string: addURL)!)
+        
+        request.httpMethod = Method.GET.rawValue
+        
+        if let userToken = userToken {
+            request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
+        }
         
         URLSession.request(point: request, completion: completion)
     }
