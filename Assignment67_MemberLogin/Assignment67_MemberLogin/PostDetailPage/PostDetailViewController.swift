@@ -118,7 +118,7 @@ extension PostDetailViewController: UITableViewDelegate, UITableViewDataSource {
             if let data = self.viewModel {
                 cell.name.text = data.user.username
                 cell.comment.text = data.text
-                cell.commentCount.text = "\(data.comments.count)개 댓글"
+                cell.commentCount.text = "\(postViewModel.commentTableData.valueData.count)개 댓글"
             }
             return cell
         } else {

@@ -38,18 +38,8 @@ class PostMainPageViewController: BaseView {
         PostMainPageViewController.tableView.dataSource = self
         PostMainPageViewController.tableView.prefetchDataSource = self
         
-        // test
-        let rightButton = UIBarButtonItem(title: "새로고침", style: .plain, target: self, action: #selector(reloadButtonClicked))
-        navigationItem.rightBarButtonItem = rightButton
-        
         postAddButton.setImage(UIImage(systemName: "plus"), for: .normal)
         postAddButton.addTarget(self, action: #selector(postAddButtonClicked), for: .touchUpInside)
-    }
-    
-    @objc func reloadButtonClicked() {
-        //test용임
-        viewModel.getPost(self, PostMainPageViewController.tableView, viewModel.startPage.valueData)
-        dump(viewModel.tableViewNumberOfRows)
     }
     
     @objc func postAddButtonClicked() {

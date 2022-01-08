@@ -20,7 +20,6 @@ class WritePostViewController: BaseView {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(editData)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
