@@ -26,6 +26,7 @@ class PostDetailViewModel: editComplete {
         if completeEditMessage != "" {
             let style = ToastStyle()
             vc.view.makeToast("", duration: 0.5, position: .bottom, title: "수정되었습니다", image: nil, style: style, completion: nil)
+            self.completeEditMessage = ""
         }
     }
     

@@ -26,6 +26,7 @@ class PostMainPageViewController: BaseView {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewModel.completeEditMakeToast(self)
         viewModel.viewDidApperAction()
     }
     
@@ -47,7 +48,7 @@ class PostMainPageViewController: BaseView {
     }
     
     @objc func myPageButtonClicked() {
-        self.navigationController?.pushViewController(MyPageViewController(), animated: true)
+        viewModel.goToMyPage(self)
     }
     
     @objc func postAddButtonClicked() {

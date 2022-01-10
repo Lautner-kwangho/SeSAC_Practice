@@ -60,8 +60,8 @@ class LoginViewModel {
                 UserDefaults.standard.removeObject(forKey: "postCount")
                 UserDefaults.standard.set(allCount!, forKey: "postCount")
             }
-            
-            Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(self.renewalToken), userInfo: nil, repeats: true)
+            // 빨리 확인하기 위해서 30초 정도 두었습니다!
+            Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.renewalToken), userInfo: nil, repeats: true)
             
             vc.view.makeToast("로그인되었습니다")
             

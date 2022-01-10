@@ -8,8 +8,11 @@
 import UIKit
 import Toast
 
-class PostMainPageViewModel {
+class PostMainPageViewModel: editComplete {
+    
     let title = "새싹농장"
+    var completeEditMessage = ""
+    
     var test = Observable(Int())
     var startPage: Observable<Int> = Observable(0)
     var limitPage: Observable<Int> = Observable(9)
@@ -33,6 +36,24 @@ class PostMainPageViewModel {
     func dateFormatter(at indexPath: IndexPath) -> String {
         let date = self.tableData.valueData[indexPath.row].createdAt.subString(from: 5, to: 9).replacingOccurrences(of: "-", with: "/")
         return date
+    }
+    
+    func sendMessage(data: Observable<String>) {
+        data.receiveData { value in
+            self.completeEditMessage = value
+        }
+    }
+    func completeEditMakeToast(_ vc: UIViewController) {
+        if completeEditMessage != "" {
+            let style = ToastStyle()
+            vc.view.makeToast("", duration: 0.5, position: .bottom, title: "변경되었습니다", image: nil, style: style, completion: nil)
+            self.completeEditMessage = ""
+        }
+    }
+    func goToMyPage(_ vc: UIViewController) {
+        let view = MyPageViewController()
+        view.delegate = self
+        vc.navigationController?.pushViewController(view, animated: true)
     }
     
     func writePost(_ vc: UIViewController) {

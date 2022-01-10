@@ -18,6 +18,7 @@
 		E42634862783144900963B88 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E42634852783144900963B88 /* RegisterViewController.swift */; };
 		E435C2002789D7070099224D /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C1FF2789D7070099224D /* MyPageViewController.swift */; };
 		E435C2022789DA9E0099224D /* MyPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E435C2012789DA9E0099224D /* MyPageViewModel.swift */; };
+		E438F378278C495800AF942E /* Protocol+editComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = E438F377278C495800AF942E /* Protocol+editComplete.swift */; };
 		E44E209C277DE09A0068D77E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E209B277DE09A0068D77E /* AppDelegate.swift */; };
 		E44E209E277DE09A0068D77E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E209D277DE09A0068D77E /* SceneDelegate.swift */; };
 		E44E20A5277DE09C0068D77E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E44E20A4277DE09C0068D77E /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		E42634852783144900963B88 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		E435C1FF2789D7070099224D /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		E435C2012789DA9E0099224D /* MyPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewModel.swift; sourceTree = "<group>"; };
+		E438F377278C495800AF942E /* Protocol+editComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol+editComplete.swift"; sourceTree = "<group>"; };
 		E44E2098277DE09A0068D77E /* Assignment67_MemberLogin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignment67_MemberLogin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E44E209B277DE09A0068D77E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E44E209D277DE09A0068D77E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				E4F5AB1D27832686002645BF /* TextField+Extension.swift */,
 				E4F899382784C759000714E9 /* String+Extension.swift */,
 				E4FE594E278870B50089DCAC /* SeSacURLManager.swift */,
+				E438F377278C495800AF942E /* Protocol+editComplete.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				E435C2002789D7070099224D /* MyPageViewController.swift in Sources */,
 				E4F5AB1E27832686002645BF /* TextField+Extension.swift in Sources */,
 				E4F5AB2527834BBD002645BF /* SignUp.swift in Sources */,
+				E438F378278C495800AF942E /* Protocol+editComplete.swift in Sources */,
 				E466F8E42789BD56006D656A /* GetComment.swift in Sources */,
 				E4F5AB2127832D66002645BF /* URLSession+Extension.swift in Sources */,
 			);

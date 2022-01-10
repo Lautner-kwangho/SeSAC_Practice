@@ -8,10 +8,6 @@
 import UIKit
 import Toast
 
-protocol editComplete {
-    func sendMessage(data: Observable<String>)
-}
-
 class CommentEditViewController: BaseView {
     
     let textView = UITextView().then {

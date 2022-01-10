@@ -20,6 +20,7 @@ class MyPageViewModel {
     var currentText = Observable(String())
     var newText = Observable(String())
     var confirmText = Observable(String())
+    var sendToast = Observable(String())
     
     func sendData(_ current: UITextField, _ new: UITextField, _ confirm: UITextField, _ button: UIButton) {
         if let current = current.text, let new = new.text, let confirm = confirm.text {
@@ -47,11 +48,11 @@ class MyPageViewModel {
         } else {
             APIManager.changePassword(currentPassword: currentText.valueData, newPassword: newText.valueData, confirmNewPassword: confirmText.valueData) { userData, error in
                 
+                let userDefaults = UserDefaults.standard
+                let id = userDefaults.string(forKey: "LoginID")!
+                let pw = userDefaults.string(forKey: "LoginPW")!
+                
                 guard let userData = userData else {
-                    
-                    let userDefaults = UserDefaults.standard
-                    let id = userDefaults.string(forKey: "LoginID")!
-                    let pw = userDefaults.string(forKey: "LoginPW")!
                     
                     if error == .badRequest {
                         DispatchQueue.main.async {
@@ -69,6 +70,9 @@ class MyPageViewModel {
                     return
                 }
                 
+                userDefaults.removeObject(forKey: "LoginPW")
+                userDefaults.set(self.confirmText.valueData, forKey: "LoginPW")
+                self.sendToast.valueData = "변경완료"
                 vc.navigationController?.popViewController(animated: true)
             }
         }

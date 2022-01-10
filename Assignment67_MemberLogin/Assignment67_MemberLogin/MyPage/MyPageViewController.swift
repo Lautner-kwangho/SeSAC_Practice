@@ -34,9 +34,15 @@ class MyPageViewController: BaseView {
         $0.isEnabled = false
     }
     var viewModel = MyPageViewModel()
+    var delegate: editComplete?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.sendMessage(data: viewModel.sendToast)
     }
     
     override func configure() {
