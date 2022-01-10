@@ -89,7 +89,7 @@ extension URLSession {
                     let userData = try JSONDecoder().decode(T.self, from: data)
                     completion(userData, nil)
                 } catch {
-                    completion(nil, .lostNetwork)
+                    completion(nil, .cannotConvert)
                 }
                 
             }

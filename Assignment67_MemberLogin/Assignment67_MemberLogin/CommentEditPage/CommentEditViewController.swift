@@ -8,6 +8,10 @@
 import UIKit
 import Toast
 
+protocol editComplete {
+    func sendMessage(data: Observable<String>)
+}
+
 class CommentEditViewController: BaseView {
     
     let textView = UITextView().then {
@@ -20,17 +24,15 @@ class CommentEditViewController: BaseView {
     
     var editModel: GetCommentElement?
     var viewModel = CommentEditViewModel()
+    var delegate: editComplete?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        let style = ToastStyle()
-        let a = self.presentingViewController?.view.description
-        print(a) // <- nil ... 아 일단 갱신부터
-        presentingViewController?.view.makeToast("", duration: 1, position: .bottom, title: "수정되었습니다", image: nil, style: style, completion: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.sendMessage(data: viewModel.sendToast)
     }
     
     override func configure() {

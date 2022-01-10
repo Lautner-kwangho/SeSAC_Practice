@@ -29,8 +29,9 @@ class PostDetailViewController: BaseView {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        postViewModel.getComment(viewModel, tableView)
         postViewModel.getDetailPost(viewModel, tableView)
+        postViewModel.getComment(viewModel, tableView)
+        postViewModel.completeEditMakeToast(self)
     }
     
     override func configure() {

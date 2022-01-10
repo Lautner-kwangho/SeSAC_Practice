@@ -8,12 +8,26 @@
 import UIKit
 import Toast
 
-class PostDetailViewModel {
+class PostDetailViewModel: editComplete {
     
     let textPlaceholder = "댓글을 입력해주세요"
     var detailText = Observable(String())
     
+    var completeEditMessage = ""
     var commentTableData = Observable(GetComment())
+    
+    func sendMessage(data: Observable<String>) {
+        data.receiveData { value in
+            self.completeEditMessage = value
+        }
+    }
+    
+    func completeEditMakeToast(_ vc: UIViewController) {
+        if completeEditMessage != "" {
+            let style = ToastStyle()
+            vc.view.makeToast("", duration: 0.5, position: .bottom, title: "수정되었습니다", image: nil, style: style, completion: nil)
+        }
+    }
     
     func getDetailPost(_ post: GetPostElement?, _ tableView: UITableView) {
         if let post = post {
@@ -87,7 +101,6 @@ class PostDetailViewModel {
 
     func sendData(_ textField: UITextField, _ button: UIButton) {
         if textField.text != nil {
-            // djswpwkdigkfRK..
             if let text = textField.text, text.count > 0 {
                 button.isHidden = false
             } else {
@@ -100,9 +113,9 @@ class PostDetailViewModel {
         if let comment = textField.text, let postID = postID?.id {
             APIManager.commentWrite(comment, postID) { userData, error in
                 textField.text = ""
+                completion()
             }
         }
-        completion()
     }
 
     func commentEdit(_ vc: UIViewController, _ postID: GetPostElement?, _ tag: Int, _ tableView: UITableView, completion: @escaping() -> Void) {
@@ -117,6 +130,7 @@ class PostDetailViewModel {
             let edietAction = UIAlertAction(title: "수정", style: .default) { _ in
                 let view = CommentEditViewController()
                 view.editModel = myID
+                view.delegate = self
                 vc.navigationController?.pushViewController(view, animated: true)
             }
             let deleteAction = UIAlertAction(title: "삭제", style: .default) { _ in

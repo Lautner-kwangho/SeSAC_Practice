@@ -61,11 +61,25 @@ class LoginViewModel {
                 UserDefaults.standard.set(allCount!, forKey: "postCount")
             }
             
+            Timer.scheduledTimer(timeInterval: 20, target: self, selector: #selector(self.renewalToken), userInfo: nil, repeats: true)
+            
             vc.view.makeToast("로그인되었습니다")
             
             completion()
         }
+    }
+    
+    @objc func renewalToken() {
+        let userDefaults = UserDefaults.standard
+        let id = userDefaults.string(forKey: "LoginID")!
+        let pw = userDefaults.string(forKey: "LoginPW")!
         
+        APIManager.login(identifier: id, pw: pw) { userData, error in
+            userDefaults.removeObject(forKey: "token")
+            userDefaults.set(userData?.jwt, forKey: "token")
+        }
+        
+        print("갱신되었습니다")
     }
 
 }

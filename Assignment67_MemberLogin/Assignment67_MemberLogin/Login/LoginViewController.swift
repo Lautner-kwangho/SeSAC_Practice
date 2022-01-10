@@ -8,14 +8,6 @@
 import UIKit
 
 class LoginViewController: BaseView {
-    /*
-    - jwt: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTc2LCJpYXQiOjE2NDEyODk0ODAsImV4cCI6MTY0Mzg4MTQ4MH0.9NPxi6-jkvz6aftueXk_uRnVwXJLLCAySAWOtofy7ZQ"
-    ▿ user: Assignment67_MemberLogin.User
-      - id: 176
-      - username: "Qweqwe"
-      - email: "qq@gamil.com"
-      - password: As
-    */
     
     let identifierField = UITextField().then {
         $0.setLeftPaddingPoints()
@@ -37,15 +29,15 @@ class LoginViewController: BaseView {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    // test 용으로 적은거라 나중에 삭제할 부분
+    ///*
+    // test 용으로 적은거라 나중에 수정할 때 사용
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.identifierField.text = "any"
         self.passwordField.text = "any "
         self.loginButton.isEnabled = true
     }
-    
+    //*/
     
     override func configure() {
         
