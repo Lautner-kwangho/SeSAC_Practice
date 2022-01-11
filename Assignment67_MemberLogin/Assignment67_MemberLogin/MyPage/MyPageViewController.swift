@@ -33,6 +33,9 @@ class MyPageViewController: BaseView {
         $0.backgroundColor = .systemGray4
         $0.isEnabled = false
     }
+    let logOutButton = UIButton().then {
+        $0.backgroundColor = .systemRed
+    }
     var viewModel = MyPageViewModel()
     var delegate: editComplete?
     
@@ -59,6 +62,9 @@ class MyPageViewController: BaseView {
         
         editbutton.setTitle(viewModel.buttonTitle, for: .normal)
         editbutton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+        
+        logOutButton.setTitle(viewModel.logOutTitle, for: .normal)
+        logOutButton.addTarget(self, action: #selector(logOutButtonClicked), for: .touchUpInside)
     }
     
     @objc func checkText() {
@@ -67,6 +73,10 @@ class MyPageViewController: BaseView {
     
     @objc func editButtonClicked() {
         viewModel.clickedButton(self)
+    }
+    
+    @objc func logOutButtonClicked() {
+        viewModel.clickedLogOutButton(self)
     }
     
     override func setupConstraints() {
@@ -104,6 +114,13 @@ class MyPageViewController: BaseView {
         view.addSubview(editbutton)
         editbutton.snp.makeConstraints {
             $0.top.equalTo(confirmPassword.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
+            $0.height.equalTo(50)
+        }
+        
+        view.addSubview(logOutButton)
+        logOutButton.snp.makeConstraints {
+            $0.bottom.equalTo(view.safeAreaLayoutGuide).offset(-20)
             $0.leading.trailing.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(50)
         }

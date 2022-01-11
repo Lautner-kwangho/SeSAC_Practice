@@ -17,10 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
+        let loginID = UserDefaults.standard.string(forKey: "LoginID")
+        let loginPW = UserDefaults.standard.string(forKey: "LoginPW")
         
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
-        window?.rootViewController = UINavigationController(rootViewController: MainViewController())
+        let rootView = loginPW != nil && loginID != nil ? PostMainPageViewController() : MainViewController()
+        window?.rootViewController = UINavigationController(rootViewController: rootView)
         window?.makeKeyAndVisible()
     }
 
@@ -34,6 +37,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
+        // 설마...
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

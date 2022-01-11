@@ -29,15 +29,14 @@ class LoginViewController: BaseView {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    ///*
+    /*
     // test 용으로 적은거라 나중에 수정할 때 사용
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.identifierField.text = "any"
         self.passwordField.text = "any "
-        self.loginButton.isEnabled = true
     }
-    //*/
+    */
     
     override func configure() {
         
@@ -60,13 +59,7 @@ class LoginViewController: BaseView {
     }
     
     @objc func loginButtonClicked() {
-        viewModel.loginClicked(self) {
-            DispatchQueue.main.async {
-                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
-                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostMainPageViewController())
-                windowScene.windows.first?.makeKeyAndVisible()
-            }
-        }
+        viewModel.loginClicked(self)
     }
     
     override func setupConstraints() {

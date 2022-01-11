@@ -40,6 +40,10 @@ class MainViewController: BaseView {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func configure() {
         mainImage.image = UIImage(named: viewModel.mainImageName)
         mainTitle.text = viewModel.mainTitleContent

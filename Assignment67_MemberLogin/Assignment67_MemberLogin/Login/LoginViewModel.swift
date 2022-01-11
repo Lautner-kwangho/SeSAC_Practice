@@ -34,7 +34,7 @@ class LoginViewModel {
         }
     }
     
-    func loginClicked(_ vc: UIViewController, completion: @escaping () -> Void) {
+    func loginClicked(_ vc: UIViewController) {
         
         APIManager.login(identifier: username.valueData, pw: pw.valueData) { userData, error in
             guard let userData = userData else {
@@ -45,41 +45,44 @@ class LoginViewModel {
             }
             
             let userDefaults = UserDefaults.standard
-            // 어차피 지울 꺼 한번에 지워도 되지 않을까
             let domain = Bundle.main.bundleIdentifier!
-            UserDefaults.standard.removePersistentDomain(forName: domain)
-            UserDefaults.standard.synchronize()
-//            userDefaults.removeObject(forKey: "token")
-            userDefaults.set(userData.jwt, forKey: "token")
-            userDefaults.set(self.username.valueData, forKey: "LoginID")
-            userDefaults.set(self.pw.valueData, forKey: "LoginPW")
-            userDefaults.set(userData.user.id, forKey: "id")
-            userDefaults.set(userData.user.username, forKey: "userName")
             
-            APIManager.getPostCount { allCount, error in
-                UserDefaults.standard.removeObject(forKey: "postCount")
-                UserDefaults.standard.set(allCount!, forKey: "postCount")
+            DispatchQueue.global().sync {
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.synchronize()
+                
+                userDefaults.set(userData.jwt, forKey: "token")
+                userDefaults.set(self.username.valueData, forKey: "LoginID")
+                userDefaults.set(self.pw.valueData, forKey: "LoginPW")
+                userDefaults.set(userData.user.id, forKey: "id")
+                userDefaults.set(userData.user.username, forKey: "userName")
+                
+                //DispatchQueue.main.async {
+                APIManager.getPostCount { allCount, error in
+                    
+                    UserDefaults.standard.removeObject(forKey: "postCount")
+                    UserDefaults.standard.set(allCount, forKey: "postCount")
+                    guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostMainPageViewController())
+                    windowScene.windows.first?.makeKeyAndVisible()
+                }
             }
-            // 빨리 확인하기 위해서 30초 정도 두었습니다!
-            Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.renewalToken), userInfo: nil, repeats: true)
-            
-            vc.view.makeToast("로그인되었습니다")
-            
-            completion()
         }
+        // 빨리 확인하기 위해서 30초 정도 두었습니다!
+        // 비효율적이라는 답변받음! 다른 걸로 다시!
+        //Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.renewalToken), userInfo: nil, repeats: true)
     }
-    
+
     @objc func renewalToken() {
-        let userDefaults = UserDefaults.standard
-        let id = userDefaults.string(forKey: "LoginID")!
-        let pw = userDefaults.string(forKey: "LoginPW")!
-        
-        APIManager.login(identifier: id, pw: pw) { userData, error in
-            userDefaults.removeObject(forKey: "token")
-            userDefaults.set(userData?.jwt, forKey: "token")
-        }
-        
-        print("갱신되었습니다")
+//        let userDefaults = UserDefaults.standard
+//        let id = userDefaults.string(forKey: "LoginID")!
+//        let pw = userDefaults.string(forKey: "LoginPW")!
+//        
+//        APIManager.login(identifier: id, pw: pw) { userData, error in
+//            userDefaults.removeObject(forKey: "token")
+//            userDefaults.set(userData?.jwt, forKey: "token")
+//        }
+//        print("갱신되었습니다")
     }
 
 }

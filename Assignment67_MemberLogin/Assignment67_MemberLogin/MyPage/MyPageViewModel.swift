@@ -11,11 +11,14 @@ import Toast
 class MyPageViewModel {
     
     let title = "비밀번호 바꾸기"
+    let logOutTitle = "로그아웃하기"
     let userName = "안녕하세요!\n\(UserDefaults.standard.string(forKey: "userName")!)님"
     let currentPlaceHolder = "현재 비밀번호를 입력하세요"
     let newPasswordPlaceHolder = "변경할 비밀번호를 입력하세요"
     let confirmPasswordPlaceHolder = "변경할 비밀번호를 한번 더 입력해주세요"
     let buttonTitle = "비밀번호 변경하기"
+    
+    let userDefaults = UserDefaults.standard
     
     var currentText = Observable(String())
     var newText = Observable(String())
@@ -48,17 +51,17 @@ class MyPageViewModel {
         } else {
             APIManager.changePassword(currentPassword: currentText.valueData, newPassword: newText.valueData, confirmNewPassword: confirmText.valueData) { userData, error in
                 
-                let userDefaults = UserDefaults.standard
-                let id = userDefaults.string(forKey: "LoginID")!
-                let pw = userDefaults.string(forKey: "LoginPW")!
-                
+//                let userDefaults = UserDefaults.standard
+                let id = self.userDefaults.string(forKey: "LoginID")!
+                let pw = self.userDefaults.string(forKey: "LoginPW")!
+//
                 guard let userData = userData else {
                     
                     if error == .badRequest {
                         DispatchQueue.main.async {
                             APIManager.login(identifier: id, pw: pw) { userData, error in
-                                userDefaults.removeObject(forKey: "token")
-                                userDefaults.set(userData?.jwt, forKey: "token")
+                                self.userDefaults.removeObject(forKey: "token")
+                                self.userDefaults.set(userData?.jwt, forKey: "token")
                             }
                         }
                     } else {
@@ -70,11 +73,26 @@ class MyPageViewModel {
                     return
                 }
                 
-                userDefaults.removeObject(forKey: "LoginPW")
-                userDefaults.set(self.confirmText.valueData, forKey: "LoginPW")
+                self.userDefaults.removeObject(forKey: "LoginPW")
+                self.userDefaults.set(self.confirmText.valueData, forKey: "LoginPW")
                 self.sendToast.valueData = "변경완료"
                 vc.navigationController?.popViewController(animated: true)
             }
         }
+    }
+    
+    func clickedLogOutButton(_ vc: UIViewController) {
+        vc.customAlert2("로그아웃", "정말 로그아웃 하시겠습니까?", "네!", style1: .default, handler1: { _ in
+            DispatchQueue.global().sync {
+                // 전부 삭제
+                let domain = Bundle.main.bundleIdentifier!
+                self.userDefaults.removePersistentDomain(forName: domain)
+                self.userDefaults.synchronize()
+                guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: MainViewController())
+                windowScene.windows.first?.makeKeyAndVisible()
+                
+            }
+        }, "아니요 ㅜ", style2: .destructive, handler2: nil)
     }
 }
