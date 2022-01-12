@@ -54,18 +54,21 @@ class WritePostViewModel {
                 let userDefaults = UserDefaults.standard
                 let id = userDefaults.string(forKey: "LoginID")!
                 let pw = userDefaults.string(forKey: "LoginPW")!
-                
+                // 음 만약 글쓰는 중에 갱신이 필요하다면..? 여기도 구현 필요하겠지
                 guard let userData = userData else {
                     if error == .badRequest {
                         APIManager.login(identifier: id, pw: pw) { userData, error in
                             userDefaults.removeObject(forKey: "token")
                             userDefaults.set(userData?.jwt, forKey: "token")
+                            APIManager.writePost(self.editText.valueData) { recallData, recallError in
+                                completion()
+                            }
+                            
                         }
                     } else {
                         var style = ToastStyle()
                         style.titleAlignment = .center
                         vc.view.makeToast("", duration: 1, position: .center, title: "\(error!.errorDescription)", image: nil, style: style, completion: nil)
-                        return
                     }
                     return
                 }

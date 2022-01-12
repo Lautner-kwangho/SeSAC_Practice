@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         window?.windowScene = windowScene
         let rootView = loginPW != nil && loginID != nil ? PostMainPageViewController() : MainViewController()
+        //test한다고 일단 여기 제출 전에 바꾸기
         window?.rootViewController = UINavigationController(rootViewController: rootView)
         window?.makeKeyAndVisible()
     }

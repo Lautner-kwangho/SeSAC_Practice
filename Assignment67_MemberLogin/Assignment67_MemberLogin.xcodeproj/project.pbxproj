@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E402F4742786BC20005DB58E /* CommentEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402F4732786BC20005DB58E /* CommentEditViewController.swift */; };
 		E402F4762786BC7A005DB58E /* CommentEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E402F4752786BC7A005DB58E /* CommentEditViewModel.swift */; };
+		E412EB28278EFC2A00BC90C6 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = E412EB27278EFC2A00BC90C6 /* JGProgressHUD */; };
 		E426346F2782FA9400963B88 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E426346E2782FA9400963B88 /* BaseView.swift */; };
 		E42634772782FBC400963B88 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E42634762782FBC400963B88 /* SnapKit */; };
 		E426347A2782FBCD00963B88 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = E42634792782FBCD00963B88 /* Then */; };
@@ -102,6 +103,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4F5AB2A278355AE002645BF /* Toast in Frameworks */,
+				E412EB28278EFC2A00BC90C6 /* JGProgressHUD in Frameworks */,
 				E42634772782FBC400963B88 /* SnapKit in Frameworks */,
 				E4F5AB3027836110002645BF /* RxSwift in Frameworks */,
 				E4F5AB2E27836110002645BF /* RxCocoa in Frameworks */,
@@ -278,6 +280,7 @@
 				E4F5AB2D27836110002645BF /* RxCocoa */,
 				E4F5AB2F27836110002645BF /* RxSwift */,
 				E466F8E12789A237006D656A /* IQKeyboardManagerSwift */,
+				E412EB27278EFC2A00BC90C6 /* JGProgressHUD */,
 			);
 			productName = Assignment67_MemberLogin;
 			productReference = E44E2098277DE09A0068D77E /* Assignment67_MemberLogin.app */;
@@ -313,6 +316,7 @@
 				E4F5AB28278355AE002645BF /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				E4F5AB2C27836110002645BF /* XCRemoteSwiftPackageReference "RxSwift" */,
 				E466F8E02789A237006D656A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				E412EB26278EFC2A00BC90C6 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = E44E2099277DE09A0068D77E /* Products */;
 			projectDirPath = "";
@@ -589,6 +593,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E412EB26278EFC2A00BC90C6 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		E42634752782FBC400963B88 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -632,6 +644,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E412EB27278EFC2A00BC90C6 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E412EB26278EFC2A00BC90C6 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		E42634762782FBC400963B88 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E42634752782FBC400963B88 /* XCRemoteSwiftPackageReference "SnapKit" */;

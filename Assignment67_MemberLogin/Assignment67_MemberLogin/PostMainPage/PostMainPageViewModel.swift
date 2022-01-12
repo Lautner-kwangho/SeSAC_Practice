@@ -71,38 +71,39 @@ class PostMainPageViewModel: editComplete {
     
     func getPost(_ vc: UIViewController, _ tableView: UITableView, _ start: Int) {
         APIManager.getPost(start) { userData, error in
-            guard let userData = userData else {
-                print("여기 실행 되면 안되는데")
-//                let userDefaults = UserDefaults.standard
-//                let id = userDefaults.string(forKey: "LoginID")!
-//                let pw = userDefaults.string(forKey: "LoginPW")!
-//
-//                if error == .badRequest {
-//                    DispatchQueue.main.async {
-//                        APIManager.login(identifier: id, pw: pw) { userData, error in
-//                            userDefaults.removeObject(forKey: "token")
-//                            userDefaults.set(userData?.jwt, forKey: "token")
-//                            print(userData?.jwt)
-//                        }
-//                    }
-//                } else {
-//                    var style = ToastStyle()
-//                    style.titleAlignment = .center
-//                    vc.view.makeToast("", duration: 1, position: .center, title: "\(error!.errorDescription)", image: nil, style: style, completion: nil)
-//                    return
-//                }
-                return
-            }
-            // sync : 동기!! 이거 끝나야 다른 거 할 수 있음
-            // async: 비동기 !! 다른 일도 동시에 할 수 있다
-            DispatchQueue.global().sync {
-                // 이거 두개를 잘 조합해야 됨..
-                self.tableData.valueData.append(contentsOf: userData)
-                DispatchQueue.main.async {
-                    tableView.reloadData()
+            let userDefaults = UserDefaults.standard
+            let id = userDefaults.string(forKey: "LoginID")!
+            let pw = userDefaults.string(forKey: "LoginPW")!
+            
+            if let userData = userData {
+                DispatchQueue.global().sync {
+                    self.tableData.valueData.append(contentsOf: userData)
+                    DispatchQueue.main.async {
+                        tableView.reloadData()
+                    }
+                }
+            } else if error == .badRequest {
+                DispatchQueue.global().sync {
+                    APIManager.login(identifier: id, pw: pw) { userData, error in
+                        userDefaults.removeObject(forKey: "token")
+                        userDefaults.set(userData?.jwt, forKey: "token")
+                        APIManager.getPost(start) { recallData, error in
+                            
+                            guard let recallData = recallData else { return }
+                            
+                            self.tableData.valueData.append(contentsOf: recallData)
+                            DispatchQueue.main.async {
+                                tableView.reloadData()
+                            }
+                        }
+                        
+                        APIManager.getPostCount { allCount, error in
+                            userDefaults.removeObject(forKey: "postCount")
+                            userDefaults.set(allCount, forKey: "postCount")
+                        }
+                    }
                 }
             }
         }
     }
-
 }

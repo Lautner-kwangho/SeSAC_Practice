@@ -7,6 +7,7 @@
 
 import UIKit
 import Toast
+import JGProgressHUD
 
 class LoginViewModel {
     
@@ -36,8 +37,13 @@ class LoginViewModel {
     
     func loginClicked(_ vc: UIViewController) {
         
+        let hud = JGProgressHUD()
+        hud.textLabel.text = "Loading"
+        hud.show(in: vc.view)
+        
         APIManager.login(identifier: username.valueData, pw: pw.valueData) { userData, error in
             guard let userData = userData else {
+                hud.dismiss()
                 var style = ToastStyle()
                 style.titleAlignment = .center
                 vc.view.makeToast("", duration: 1, position: .center, title: "\(error!.errorDescription)", image: nil, style: style, completion: nil)
@@ -51,18 +57,20 @@ class LoginViewModel {
                 UserDefaults.standard.removePersistentDomain(forName: domain)
                 UserDefaults.standard.synchronize()
                 
+                // 토큰 테스트용임
+//                userDefaults.set("테스트으으으으으으으", forKey: "token")
                 userDefaults.set(userData.jwt, forKey: "token")
                 userDefaults.set(self.username.valueData, forKey: "LoginID")
                 userDefaults.set(self.pw.valueData, forKey: "LoginPW")
                 userDefaults.set(userData.user.id, forKey: "id")
                 userDefaults.set(userData.user.username, forKey: "userName")
-                
                 //DispatchQueue.main.async {
                 APIManager.getPostCount { allCount, error in
                     
                     UserDefaults.standard.removeObject(forKey: "postCount")
                     UserDefaults.standard.set(allCount, forKey: "postCount")
                     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene else { return }
+                    //test
                     windowScene.windows.first?.rootViewController = UINavigationController(rootViewController: PostMainPageViewController())
                     windowScene.windows.first?.makeKeyAndVisible()
                 }

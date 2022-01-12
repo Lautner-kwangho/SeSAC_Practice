@@ -23,8 +23,6 @@ enum APIError: String, Error, LocalizedError {
 
 class APIManager {
     
-    static let userToken = UserDefaults.standard.object(forKey: "token")
-    
     static func register(username: String, email: String, password: String, completion: @escaping (SignUp?, APIError?) -> Void) {
         
         var request = URLRequest(url: point.signUp.url)
@@ -41,7 +39,7 @@ class APIManager {
         request.httpBody = "currentPassword=\(currentPassword)&newPassword=\(newPassword)&confirmNewPassword=\(confirmNewPassword)"
             .data(using: .utf8,
                   allowLossyConversion: false)
-        
+        let userToken = UserDefaults.standard.object(forKey: "token")
         if let userToken = userToken {
             request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         }
@@ -66,6 +64,7 @@ class APIManager {
         
         request.httpMethod = Method.GET.rawValue
         
+        let userToken = UserDefaults.standard.object(forKey: "token")
         if let userToken = userToken {
             request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         }
@@ -79,6 +78,7 @@ class APIManager {
         
         request.httpMethod = Method.GET.rawValue
         
+        let userToken = UserDefaults.standard.object(forKey: "token")
         if let userToken = userToken {
             request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         }
@@ -90,6 +90,7 @@ class APIManager {
         var request = URLRequest(url: point.allPostCount.url)
         request.httpMethod = Method.GET.rawValue
         
+        let userToken = UserDefaults.standard.object(forKey: "token")
         if let userToken = userToken {
             request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         }
@@ -136,6 +137,7 @@ class APIManager {
         var request = URLRequest(url: URL(string: addURL)!)
         request.httpMethod = Method.GET.rawValue
         
+        let userToken = UserDefaults.standard.object(forKey: "token")
         if let userToken = userToken {
             request.allHTTPHeaderFields = ["Authorization":"bearer \(userToken)"]
         }

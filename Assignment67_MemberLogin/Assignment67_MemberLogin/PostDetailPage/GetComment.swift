@@ -9,6 +9,7 @@ import Foundation
 
 // MARK: - GetCommentElement
 struct GetCommentElement: Codable {
+    
     let id: Int
     let comment: String
     let user: UsersInfo
