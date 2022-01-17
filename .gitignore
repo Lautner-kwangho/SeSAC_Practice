@@ -7,6 +7,7 @@ APIKEY.swift
 Constants.swift
 # FireBase
 GoogleService-Info.plist
+*.plist
 # SeSac Data
 SeSacURLManager.swift
 
